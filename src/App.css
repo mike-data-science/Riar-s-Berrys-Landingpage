@@ -1,0 +1,26 @@
+/*
+  STACKING — hero uses position:fixed for bg + video.
+  Every section needs position:relative + z-index >= 2 to sit above it.
+*/
+#main-content,
+#categories, #products, #process, #nutrition,
+#about, #reviews, #gift, #newsletter,
+#gallery, #location, #contact {
+  position: relative;
+  z-index: 2;
+}
+
+.trust-bar    { position: relative; z-index: 2; }
+.cta-section  { position: relative; z-index: 2; }
+.footer       { position: relative; z-index: 3; }
+.cookie-banner{ z-index: 500; }
+
+/* Product page + About page sit above fixed hero bg */
+.pp, .about { position: relative; z-index: 2; }
+
+/* Page entrance animation */
+main { animation: pageIn 0.35s ease; }
+@keyframes pageIn {
+  from { opacity:0; transform:translateY(10px); }
+  to   { opacity:1; transform:translateY(0); }
+}

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://riarberry.com/sitemap.xml
+
+# Block any admin or private paths (add yours here if needed)
+Disallow: /api/

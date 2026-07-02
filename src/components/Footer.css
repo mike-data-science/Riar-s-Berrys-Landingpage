@@ -1,0 +1,110 @@
+.footer {
+  background: #0a0e0a;
+  color: var(--c-cream);
+  padding: 5rem 3rem 2.5rem;
+  border-top: 0.5px solid rgba(200,169,110,0.12);
+}
+
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding-bottom: 3.5rem;
+  border-bottom: 0.5px solid rgba(245,240,232,0.07);
+  margin-bottom: 2rem;
+}
+
+/* Brand */
+.footer__logo {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 300;
+  color: var(--c-gold);
+  display: block;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.01em;
+}
+.footer__logo em {
+  font-style: italic;
+  color: var(--c-gold-light);
+}
+.footer__tagline {
+  font-size: 0.85rem;
+  color: rgba(245,240,232,0.38);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+/* Social icons */
+.footer__social {
+  display: flex;
+  gap: 0.75rem;
+}
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(200,169,110,0.25);
+  color: rgba(245,240,232,0.4);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.footer__social-link svg {
+  width: 16px; height: 16px;
+}
+.footer__social-link:hover {
+  color: var(--c-gold);
+  border-color: var(--c-gold);
+  background: rgba(200,169,110,0.08);
+}
+
+/* Nav columns */
+.footer__nav {
+  display: flex;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+}
+.footer__nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.footer__nav-title {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+  margin-bottom: 0.35rem;
+}
+.footer__nav-col a {
+  font-size: 0.85rem;
+  color: rgba(245,240,232,0.42);
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.5;
+}
+.footer__nav-col a:hover { color: var(--c-cream); }
+
+/* Bottom bar */
+.footer__bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.74rem;
+  color: rgba(245,240,232,0.18);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .footer { padding: 4rem 1.5rem 2rem; }
+  .footer__inner { flex-direction: column; gap: 2.5rem; }
+  .footer__nav { gap: 2rem; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+}

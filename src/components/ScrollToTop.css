@@ -1,0 +1,30 @@
+.stt {
+  position: fixed;
+  bottom: 5.5rem;        /* sits above WhatsApp button */
+  right: 2rem;
+  z-index: 199;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: rgba(10,14,10,0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 0.5px solid rgba(200,169,110,0.3);
+  color: var(--c-gold);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease,
+              background 0.2s, border-color 0.2s;
+  pointer-events: none;
+}
+.stt svg { width: 16px; height: 16px; }
+.stt--visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+.stt:hover {
+  background: var(--c-gold);
+  color: #060402;
+  border-color: var(--c-gold);
+  transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+  .stt { bottom: 4.5rem; right: 1.25rem; width: 38px; height: 38px; }
+}

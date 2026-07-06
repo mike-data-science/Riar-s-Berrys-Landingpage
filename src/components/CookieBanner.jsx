@@ -1,19 +1,20 @@
 import { useCookies } from '../context/CookieContext';
+import { useLang } from '../context/LangContext';
 import './CookieBanner.css';
 
 export default function CookieBanner() {
   const { consent, accept, decline } = useCookies();
+  const { t } = useLang();
+  const tc = t.cookie;
   if (consent !== null) return null; // already decided
 
   return (
     <div className="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
       <div className="cookie-banner__inner">
         <div className="cookie-banner__text">
-          <p className="cookie-banner__title">🍪 We use cookies</p>
+          <p className="cookie-banner__title">{tc.title}</p>
           <p className="cookie-banner__desc">
-            We use Google Analytics to understand how visitors use the site.
-            No personal data is sold. You can decline and the site works fully without cookies.
-            <a href="/about#privacy" className="cookie-banner__link"> Learn more</a>
+            {tc.desc} <a href="/about#privacy" className="cookie-banner__link">{tc.learnMore}</a>
           </p>
         </div>
         <div className="cookie-banner__actions">

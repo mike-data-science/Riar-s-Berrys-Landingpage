@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PRODUCTS, CATEGORIES } from '../data/fruits';
 import WishlistHeart from './WishlistHeart';
+import { useLang } from '../context/LangContext';
 import './ProductGrid.css';
 
 
@@ -22,8 +23,6 @@ function ProductCardSkeleton() {
 }
 
 gsap.registerPlugin(ScrollTrigger);
-
-const ALL_CATS = [{ id:'all', label:'All' }, ...CATEGORIES.map(c => ({ id:c.id, label:c.label }))];
 
 function ProductCard({ product }) {
   const [failed, setFailed] = useState(false);
@@ -55,11 +54,24 @@ function ProductCard({ product }) {
 }
 
 export default function ProductGrid() {
+  const { t } = useLang();
+  const ts = t.productsSection;
+  const ALL_CATS = [{ id:'all', label:ts.all }, ...CATEGORIES.map(c => ({ id:c.id, label:c.label }))];
   const [activecat, setActiveCat] = useState('all');
   const [query,  setQuery]  = useState('');
   const gridRef    = useRef(null);
   const headerRef  = useRef(null);
   const searchRef  = useRef(null);
+
+  // Listen for category picks coming from the circles in CategoriesSection
+  useEffect(() => {
+    const onCategoryPick = (e) => {
+      const catId = e.detail;
+      if (catId) setActiveCat(catId);
+    };
+    window.addEventListener('rb:filter-category', onCategoryPick);
+    return () => window.removeEventListener('rb:filter-category', onCategoryPick);
+  }, []);
 
   // Combined filter: category + search query
   const filtered = PRODUCTS.filter(p => {
@@ -88,12 +100,12 @@ export default function ProductGrid() {
       gsap.fromTo(headerRef.current,
         { opacity:0, y:36 },
         { opacity:1, y:0, duration:0.9, ease:'power2.out',
-          scrollTrigger:{ trigger:headerRef.current, start:'top 82%', once:true } }
+          scrollTrigger:{ trigger:headerRef.current, start:'top 92%', once:true } }
       );
       gsap.fromTo(searchRef.current,
         { opacity:0, y:20 },
         { opacity:1, y:0, duration:0.7, delay:0.1, ease:'power2.out',
-          scrollTrigger:{ trigger:searchRef.current, start:'top 85%', once:true } }
+          scrollTrigger:{ trigger:searchRef.current, start:'top 92%', once:true } }
       );
     });
     return () => ctx.revert();
@@ -123,7 +135,7 @@ export default function ProductGrid() {
                 className="pgrid__search"
                 value={query}
                 onChange={e => setQuery(e.target.value)}
-                placeholder="Search fruits…"
+                placeholder={ts.searchPlaceholder}
                 aria-label="Search products"
                 aria-controls="product-grid"
               />
@@ -160,10 +172,10 @@ export default function ProductGrid() {
         {/* Result count */}
         <p className="pgrid__count" role="status" aria-live="polite">
           {filtered.length === PRODUCTS.length
-            ? `${PRODUCTS.length} products`
-            : `${filtered.length} of ${PRODUCTS.length} products`
+            ? `${PRODUCTS.length} ${ts.countSuffix}`
+            : `${filtered.length} ${ts.countOf} ${PRODUCTS.length} ${ts.countSuffix}`
           }
-          {query && <span className="pgrid__count-query"> for "<strong>{query}</strong>"</span>}
+          {query && <span className="pgrid__count-query"> {ts.forQuery} "<strong>{query}</strong>"</span>}
         </p>
 
         {/* Grid */}

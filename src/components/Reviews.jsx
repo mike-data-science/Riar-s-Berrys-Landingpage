@@ -58,7 +58,7 @@ export default function Reviews() {
       gsap.fromTo('.rev-header',
         { opacity:0, y:36 },
         { opacity:1, y:0, duration:0.9, ease:'power2.out',
-          scrollTrigger:{ trigger:sectionRef.current, start:'top 80%', once:true } }
+          scrollTrigger:{ trigger:sectionRef.current, start:'top 92%', once:true } }
       );
     }, sectionRef);
     return () => ctx.revert();

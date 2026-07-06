@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { RECIPES } from '../data/recipes';
+import { useLang } from '../context/LangContext';
 import './RecipesPage.css';
 
 // ── Single recipe detail ───────────────────────────────────────────────────
@@ -120,6 +121,8 @@ function RecipeCard({ recipe }) {
 
 // ── Main page ───────────────────────────────────────────────────────────────
 export default function RecipesPage() {
+  const { t } = useLang();
+  const tr = t.recipesPage;
   const { id } = useParams();
   const recipe  = id ? RECIPES.find(r => r.id === id) : null;
 

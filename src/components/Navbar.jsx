@@ -55,38 +55,53 @@ export default function Navbar() {
             </a>
           </li>
         ))}
-        <li role="none">
-          <Link to="/wishlist" className="nav__wish"
-            aria-label={`Wishlist (${wishCount} items)`}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                 strokeWidth="1.8" aria-hidden="true" width="18" height="18">
-              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
-                strokeLinecap="round" strokeLinejoin="round"/>
+        {/* Mobile-only: wishlist + contact (desktop shows these in nav__right) */}
+        <li role="none" className="nav__mobile-only">
+          <Link to="/wishlist" className="nav__link nav__link--wish-mobile" onClick={() => setMenuOpen(false)}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" width="24" height="24">
+              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            {wishCount > 0 && <span className="nav__wish-badge">{wishCount}</span>}
+            Wishlist {wishCount > 0 && `(${wishCount})`}
           </Link>
         </li>
-        <li role="none">
+        <li role="none" className="nav__mobile-only">
           <a href={isHome ? '#contact' : '/#contact'} className="nav__cta"
-             role="menuitem" onClick={() => setMenuOpen(false)}>
+             onClick={() => setMenuOpen(false)}>
             {t.nav.contact}
           </a>
         </li>
       </ul>
 
-      {/* Language toggle — sits right of links, left of burger */}
-      <div className="nav__lang" role="group" aria-label="Language">
-        {['en','ro','ru'].map(l => (
-          <button
-            key={l}
-            className={`nav__lang-btn ${lang === l ? 'nav__lang-btn--active' : ''}`}
-            onClick={() => setLang(l)}
-            aria-pressed={lang === l}
-            aria-label={`Switch to ${l.toUpperCase()}`}
-          >
-            {l.toUpperCase()}
-          </button>
-        ))}
+      {/* Right cluster: wishlist · contact · language — grouped together */}
+      <div className="nav__right">
+        <Link to="/wishlist" className="nav__wish"
+          aria-label={`Wishlist (${wishCount} items)`}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               strokeWidth="1.8" aria-hidden="true" width="18" height="18">
+            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+              strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          {wishCount > 0 && <span className="nav__wish-badge">{wishCount}</span>}
+        </Link>
+
+        <a href={isHome ? '#contact' : '/#contact'} className="nav__cta"
+           onClick={() => setMenuOpen(false)}>
+          {t.nav.contact}
+        </a>
+
+        <div className="nav__lang" role="group" aria-label="Language">
+          {['en','ro','ru'].map(l => (
+            <button
+              key={l}
+              className={`nav__lang-btn ${lang === l ? 'nav__lang-btn--active' : ''}`}
+              onClick={() => setLang(l)}
+              aria-pressed={lang === l}
+              aria-label={`Switch to ${l.toUpperCase()}`}
+            >
+              {l.toUpperCase()}
+            </button>
+          ))}
+        </div>
       </div>
 
       <button

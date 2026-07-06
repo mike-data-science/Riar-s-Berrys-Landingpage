@@ -2,9 +2,12 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useWishlist } from '../context/WishlistContext';
 import { PRODUCTS, CATEGORIES } from '../data/fruits';
+import { useLang } from '../context/LangContext';
 import './WishlistPage.css';
 
 export default function WishlistPage() {
+  const { t } = useLang();
+  const tw = t.wishlistPage;
   const { items, toggle } = useWishlist();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,8 +30,8 @@ export default function WishlistPage() {
           </h1>
           <p className="wl__sub">
             {saved.length === 0
-              ? 'No favourites yet — browse our products and tap the heart to save them here.'
-              : `${saved.length} ${saved.length === 1 ? 'product' : 'products'} saved. We'll notify you when ordering goes live.`
+              ? tw.emptyText
+              : `${saved.length} ${tw.filledText}`
             }
           </p>
         </header>

@@ -12,6 +12,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLang } from '../context/LangContext';
 import './CategoriesSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,7 +28,7 @@ const CIRCLES = [
   { id:'premium', label:'Premium Mix',  sublabel:'Nuts · Dried Figs · Berries',        color:'#a08040', glow:'rgba(160,128,64,0.22)',  image:'/images/circles/premium.png', fallback:'✨' },
 ];
 
-function CircleCard({ cat, i, visible }) {
+function CircleCard({ cat, catT, i, visible }) {
   const [failed, setFailed] = useState(false);
   const cardRef = useRef(null);
 
@@ -41,14 +42,23 @@ function CircleCard({ cat, i, visible }) {
     );
   }, [visible, i]);
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    // Broadcast which category was picked — ProductGrid listens for this
+    window.dispatchEvent(new CustomEvent('rb:filter-category', { detail: cat.id }));
+    // Smooth scroll to the product grid
+    document.getElementById('products')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
-    <a
+    <button
       ref={cardRef}
-      href="#products"
+      type="button"
+      onClick={handleClick}
       className="cc"
       data-circle={cat.id}
       style={{ '--col': cat.color, '--glow': cat.glow, opacity: 0 }}
-      aria-label={`${cat.label} — ${cat.sublabel}`}
+      aria-label={`${catT.label} — ${catT.sublabel}`}
     >
       <span className="cc__spin"   aria-hidden="true" />
       <span className="cc__border" aria-hidden="true" />
@@ -71,14 +81,15 @@ function CircleCard({ cat, i, visible }) {
       </div>
 
       <div className="cc__info" aria-hidden="true">
-        <span className="cc__name">{cat.label}</span>
-        <span className="cc__sub">{cat.sublabel}</span>
+        <span className="cc__name">{catT.label}</span>
+        <span className="cc__sub">{catT.sublabel}</span>
       </div>
-    </a>
+    </button>
   );
 }
 
 export default function CategoriesSection() {
+  const { t } = useLang();
   const sectionRef = useRef(null);
   const vid2Ref    = useRef(null);
   const vidWrapRef = useRef(null);
@@ -147,19 +158,19 @@ export default function CategoriesSection() {
       <div className={`cats__circles-wrap ${circlesVisible ? 'cats__circles-wrap--visible' : ''}`}>
         <div className="cats__inner">
           <header className="cats__head">
-            <p className="cats__eyebrow">Six fruit families</p>
+            <p className="cats__eyebrow">{t.categories.eyebrow}</p>
             <h2 className="cats__title">
-              Every fruit<br /><em>finds its family.</em>
+              {t.categories.titleLine1}<br /><em>{t.categories.titleEm}</em>
             </h2>
           </header>
 
           <div className="cats__row" role="list">
             {CIRCLES.map((cat, i) => (
-              <CircleCard key={cat.id} cat={cat} i={i} visible={circlesVisible} />
+              <CircleCard key={cat.id} cat={cat} catT={t.categories.list[cat.id] ?? cat} i={i} visible={circlesVisible} />
             ))}
           </div>
 
-          <p className="cats__hint">Hover to explore each family · Click to browse products</p>
+          <p className="cats__hint">{t.categories.hint}</p>
         </div>
       </div>
 

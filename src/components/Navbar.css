@@ -54,6 +54,12 @@
 .nav__link:hover { color: var(--c-cream); }
 .nav__link:hover::after { transform: scaleX(1); }
 
+/* ── Right cluster: wishlist · contact · language, grouped ── */
+.nav__right {
+  display: flex; align-items: center;
+  gap: 1rem; flex-shrink: 0;
+}
+
 /* Wishlist heart */
 .nav__wish {
   position: relative; display: flex;
@@ -84,6 +90,9 @@
   background: var(--c-gold); color: #060402;
   border-color: var(--c-gold);
 }
+
+/* Hide mobile-duplicate links on desktop — nav__right already shows them */
+.nav__mobile-only { display: none; }
 
 /* ── Language toggle — integrated in nav row ── */
 .nav__lang {
@@ -131,20 +140,32 @@
   .nav { padding: 1rem 1.5rem; gap: 0.75rem; }
   .nav--scrolled { padding: 0.75rem 1.5rem; }
   .nav__burger { display: flex; }
+
+  /* On mobile, hide the desktop wish+cta from nav__right — they move into the menu */
+  .nav__right { margin-left: auto; gap: 0.6rem; }
+  .nav__right .nav__wish,
+  .nav__right .nav__cta { display: none; }
+
+  .nav__link--wish-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
   .nav__links {
     position: fixed; inset: 0;
     background: rgba(3,3,3,0.97);
     flex-direction: column; justify-content: center;
-    gap: 2.5rem; transform: translateX(100%);
+    gap: 2rem; transform: translateX(100%);
     transition: transform 0.38s cubic-bezier(0.25,0.46,0.45,0.94);
     pointer-events: none;
   }
   .nav__links--open { transform: translateX(0); pointer-events: all; }
   .nav__link { font-size: 1.5rem; color: var(--c-cream); }
-  .nav__cta  { font-size: 1.2rem; }
-  /* Keep lang toggle visible on mobile, compact */
-  .nav__lang-btn { font-size: 0.62rem; padding: 3px 7px; }
+  .nav__mobile-only { display: block; }
+  .nav__mobile-only .nav__cta { font-size: 1.2rem; }
 }
 @media (max-width: 480px) {
-  .nav__lang { display: none; } /* hide on very small — accessible via menu */
+  .nav__lang { display: none; } /* hide on very small — language still in URL/browser */
 }

@@ -1,16 +1,12 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLang } from '../context/LangContext';
 import './NutritionSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const COMPARISONS = [
-  { label:'Dried Fruit (30g)',  cal:90,  fibre:2.5, sugar:18, natural:true  },
-  { label:'Potato Chips (30g)', cal:162, fibre:1.2, sugar:0.2,natural:false },
-  { label:'Chocolate Bar (30g)',cal:158, fibre:0.8, sugar:17, natural:false },
-  { label:'Gummy Bears (30g)', cal:107, fibre:0,   sugar:22, natural:false },
-];
+
 
 const BENEFITS = [
   { icon:'⚡', title:'Natural energy',  text:'Concentrated natural sugars give sustained energy without the crash of processed snacks.' },
@@ -20,6 +16,9 @@ const BENEFITS = [
 ];
 
 export default function NutritionSection() {
+  const { t } = useLang();
+  const tn = t.nutrition;
+  const COMPARISONS = tn.compareItems.map((ci, i) => ({ ...ci, natural: i === 0 }));
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -27,18 +26,18 @@ export default function NutritionSection() {
       gsap.fromTo('.nutr-header',
         { opacity:0, y:36 },
         { opacity:1, y:0, duration:0.9, ease:'power2.out',
-          scrollTrigger:{ trigger:sectionRef.current, start:'top 80%', once:true } }
+          scrollTrigger:{ trigger:sectionRef.current, start:'top 92%', once:true } }
       );
       gsap.fromTo('.nutr-card',
         { opacity:0, y:40, scale:0.96 },
         { opacity:1, y:0, scale:1, stagger:0.1, duration:0.65, ease:'power2.out',
-          scrollTrigger:{ trigger:'.nutr-benefits', start:'top 82%', once:true } }
+          scrollTrigger:{ trigger:'.nutr-benefits', start:'top 92%', once:true } }
       );
       // Animate comparison bars
       gsap.fromTo('.nutr-bar__fill',
         { scaleX:0 },
         { scaleX:1, stagger:0.08, duration:0.8, ease:'power2.out',
-          scrollTrigger:{ trigger:'.nutr-compare', start:'top 80%', once:true } }
+          scrollTrigger:{ trigger:'.nutr-compare', start:'top 92%', once:true } }
       );
     }, sectionRef);
     return () => ctx.revert();
@@ -62,7 +61,7 @@ export default function NutritionSection() {
 
         {/* Benefits grid */}
         <div className="nutr-benefits">
-          {BENEFITS.map((b, i) => (
+          {tn.benefits.map((b, i) => (
             <div key={i} className="nutr-card">
               <span className="nutr-card__icon" aria-hidden="true">{b.icon}</span>
               <h3 className="nutr-card__title">{b.title}</h3>

@@ -4,6 +4,7 @@ import './Footer.css';
 
 export default function Footer() {
   const { t } = useLang();
+  const tf = t.footer;
   return (
     <footer className="footer" role="contentinfo">
       <div className="footer__inner">

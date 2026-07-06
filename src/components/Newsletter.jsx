@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { useLang } from '../context/LangContext';
 import './Newsletter.css';
 
 const FORMSPREE_ID = 'YOUR_FORM_ID'; // ← same ID as CTASection
 
 export default function Newsletter() {
+  const { t } = useLang();
+  const tn = t.newsletter;
   const [email, setEmail]   = useState('');
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
@@ -51,7 +54,7 @@ export default function Newsletter() {
                 type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                placeholder="your@email.com"
+                placeholder={tn.placeholder}
                 required
                 className="nl__input"
                 aria-label="Email address for newsletter"
@@ -63,7 +66,7 @@ export default function Newsletter() {
                 disabled={status === 'sending'}
                 aria-busy={status === 'sending'}
               >
-                {status === 'sending' ? 'Joining…' : 'Join the list'}
+                {status === 'sending' ? tn.sending : tn.btn}
               </button>
               {status === 'error' && (
                 <p className="nl__error" role="alert">Something went wrong. Try again.</p>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useLang } from '../context/LangContext';
 import './WholesalePage.css';
 
 const FORMSPREE_ID = 'YOUR_FORM_ID';
@@ -16,6 +17,8 @@ const BENEFITS = [
 const CLIENT_TYPES = ['Café / Restaurant','Hotel','Gift Company','Retailer','Corporate Gifting','Other'];
 
 export default function WholesalePage() {
+  const { t } = useLang();
+  const tw = t.wholesalePage;
   const [form, setForm]     = useState({ business:'', name:'', email:'', phone:'', type:'', quantity:'', message:'' });
   const [status, setStatus] = useState('idle');
 
@@ -160,7 +163,7 @@ export default function WholesalePage() {
 
               <button type="submit" className="ws__submit" disabled={status==='sending'}
                 aria-busy={status==='sending'}>
-                {status === 'sending' ? 'Sending…' : 'Send Inquiry'}
+                {status === 'sending' ? tw.sending : tw.send}
               </button>
               <input type="text" name="_gotcha" style={{display:'none'}} />
             </form>

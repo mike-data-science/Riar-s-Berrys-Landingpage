@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useLang } from '../context/LangContext';
 import './ScrollToTop.css';
 
 export default function ScrollToTop() {
+  const { t } = useLang();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -16,7 +18,7 @@ export default function ScrollToTop() {
     <button
       className={`stt ${visible ? 'stt--visible' : ''}`}
       onClick={scrollUp}
-      aria-label="Scroll to top"
+      aria-label={t.scrollTop.label}
     >
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2"
            strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

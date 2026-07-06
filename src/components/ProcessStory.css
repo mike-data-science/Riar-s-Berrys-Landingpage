@@ -81,7 +81,8 @@
 }
 
 @media (max-width: 900px) {
-  .ps__steps { grid-template-columns: 1fr; max-width: 480px; gap: 2rem; }
+  .ps-header { text-align: center; }
+  .ps__steps { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; gap: 2rem; }
   .ps__line { display: none; }
 }
 @media (max-width: 600px) { .ps { padding: 5rem 1.5rem; } }

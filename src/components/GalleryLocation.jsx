@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLang } from '../context/LangContext';
 import './GalleryLocation.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -84,6 +85,9 @@ function Lightbox({ images, index, onClose, onPrev, onNext }) {
 }
 
 export default function GalleryLocation() {
+  const { t } = useLang();
+  const tg = t.gallery;
+  const tl = t.location;
   const sectionRef  = useRef(null);
   const galleryRef  = useRef(null);
   const locationRef = useRef(null);
@@ -101,20 +105,20 @@ export default function GalleryLocation() {
       gsap.fromTo(headerRef.current,
         { opacity:0, y:36 },
         { opacity:1, y:0, duration:0.9, ease:'power2.out',
-          scrollTrigger:{ trigger:headerRef.current, start:'top 82%', once:true } }
+          scrollTrigger:{ trigger:headerRef.current, start:'top 92%', once:true } }
       );
       const imgs = galleryRef.current?.querySelectorAll('.gl-img');
       if (imgs?.length) {
         gsap.fromTo(imgs,
           { opacity:0, y:40, scale:0.96 },
           { opacity:1, y:0, scale:1, stagger:{ amount:0.7 }, duration:0.75, ease:'power2.out',
-            scrollTrigger:{ trigger:galleryRef.current, start:'top 80%', once:true } }
+            scrollTrigger:{ trigger:galleryRef.current, start:'top 92%', once:true } }
         );
       }
       gsap.fromTo(locationRef.current,
         { opacity:0, y:50 },
         { opacity:1, y:0, duration:0.9, ease:'power2.out',
-          scrollTrigger:{ trigger:locationRef.current, start:'top 82%', once:true } }
+          scrollTrigger:{ trigger:locationRef.current, start:'top 92%', once:true } }
       );
     }, sectionRef);
     return () => ctx.revert();
@@ -163,7 +167,7 @@ export default function GalleryLocation() {
               </div>
               <div className="loc__detail-row">
                 <span className="loc__icon">🕐</span>
-                <div><strong>Hours</strong><p>Mon – Fri: 9:00 – 18:00<br/>Sat: 10:00 – 15:00</p></div>
+                <div><strong>Hours</strong><p>{tl.hoursValue.replace('\n', '<br/>')}</p></div>
               </div>
               <div className="loc__detail-row">
                 <span className="loc__icon">📞</span>

@@ -1,8 +1,11 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useLang } from '../context/LangContext';
 import './NotFoundPage.css';
 
 export default function NotFoundPage() {
+  const { t } = useLang();
+  const t4 = t.notFoundPage;
   useEffect(() => { window.scrollTo(0, 0); document.title = '404 — Riar Berry\'s'; }, []);
 
   return (

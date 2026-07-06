@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useLang } from '../context/LangContext';
 import './AboutPage.css';
 
 const TIMELINE = [
@@ -11,6 +12,8 @@ const TIMELINE = [
 ];
 
 export default function AboutPage() {
+  const { t } = useLang();
+  const ta = t.aboutPage;
   useEffect(() => { window.scrollTo(0,0); }, []);
 
   return (

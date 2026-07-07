@@ -19,7 +19,7 @@ export default function AboutPage() {
   return (
     <div className="about" id="main-content">
       <div className="about__nav">
-        <Link to="/" className="about__back">← Back to home</Link>
+        <Link to="/" className="about__back">{ta.back}</Link>
       </div>
 
       {/* Hero */}
@@ -29,14 +29,12 @@ export default function AboutPage() {
           <div className="about__hero-overlay" />
         </div>
         <div className="about__hero-content">
-          <p className="about__eyebrow">Our story</p>
+          <p className="about__eyebrow">{ta.eyebrow}</p>
           <h1 className="about__title">
-            We didn't like<br /><em>what was available.</em>
+            {ta.title}<br /><em>{ta.titleEm}</em>
           </h1>
           <p className="about__lead">
-            So we made something better. Riar Berry's is a small premium dried fruit
-            company based in Chișinău, Moldova. We work directly with local farms,
-            dry slowly at low temperatures, and pack everything by hand.
+            {ta.lead}
           </p>
         </div>
       </header>
@@ -44,7 +42,7 @@ export default function AboutPage() {
       {/* Values */}
       <section className="about__values">
         <div className="about__values-inner">
-          <h2 className="about__section-title">What we believe</h2>
+          <h2 className="about__section-title">{ta.valuesTitle}</h2>
           <div className="about__values-grid">
             {[
               { icon:'🌱', title:'Slow is better', text:'72 hours at low temperature. Not 4 hours at high. It takes patience to do it right — and it tastes completely different.' },
@@ -65,7 +63,7 @@ export default function AboutPage() {
       {/* Timeline */}
       <section className="about__timeline">
         <div className="about__timeline-inner">
-          <h2 className="about__section-title">How we got here</h2>
+          <h2 className="about__section-title">{ta.timelineTitle}</h2>
           <div className="about__tl">
             {TIMELINE.map((t,i) => (
               <div key={i} className="about__tl-item">
@@ -84,7 +82,7 @@ export default function AboutPage() {
       {/* Team photo placeholder */}
       <section className="about__team">
         <div className="about__team-inner">
-          <h2 className="about__section-title">The team</h2>
+          <h2 className="about__section-title">{ta.teamTitle}</h2>
           <div className="about__team-img-wrap">
             <img src="/images/gallery/frame_07.jpg" alt="The Riar Berry's team" />
             <div className="about__team-caption">
@@ -97,14 +95,14 @@ export default function AboutPage() {
       {/* Privacy anchor */}
       <section className="about__privacy" id="privacy">
         <div className="about__privacy-inner">
-          <h2 className="about__section-title">Privacy</h2>
+          <h2 className="about__section-title">{ta.privacyTitle}</h2>
           <p>We use Google Analytics to understand how visitors use the site. Analytics only runs after you accept cookies. We never sell personal data. Emails collected via our signup forms are used only to notify you of product launches and news. You can unsubscribe at any time.</p>
           <p style={{marginTop:'1rem'}}>To request deletion of your data, email: <a href="mailto:hello@riarberry.com">hello@riarberry.com</a></p>
         </div>
       </section>
 
       <div className="about__cta">
-        <Link to="/" className="about__cta-btn">Browse our products →</Link>
+        <Link to="/" className="about__cta-btn">{ta.ctaText}</Link>
       </div>
     </div>
   );

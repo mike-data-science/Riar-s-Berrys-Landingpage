@@ -29,13 +29,12 @@ export default function Newsletter() {
     <section className="nl" id="newsletter" aria-label="Newsletter signup">
       <div className="nl__inner">
         <div className="nl__left">
-          <p className="nl__eyebrow">Stay in the loop</p>
+          <p className="nl__eyebrow">{tn.eyebrow}</p>
           <h2 className="nl__title">
-            Seasonal collections.<br /><em>Recipes. Early access.</em>
+            {tn.title}<br /><em>{tn.titleEm}</em>
           </h2>
           <p className="nl__sub">
-            Join 500+ fruit lovers who get our monthly newsletter.
-            No spam — only what's worth reading.
+            {tn.sub}
           </p>
         </div>
 
@@ -44,8 +43,8 @@ export default function Newsletter() {
             <div className="nl__success" role="status">
               <span aria-hidden="true">🎉</span>
               <div>
-                <strong>You're in!</strong>
-                <p>Welcome to the Riar Berry's community.</p>
+                <strong>{tn.successTitle}</strong>
+                <p>{tn.successText}</p>
               </div>
             </div>
           ) : (
@@ -72,8 +71,8 @@ export default function Newsletter() {
                 <p className="nl__error" role="alert">Something went wrong. Try again.</p>
               )}
               <p className="nl__legal">
-                No spam. Unsubscribe anytime. See our{' '}
-                <a href="/about#privacy">privacy policy</a>.
+                {tn.legal}{' '}
+                <a href="/about#privacy">{tn.privacyLink}</a>.
               </p>
             </form>
           )}

@@ -160,7 +160,7 @@ export default function RecipesPage() {
     <div className="rcp-page" id="main-content">
       <div className="rcp-page__inner">
         <nav className="rcp-nav">
-          <Link to="/" className="rcp-nav__back">← Home</Link>
+          <Link to="/" className="rcp-nav__back">{t.product.backHome}</Link>
         </nav>
         <header className="rcp-header">
           <p className="rcp-eyebrow">{tr.eyebrow}</p>

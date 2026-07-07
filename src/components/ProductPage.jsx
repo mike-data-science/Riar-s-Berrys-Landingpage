@@ -235,12 +235,12 @@ export default function ProductPage() {
           <h2 className="pp__section-title">{t.product.nutrition} <em>{t.product.perHundred}</em></h2>
           <div className="pp__nut-grid">
             {[
-              { label:'Calories', value:`${nut.cal} kcal` },
-              { label:'Carbs',    value:`${nut.carbs}g`   },
-              { label:'Sugar',    value:`${nut.sugar}g`   },
-              { label:'Fibre',    value:`${nut.fibre}g`   },
-              { label:'Protein',  value:`${nut.protein}g` },
-              { label:'Fat',      value:`${nut.fat}g`     },
+              { label:t.product.calories, value:`${nut.cal} kcal` },
+              { label:t.product.carbs,    value:`${nut.carbs}g`   },
+              { label:t.product.sugar,    value:`${nut.sugar}g`   },
+              { label:t.product.fibre,    value:`${nut.fibre}g`   },
+              { label:t.product.protein,  value:`${nut.protein}g` },
+              { label:t.product.fat,      value:`${nut.fat}g`     },
             ].map(n => (
               <div key={n.label} className="pp__nut-cell">
                 <span className="pp__nut-val">{n.value}</span>

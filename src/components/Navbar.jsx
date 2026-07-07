@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, startTransition } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
 import { useWishlist } from '../context/WishlistContext';
@@ -94,7 +94,7 @@ export default function Navbar() {
             <button
               key={l}
               className={`nav__lang-btn ${lang === l ? 'nav__lang-btn--active' : ''}`}
-              onClick={() => setLang(l)}
+              onClick={() => startTransition(() => setLang(l))}
               aria-pressed={lang === l}
               aria-label={`Switch to ${l.toUpperCase()}`}
             >

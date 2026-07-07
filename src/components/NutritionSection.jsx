@@ -49,13 +49,12 @@ export default function NutritionSection() {
     <section className="nutr" id="nutrition" ref={sectionRef}>
       <div className="nutr__inner">
         <header className="nutr-header">
-          <p className="nutr__eyebrow">Why dried fruit</p>
+          <p className="nutr__eyebrow">{tn.eyebrow}</p>
           <h2 className="nutr__title">
-            The smarter <em>snack choice.</em>
+            {tn.title} <em>{tn.titleEm}</em>
           </h2>
           <p className="nutr__sub">
-            Compared to processed alternatives, premium dried fruit delivers more fibre, more
-            vitamins, and real natural sweetness — with nothing you don't need.
+            {tn.sub}
           </p>
         </header>
 
@@ -72,11 +71,11 @@ export default function NutritionSection() {
 
         {/* Calorie comparison bars */}
         <div className="nutr-compare">
-          <h3 className="nutr-compare__title">Calories per 30g serving</h3>
+          <h3 className="nutr-compare__title">{tn.compareTitle}</h3>
           {COMPARISONS.map((c, i) => (
             <div key={i} className={`nutr-compare__row ${c.natural ? 'nutr-compare__row--highlight' : ''}`}>
               <span className="nutr-compare__label">
-                {c.natural && <span className="nutr-compare__badge">Our product</span>}
+                {c.natural && <span className="nutr-compare__badge">{tn.ourProduct}</span>}
                 {c.label}
               </span>
               <div className="nutr-bar">
@@ -96,7 +95,7 @@ export default function NutritionSection() {
               <span className="nutr-compare__val">{c.cal} kcal</span>
             </div>
           ))}
-          <p className="nutr-compare__note">* Values are approximate averages per 30g serving</p>
+          <p className="nutr-compare__note">{tn.compareNote}</p>
         </div>
       </div>
     </section>

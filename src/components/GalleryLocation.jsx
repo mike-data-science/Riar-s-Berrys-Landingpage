@@ -128,9 +128,9 @@ export default function GalleryLocation() {
     <section className="gal-loc" id="gallery" ref={sectionRef}>
       <div className="gal-loc__inner">
         <header className="gal-loc__header" ref={headerRef}>
-          <p className="gal-loc__eyebrow">Behind the product</p>
+          <p className="gal-loc__eyebrow">{tg.eyebrow}</p>
           <h2 className="gal-loc__title">
-            Where nature<br /><em>becomes craft.</em>
+            {tg.title}<br /><em>{tg.titleEm}</em>
           </h2>
         </header>
 
@@ -158,24 +158,24 @@ export default function GalleryLocation() {
         {/* Location */}
         <div className="gal-loc__location" ref={locationRef} id="location">
           <div className="loc__info">
-            <p className="loc__eyebrow">Find us</p>
-            <h3 className="loc__title">Visit Riar Berry's</h3>
+            <p className="loc__eyebrow">{tl.eyebrow}</p>
+            <h3 className="loc__title">{tl.title}</h3>
             <div className="loc__details">
               <div className="loc__detail-row">
                 <span className="loc__icon">📍</span>
-                <div><strong>Address</strong><p>Strada Florilor 12, Chișinău<br/>MD-2001, Moldova</p></div>
+                <div><strong>{tl.address}</strong><p>Strada Florilor 12, Chișinău<br/>MD-2001, Moldova</p></div>
               </div>
               <div className="loc__detail-row">
                 <span className="loc__icon">🕐</span>
-                <div><strong>Hours</strong><p>{tl.hoursValue.replace('\n', '<br/>')}</p></div>
+                <div><strong>{tl.hours}</strong><p dangerouslySetInnerHTML={{ __html: tl.hoursValue.replace(/\n/g, '<br/>') }} /></div>
               </div>
               <div className="loc__detail-row">
                 <span className="loc__icon">📞</span>
-                <div><strong>Contact</strong><p><a href="tel:+37360000000">+373 60 000 000</a><br/><a href="mailto:hello@riarberry.com">hello@riarberry.com</a></p></div>
+                <div><strong>{tl.contact}</strong><p><a href="tel:+37360000000">+373 60 000 000</a><br/><a href="mailto:hello@riarberry.com">hello@riarberry.com</a></p></div>
               </div>
             </div>
             <a href="https://www.google.com/maps/place/Chișinău" target="_blank" rel="noreferrer" className="loc__directions-btn">
-              Get Directions →
+              {tl.directions} →
             </a>
           </div>
           <div className="loc__map">

@@ -91,6 +91,9 @@ export default function ProductGrid() {
 
   // Animate cards whenever filtered list changes
   useEffect(() => {
+    // Refresh ScrollTrigger so sections below adjust to the new grid height
+    setTimeout(() => ScrollTrigger.refresh(), 50);
+
     const cards = gridRef.current?.querySelectorAll('.pcard');
     if (!cards?.length) return;
     const ctx = gsap.context(() => {

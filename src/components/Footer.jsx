@@ -37,48 +37,48 @@ export default function Footer() {
 
         <nav className="footer__nav" aria-label="Footer navigation">
           <div className="footer__nav-col">
-            <span className="footer__nav-title">Products</span>
-            <a href="#products">All Fruits</a>
-            <a href="#categories">By Category</a>
-            <a href="#gift">Gift Box</a>
-            <Link to="/wishlist">My Wishlist</Link>
-            <Link to="/wholesale">Wholesale</Link>
+            <span className="footer__nav-title">{tf.productsCol}</span>
+            <a href="#products">{tf.allFruits}</a>
+            <a href="#categories">{tf.byCategory}</a>
+            <a href="#gift">{tf.giftBox}</a>
+            <Link to="/wishlist">{tf.myWishlist}</Link>
+            <Link to="/wholesale">{tf.wholesale}</Link>
           </div>
           <div className="footer__nav-col">
-            <span className="footer__nav-title">Discover</span>
-            <Link to="/recipes">Recipes</Link>
-            <a href="#nutrition">Why Dried Fruit</a>
-            <a href="#process">How We Make It</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#reviews">Reviews</a>
+            <span className="footer__nav-title">{tf.discoverCol}</span>
+            <Link to="/recipes">{tf.recipes}</Link>
+            <a href="#nutrition">{tf.whyDried}</a>
+            <a href="#process">{tf.howWeMake}</a>
+            <a href="#gallery">{tf.galleryLink}</a>
+            <a href="#reviews">{tf.reviewsLink}</a>
           </div>
           <div className="footer__nav-col">
-            <span className="footer__nav-title">Company</span>
-            <Link to="/about">Our Story</Link>
-            <a href="#newsletter">Newsletter</a>
-            <Link to="/about#privacy">Privacy Policy</Link>
-            <Link to="/sitemap">Sitemap</Link>
+            <span className="footer__nav-title">{tf.companyCol}</span>
+            <Link to="/about">{tf.ourStory}</Link>
+            <a href="#newsletter">{tf.newsletterLink}</a>
+            <Link to="/about#privacy">{tf.privacyPolicy}</Link>
+            <Link to="/sitemap">{tf.sitemap}</Link>
           </div>
           <div className="footer__nav-col">
-            <span className="footer__nav-title">Contact</span>
+            <span className="footer__nav-title">{tf.contactCol}</span>
             <a href="tel:+37360000000">+373 60 000 000</a>
             <a href="mailto:hello@riarberry.com">hello@riarberry.com</a>
-            <a href="https://wa.me/37360000000" target="_blank" rel="noreferrer">WhatsApp</a>
+            <a href="https://wa.me/37360000000" target="_blank" rel="noreferrer">{tf.whatsappLink}</a>
             <a href="#location">Strada Florilor 12<br/>Chișinău, MD</a>
           </div>
         </nav>
       </div>
 
       <div className="footer__bottom">
-        <span>© {new Date().getFullYear()} Riar Berry's. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Riar Berry's. {tf.rights}</span>
         <span>
           <Link to="/about#privacy">Privacy</Link>
           {' · '}
-          <Link to="/wholesale">Wholesale</Link>
+          <Link to="/wholesale">{tf.wholesale}</Link>
           {' · '}
-          <Link to="/sitemap">Sitemap</Link>
+          <Link to="/sitemap">{tf.sitemap}</Link>
           {' · '}
-          Made in Moldova 🇲🇩
+          {tf.madeIn} 🇲🇩
         </span>
       </div>
     </footer>

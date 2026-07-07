@@ -10,7 +10,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [hidden,   setHidden]   = useState(false);
-  const [testTheme, setTestTheme] = useState('combined');
   const lastY    = useRef(0);
   const location = useLocation();
   const isHome   = location.pathname === '/';
@@ -36,7 +35,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`nav ${scrolled ? 'nav--scrolled' : `nav--theme-${testTheme}`} ${hidden ? 'nav--hidden' : ''}`}
+      className={`nav ${scrolled ? 'nav--scrolled' : ''} ${hidden ? 'nav--hidden' : ''}`}
       role="navigation"
       aria-label="Main navigation"
     >
@@ -89,21 +88,6 @@ export default function Navbar() {
            onClick={() => setMenuOpen(false)}>
           {t.nav.contact}
         </a>
-
-        {/* ── Test Dropdown ── */}
-        <div className="nav__test-dropdown">
-          <select 
-            className="nav__test-select" 
-            value={testTheme} 
-            onChange={(e) => setTestTheme(e.target.value)}
-            aria-label="Test Navbar Theme"
-          >
-            <option value="combined">Combined</option>
-            <option value="gradient">Gradient</option>
-            <option value="glass">Glass</option>
-            <option value="shadow">Shadow</option>
-          </select>
-        </div>
 
         <div className="nav__lang" role="group" aria-label="Language">
           {['en','ro','ru'].map(l => (

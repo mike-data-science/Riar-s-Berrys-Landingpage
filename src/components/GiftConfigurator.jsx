@@ -46,14 +46,14 @@ export default function GiftConfigurator() {
       gsap.fromTo('.gift__header',
         { opacity:0, y:36 },
         { opacity:1, y:0, duration:0.9, ease:'power2.out',
-          scrollTrigger:{ trigger:sectionRef.current, start:'top 92%', once:true } }
+          scrollTrigger:{ trigger:sectionRef.current, start:'top 80%', once:true } }
       );
       const cards = cardsRef.current?.querySelectorAll('.pkg-card');
       if (cards?.length) {
         gsap.fromTo(cards,
           { opacity:0, y:50, scale:0.95 },
           { opacity:1, y:0, scale:1, stagger:0.08, duration:0.7, ease:'power2.out',
-            scrollTrigger:{ trigger:cardsRef.current, start:'top 92%', once:true } }
+            scrollTrigger:{ trigger:cardsRef.current, start:'top 85%', once:true } }
         );
       }
     }, sectionRef);

@@ -8,16 +8,16 @@ export const CATEGORIES = [
 ];
 
 export const PRODUCTS = [
-  { id:'dried-kiwi',       category:'exotic',   weight:['100g','250g','500g'], image:'/images/products/dried-kiwi.png' },
-  { id:'dried-mango',      category:'exotic',   weight:['100g','250g','500g'], image:'/images/products/dried-mango.png' },
-  { id:'dried-strawberry', category:'berries',  weight:['100g','250g'],        image:'/images/products/dried-strawberry.png' },
-  { id:'dried-banana',     category:'exotic',   weight:['100g','250g','500g'], image:'/images/products/dried-banana.png' },
-  { id:'raisins',          category:'berries',  weight:['250g','500g','1kg'],  image:'/images/products/raisins.png' },
-  { id:'dried-apricot',    category:'dried',    weight:['100g','250g','500g'], image:'/images/products/dried-apricot.png' },
-  { id:'dried-pineapple',  category:'citrus',   weight:['100g','250g'],        image:'/images/products/dried-pineapple.png' },
-  { id:'dried-apple',      category:'classic',  weight:['100g','250g','500g'], image:'/images/products/dried-apple.png' },
-  { id:'dried-fig',        category:'dried',    weight:['100g','250g'],        image:'/images/products/dried-fig.png' },
-  { id:'dried-dates',      category:'dried',    weight:['250g','500g'],        image:'/images/products/dried-dates.png' },
-  { id:'blueberries',      category:'berries',  weight:['100g','250g'],        image:'/images/products/blueberries.png' },
-  { id:'premium-mix',      category:'premium',  weight:['250g','500g'],        image:'/images/products/premium-mix.png' },
+  { id:'dried-kiwi',       category:'exotic',   weight:['100g','250g','500g'], emoji:'🥝' },
+  { id:'dried-mango',      category:'exotic',   weight:['100g','250g','500g'], emoji:'🥭' },
+  { id:'dried-strawberry', category:'berries',  weight:['100g','250g'],        emoji:'🍓' },
+  { id:'dried-banana',     category:'exotic',   weight:['100g','250g','500g'], emoji:'🍌' },
+  { id:'raisins',          category:'berries',  weight:['250g','500g','1kg'],  emoji:'🍇' },
+  { id:'dried-apricot',    category:'dried',    weight:['100g','250g','500g'], emoji:'🍑' },
+  { id:'dried-pineapple',  category:'citrus',   weight:['100g','250g'],        emoji:'🍍' },
+  { id:'dried-apple',      category:'classic',  weight:['100g','250g','500g'], emoji:'🍎' },
+  { id:'dried-fig',        category:'dried',    weight:['100g','250g'],        emoji:'🌰' },
+  { id:'dried-dates',      category:'dried',    weight:['250g','500g'],        emoji:'🌴' },
+  { id:'blueberries',      category:'berries',  weight:['100g','250g'],        emoji:'🫐' },
+  { id:'premium-mix',      category:'premium',  weight:['250g','500g'],        emoji:'✨' },
 ];

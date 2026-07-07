@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useWishlist } from '../context/WishlistContext';
 import { PRODUCTS, CATEGORIES } from '../data/fruits';
@@ -47,11 +47,22 @@ export default function WishlistPage() {
               const cat = CATEGORIES.find(c => c.id === product.category);
               const catT = t.categories.list[product.category];
               const prodT = t.products[product.id];
+              const [failed, setFailed] = useState(false);
               return (
                 <div key={product.id} className="wl-card">
                   <Link to={`/product/${product.id}`} className="wl-card__img-wrap">
-                    <img src={product.image} alt={prodT.name}
-                      onError={e => e.target.style.display='none'} />
+                    {!failed && product.image ? (
+                      <img src={product.image} alt={prodT.name}
+                        onError={() => setFailed(true)} />
+                    ) : (
+                      <div className="pcard__img-fallback" style={{
+                        width:'100%', height:'100%', display:'flex',
+                        alignItems:'center', justifyContent:'center',
+                        fontSize:'4rem'
+                      }}>
+                        {product.emoji ?? cat?.emoji ?? '🍃'}
+                      </div>
+                    )}
                     <div className="wl-card__overlay">{t.productsSection.view} →</div>
                   </Link>
                   <div className="wl-card__body">

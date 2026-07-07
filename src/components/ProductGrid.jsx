@@ -32,11 +32,11 @@ function ProductCard({ product }) {
   const prodT = t.products[product.id];
   return (
     <Link to={`/product/${product.id}`} className="pcard">
-      <div className="pcard__img-wrap">
+      <div className="pcard__img-wrap" style={{ background: cat?.color + '15' }}>
         <WishlistHeart productId={product.id} productName={product.name} />
-        {!failed
+        {!failed && product.image
           ? <img src={product.image} alt={prodT.name} onError={() => setFailed(true)} />
-          : <div className="pcard__img-fallback">{cat?.emoji ?? '🍃'}</div>
+          : <div className="pcard__img-fallback">{product.emoji ?? cat?.emoji ?? '🍃'}</div>
         }
         <div className="pcard__hover-overlay">
           <span className="pcard__hover-label">{t.productsSection.view} →</span>
@@ -93,10 +93,14 @@ export default function ProductGrid() {
   useEffect(() => {
     const cards = gridRef.current?.querySelectorAll('.pcard');
     if (!cards?.length) return;
-    gsap.fromTo(cards,
-      { opacity:0, y:24, scale:0.97 },
-      { opacity:1, y:0, scale:1, stagger:0.055, duration:0.45, ease:'power2.out' }
-    );
+    const ctx = gsap.context(() => {
+      gsap.fromTo(cards,
+        { opacity:0, y:24, scale:0.97 },
+        { opacity:1, y:0, scale:1, stagger:0.055, duration:0.45, ease:'power2.out',
+          scrollTrigger:{ trigger:gridRef.current, start:'top 85%', once:true } }
+      );
+    }, gridRef);
+    return () => ctx.revert();
   }, [activecat, query]);
 
   // Scroll reveal
@@ -105,12 +109,12 @@ export default function ProductGrid() {
       gsap.fromTo(headerRef.current,
         { opacity:0, y:36 },
         { opacity:1, y:0, duration:0.9, ease:'power2.out',
-          scrollTrigger:{ trigger:headerRef.current, start:'top 92%', once:true } }
+          scrollTrigger:{ trigger:headerRef.current, start:'top 80%', once:true } }
       );
       gsap.fromTo(searchRef.current,
         { opacity:0, y:20 },
         { opacity:1, y:0, duration:0.7, delay:0.1, ease:'power2.out',
-          scrollTrigger:{ trigger:searchRef.current, start:'top 92%', once:true } }
+          scrollTrigger:{ trigger:searchRef.current, start:'top 80%', once:true } }
       );
     });
     return () => ctx.revert();

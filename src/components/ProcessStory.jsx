@@ -25,14 +25,14 @@ export default function ProcessStory() {
       gsap.fromTo('.ps-header',
         { opacity:0, y:36 },
         { opacity:1, y:0, duration:0.9, ease:'power2.out',
-          scrollTrigger:{ trigger:sectionRef.current, start:'top 92%', once:true } }
+          scrollTrigger:{ trigger:sectionRef.current, start:'top 80%', once:true } }
       );
       stepsRef.current.forEach((el, i) => {
         if (!el) return;
         gsap.fromTo(el,
           { opacity:0, y:50 },
           { opacity:1, y:0, duration:0.75, ease:'power2.out', delay: i * 0.15,
-            scrollTrigger:{ trigger:el, start:'top 92%', once:true } }
+            scrollTrigger:{ trigger:el, start:'top 85%', once:true } }
         );
       });
     }, sectionRef);

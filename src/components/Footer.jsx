@@ -57,7 +57,7 @@ export default function Footer() {
             <Link to="/about">Our Story</Link>
             <a href="#newsletter">Newsletter</a>
             <Link to="/about#privacy">Privacy Policy</Link>
-            <a href="/sitemap.xml">Sitemap</a>
+            <Link to="/sitemap">Sitemap</Link>
           </div>
           <div className="footer__nav-col">
             <span className="footer__nav-title">Contact</span>
@@ -76,7 +76,7 @@ export default function Footer() {
           {' · '}
           <Link to="/wholesale">Wholesale</Link>
           {' · '}
-          <a href="/sitemap.xml">Sitemap</a>
+          <Link to="/sitemap">Sitemap</Link>
           {' · '}
           Made in Moldova 🇲🇩
         </span>

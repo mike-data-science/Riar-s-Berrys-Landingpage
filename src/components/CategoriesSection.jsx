@@ -128,7 +128,7 @@ export default function CategoriesSection() {
     gsap.to(wrap, {
       opacity: 0, duration: 0.9, ease: 'power2.inOut',
       onComplete: () => {
-        wrap.style.display = 'none';
+        wrap.style.pointerEvents = 'none';
         setCirclesVisible(true);
       },
     });

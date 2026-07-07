@@ -105,20 +105,20 @@ export default function GalleryLocation() {
       gsap.fromTo(headerRef.current,
         { opacity:0, y:36 },
         { opacity:1, y:0, duration:0.9, ease:'power2.out',
-          scrollTrigger:{ trigger:headerRef.current, start:'top 92%', once:true } }
+          scrollTrigger:{ trigger:headerRef.current, start:'top 80%', once:true } }
       );
       const imgs = galleryRef.current?.querySelectorAll('.gl-img');
       if (imgs?.length) {
         gsap.fromTo(imgs,
           { opacity:0, y:40, scale:0.96 },
           { opacity:1, y:0, scale:1, stagger:{ amount:0.7 }, duration:0.75, ease:'power2.out',
-            scrollTrigger:{ trigger:galleryRef.current, start:'top 92%', once:true } }
+            scrollTrigger:{ trigger:galleryRef.current, start:'top 85%', once:true } }
         );
       }
       gsap.fromTo(locationRef.current,
         { opacity:0, y:50 },
         { opacity:1, y:0, duration:0.9, ease:'power2.out',
-          scrollTrigger:{ trigger:locationRef.current, start:'top 92%', once:true } }
+          scrollTrigger:{ trigger:locationRef.current, start:'top 80%', once:true } }
       );
     }, sectionRef);
     return () => ctx.revert();

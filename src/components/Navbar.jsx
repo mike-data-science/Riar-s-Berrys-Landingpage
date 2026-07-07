@@ -35,7 +35,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`nav ${scrolled ? 'nav--scrolled' : ''} ${hidden ? 'nav--hidden' : ''}`}
+      className={`nav ${scrolled || !isHome ? 'nav--scrolled' : 'nav--home-top'} ${hidden ? 'nav--hidden' : ''}`}
       role="navigation"
       aria-label="Main navigation"
     >

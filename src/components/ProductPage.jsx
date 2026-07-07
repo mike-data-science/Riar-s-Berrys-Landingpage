@@ -170,10 +170,10 @@ export default function ProductPage() {
 
       {/* Hero */}
       <div className="pp__hero" ref={heroRef}>
-        <div className="pp__img-wrap">
-          {!imgFailed
+        <div className="pp__img-wrap" style={{ background: cat?.color + '15' }}>
+          {!imgFailed && product.image
             ? <img src={product.image} alt={prodT.name} className="pp__img" onError={() => setImgFailed(true)} />
-            : <div className="pp__img-fallback">{cat?.emoji ?? '🍃'}</div>
+            : <div className="pp__img-fallback" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', fontSize: '12rem' }}>{product.emoji ?? cat?.emoji ?? '🍃'}</div>
           }
         </div>
 
@@ -258,8 +258,12 @@ export default function ProductPage() {
           <div className="pp__related">
             {related.map(p => (
               <Link key={p.id} to={`/product/${p.id}`} className="pp__rel-card">
-                <div className="pp__rel-img-wrap">
-                  <img src={p.image} alt={t.products[p.id].name} onError={e => e.target.style.display='none'} />
+                <div className="pp__rel-img-wrap" style={{ background: CATEGORIES.find(c => c.id === p.category)?.color + '15', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3rem' }}>
+                  {p.image ? (
+                    <img src={p.image} alt={t.products[p.id].name} onError={e => e.target.style.display='none'} />
+                  ) : (
+                    p.emoji ?? CATEGORIES.find(c => c.id === p.category)?.emoji ?? '🍃'
+                  )}
                 </div>
                 <span className="pp__rel-name">{t.products[p.id].name}</span>
               </Link>

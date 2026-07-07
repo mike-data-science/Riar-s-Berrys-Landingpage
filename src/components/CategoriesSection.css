@@ -10,6 +10,7 @@
   /* tall enough to fully clear the hero fixed video before circles show */
   min-height: 100svh;
   overflow: hidden;
+  scroll-snap-align: start;
 }
 
 /* Top fade — the hero V1 fades out as it exits, this blends the join */

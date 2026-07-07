@@ -11,8 +11,8 @@ export default function WishlistPage() {
   const { items, toggle } = useWishlist();
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Wishlist — Riar Berry\'s';
-  }, []);
+    document.title = `${tw.title} ${tw.titleEm} — Riar Berry's`;
+  }, [tw]);
 
   const saved = PRODUCTS.filter(p => items.includes(p.id));
 
@@ -20,13 +20,13 @@ export default function WishlistPage() {
     <div className="wl" id="main-content">
       <div className="wl__inner">
         <nav className="wl__nav">
-          <Link to="/" className="wl__back">← Back to home</Link>
+          <Link to="/" className="wl__back">{t.product.backHome}</Link>
         </nav>
 
         <header className="wl__header">
-          <p className="wl__eyebrow">Your list</p>
+          <p className="wl__eyebrow">{tw.eyebrow}</p>
           <h1 className="wl__title">
-            Saved <em>favourites.</em>
+            {tw.title} <em>{tw.titleEm}</em>
           </h1>
           <p className="wl__sub">
             {saved.length === 0
@@ -39,38 +39,40 @@ export default function WishlistPage() {
         {saved.length === 0 ? (
           <div className="wl__empty">
             <span className="wl__empty-icon" aria-hidden="true">🍃</span>
-            <Link to="/#products" className="wl__empty-btn">Browse Products</Link>
+            <Link to="/#products" className="wl__empty-btn">{tw.browse}</Link>
           </div>
         ) : (
           <div className="wl__grid">
             {saved.map(product => {
               const cat = CATEGORIES.find(c => c.id === product.category);
+              const catT = t.categories.list[product.category];
+              const prodT = t.products[product.id];
               return (
                 <div key={product.id} className="wl-card">
                   <Link to={`/product/${product.id}`} className="wl-card__img-wrap">
-                    <img src={product.image} alt={product.name}
+                    <img src={product.image} alt={prodT.name}
                       onError={e => e.target.style.display='none'} />
-                    <div className="wl-card__overlay">View →</div>
+                    <div className="wl-card__overlay">{t.productsSection.view} →</div>
                   </Link>
                   <div className="wl-card__body">
                     <span className="wl-card__cat" style={{ color: cat?.color }}>
-                      {cat?.label}
+                      {catT?.label ?? cat?.label}
                     </span>
-                    <h3 className="wl-card__name">{product.name}</h3>
-                    <p className="wl-card__desc">{product.description}</p>
+                    <h3 className="wl-card__name">{prodT.name}</h3>
+                    <p className="wl-card__desc">{prodT.description}</p>
                     <div className="wl-card__actions">
                       <a
-                        href={`https://wa.me/37360000000?text=${encodeURIComponent(`Hi, I'd like to order ${product.name} from Riar Berry's!`)}`}
+                        href={`https://wa.me/37360000000?text=${encodeURIComponent(`${t.whatsapp} ${prodT.name}`)}`}
                         className="wl-card__wa" target="_blank" rel="noreferrer"
                       >
-                        Order via WhatsApp
+                        {tw.orderWa}
                       </a>
                       <button
                         className="wl-card__remove"
                         onClick={() => toggle(product.id)}
-                        aria-label={`Remove ${product.name} from wishlist`}
+                        aria-label={`${tw.remove} ${prodT.name}`}
                       >
-                        Remove
+                        {tw.remove}
                       </button>
                     </div>
                   </div>

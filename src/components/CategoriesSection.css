@@ -20,13 +20,7 @@
   z-index: 2; pointer-events: none;
 }
 
-/* Bottom fade — transitions to cream product grid */
-.cats__bottom-fade {
-  position: absolute;
-  bottom: 0; left: 0; right: 0; height: 200px;
-  background: linear-gradient(to top, var(--c-white), transparent);
-  z-index: 2; pointer-events: none;
-}
+
 
 /* ══════════════════════════════
    VIDEO wrapper
@@ -34,8 +28,8 @@
 .cats__vid-wrap {
   position: relative;
   width: 100%;
-  /* Take up most of the section height */
-  height: 80svh;
+  /* Take up the full section height to avoid black gap */
+  height: 100svh;
   min-height: 500px;
   display: flex;
   align-items: center;

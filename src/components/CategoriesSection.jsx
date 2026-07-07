@@ -173,8 +173,6 @@ export default function CategoriesSection() {
           <p className="cats__hint">{t.categories.hint}</p>
         </div>
       </div>
-
-      <div className="cats__bottom-fade" />
     </section>
   );
 }

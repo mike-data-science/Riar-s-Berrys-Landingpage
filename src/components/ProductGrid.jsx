@@ -25,26 +25,29 @@ function ProductCardSkeleton() {
 gsap.registerPlugin(ScrollTrigger);
 
 function ProductCard({ product }) {
+  const { t } = useLang();
   const [failed, setFailed] = useState(false);
   const cat = CATEGORIES.find(c => c.id === product.category);
+  const catT = t.categories.list[product.category];
+  const prodT = t.products[product.id];
   return (
     <Link to={`/product/${product.id}`} className="pcard">
       <div className="pcard__img-wrap">
         <WishlistHeart productId={product.id} productName={product.name} />
         {!failed
-          ? <img src={product.image} alt={product.name} onError={() => setFailed(true)} />
+          ? <img src={product.image} alt={prodT.name} onError={() => setFailed(true)} />
           : <div className="pcard__img-fallback">{cat?.emoji ?? '🍃'}</div>
         }
         <div className="pcard__hover-overlay">
-          <span className="pcard__hover-label">View Product →</span>
+          <span className="pcard__hover-label">{t.productsSection.view} →</span>
         </div>
       </div>
       <div className="pcard__body">
         <span className="pcard__cat" style={{ color: cat?.color ?? 'var(--c-brown-light)' }}>
-          {cat?.label ?? product.category}
+          {catT?.label ?? cat?.label ?? product.category}
         </span>
-        <h3 className="pcard__name">{product.name}</h3>
-        <p className="pcard__desc">{product.description}</p>
+        <h3 className="pcard__name">{prodT.name}</h3>
+        <p className="pcard__desc">{prodT.description}</p>
         <div className="pcard__weights">
           {product.weight.map(w => <span key={w} className="pcard__weight">{w}</span>)}
         </div>
@@ -56,7 +59,7 @@ function ProductCard({ product }) {
 export default function ProductGrid() {
   const { t } = useLang();
   const ts = t.productsSection;
-  const ALL_CATS = [{ id:'all', label:ts.all }, ...CATEGORIES.map(c => ({ id:c.id, label:c.label }))];
+  const ALL_CATS = [{ id:'all', label:ts.all }, ...CATEGORIES.map(c => ({ id:c.id, label:t.categories.list[c.id]?.label || c.label }))];
   const [activecat, setActiveCat] = useState('all');
   const [query,  setQuery]  = useState('');
   const gridRef    = useRef(null);
@@ -77,10 +80,12 @@ export default function ProductGrid() {
   const filtered = PRODUCTS.filter(p => {
     const matchesCat   = activecat === 'all' || p.category === activecat;
     const q            = query.toLowerCase().trim();
+    const prodT = t.products[p.id];
+    const catT = t.categories.list[p.category];
     const matchesQuery = !q
-      || p.name.toLowerCase().includes(q)
-      || p.description.toLowerCase().includes(q)
-      || p.category.toLowerCase().includes(q);
+      || prodT.name.toLowerCase().includes(q)
+      || prodT.description.toLowerCase().includes(q)
+      || (catT?.label || p.category).toLowerCase().includes(q);
     return matchesCat && matchesQuery;
   });
 
@@ -120,8 +125,8 @@ export default function ProductGrid() {
         <header className="pgrid__header" ref={headerRef}>
           <div className="pgrid__header-row">
             <div className="pgrid__header-text">
-              <p className="pgrid__eyebrow">The Collection</p>
-              <h2 className="pgrid__title">Our dried fruits</h2>
+              <p className="pgrid__eyebrow">{ts.eyebrow}</p>
+              <h2 className="pgrid__title">{ts.title}</h2>
             </div>
 
             {/* Search sits beside the title on desktop */}
@@ -149,10 +154,7 @@ export default function ProductGrid() {
             </div>
           </div>
 
-          <p className="pgrid__subtitle">
-            Every variety sourced at peak ripeness, dried slowly to preserve
-            flavour, colour and nutrition. Nothing added. Nothing removed.
-          </p>
+          <p className="pgrid__subtitle">{ts.subtitle}</p>
         </header>
 
         {/* Category filter pills — own row, separate from search */}
@@ -185,8 +187,8 @@ export default function ProductGrid() {
             ? filtered.map(p => <ProductCard key={p.id} product={p} />)
             : (
               <div className="pgrid__empty" role="listitem">
-                <p>No products found{query ? ` for "${query}"` : ''}.</p>
-                <button onClick={clearSearch} className="pgrid__empty-reset">Show all products</button>
+                <p>{ts.noResults}{query ? ` ${ts.forQuery} "${query}"` : ''}.</p>
+                <button onClick={clearSearch} className="pgrid__empty-reset">{ts.showAll}</button>
               </div>
             )
           }

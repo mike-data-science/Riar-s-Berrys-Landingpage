@@ -22,8 +22,10 @@ const NUTRITION = {
 
 // ── Social share helpers ───────────────────────────────────────────────────
 function ShareButtons({ product }) {
+  const { t } = useLang();
+  const prodT = t.products[product.id];
   const url     = `https://riarberry.com/product/${product.id}`;
-  const text    = `Check out ${product.name} at Riar Berry's 🍃`;
+  const text    = `Check out ${prodT.name} at Riar Berry's 🍃`;
   const [copied, setCopied] = useState(false);
 
   const copyLink = () => {
@@ -35,7 +37,7 @@ function ShareButtons({ product }) {
 
   return (
     <div className="pp__share" aria-label="Share this product">
-      <span className="pp__share-label">Share</span>
+      <span className="pp__share-label">{t.product.share}</span>
       <a
         href={`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`}
         target="_blank" rel="noreferrer"
@@ -73,30 +75,34 @@ function ShareButtons({ product }) {
 
 // ── Breadcrumb ─────────────────────────────────────────────────────────────
 function Breadcrumb({ product, cat }) {
+  const { t } = useLang();
+  const prodT = t.products[product.id];
+  const catT = cat ? t.categories.list[cat.id] : null;
+
   return (
     <nav className="pp__breadcrumb" aria-label="Breadcrumb">
       <ol className="pp__breadcrumb-list" itemScope itemType="https://schema.org/BreadcrumbList">
         <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-          <Link to="/" itemProp="item"><span itemProp="name">Home</span></Link>
+          <Link to="/" itemProp="item"><span itemProp="name">{t.product.breadcrumbHome}</span></Link>
           <meta itemProp="position" content="1" />
         </li>
         <span className="pp__breadcrumb-sep" aria-hidden="true">›</span>
         <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-          <Link to="/#products" itemProp="item"><span itemProp="name">Products</span></Link>
+          <Link to="/#products" itemProp="item"><span itemProp="name">{t.product.breadcrumbProducts}</span></Link>
           <meta itemProp="position" content="2" />
         </li>
         {cat && (
           <>
             <span className="pp__breadcrumb-sep" aria-hidden="true">›</span>
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <Link to={`/#products`} itemProp="item"><span itemProp="name">{cat.label}</span></Link>
+              <Link to={`/#products`} itemProp="item"><span itemProp="name">{catT?.label ?? cat.label}</span></Link>
               <meta itemProp="position" content="3" />
             </li>
           </>
         )}
         <span className="pp__breadcrumb-sep" aria-hidden="true">›</span>
         <li aria-current="page" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-          <span itemProp="name">{product.name}</span>
+          <span itemProp="name">{prodT.name}</span>
           <meta itemProp="position" content={cat ? "4" : "3"} />
         </li>
       </ol>
@@ -118,10 +124,13 @@ export default function ProductPage() {
   const nut     = NUTRITION[id] ?? null;
   const related = PRODUCTS.filter(p => p.category === product?.category && p.id !== id).slice(0,3);
 
+  const prodT = product ? t.products[product.id] : null;
+  const catT = cat ? t.categories.list[cat.id] : null;
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = product ? `${product.name} — Riar Berry's` : 'Riar Berry\'s';
-  }, [id, product]);
+    document.title = prodT ? `${prodT.name} — Riar Berry's` : 'Riar Berry\'s';
+  }, [id, prodT]);
 
   useEffect(() => {
     if (!heroRef.current) return;
@@ -134,8 +143,8 @@ export default function ProductPage() {
   if (!product) {
     return (
       <div className="pp-404">
-        <h1>Product not found</h1>
-        <Link to="/" className="pp-back">← Back to home</Link>
+        <h1>{t.product.notFound}</h1>
+        <Link to="/" className="pp-back">{t.product.backHome}</Link>
       </div>
     );
   }
@@ -147,7 +156,7 @@ export default function ProductPage() {
       await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
         headers: { 'Content-Type':'application/json', 'Accept':'application/json' },
-        body: JSON.stringify({ email, product: product.name, _subject: `Notify: ${product.name}` }),
+        body: JSON.stringify({ email, product: prodT.name, _subject: `Notify: ${prodT.name}` }),
       });
     } catch { /* silent */ }
     setNotifySent(true);
@@ -163,15 +172,15 @@ export default function ProductPage() {
       <div className="pp__hero" ref={heroRef}>
         <div className="pp__img-wrap">
           {!imgFailed
-            ? <img src={product.image} alt={product.name} className="pp__img" onError={() => setImgFailed(true)} />
+            ? <img src={product.image} alt={prodT.name} className="pp__img" onError={() => setImgFailed(true)} />
             : <div className="pp__img-fallback">{cat?.emoji ?? '🍃'}</div>
           }
         </div>
 
         <div className="pp__details">
-          <span className="pp__cat" style={{ color: cat?.color }}>{cat?.label}</span>
-          <h1 className="pp__name">{product.name}</h1>
-          <p className="pp__desc">{product.description}</p>
+          <span className="pp__cat" style={{ color: cat?.color }}>{catT?.label ?? cat?.label}</span>
+          <h1 className="pp__name">{prodT.name}</h1>
+          <p className="pp__desc">{prodT.description}</p>
 
           <div className="pp__weights-wrap">
             <span className="pp__weights-label">{t.product.weight}</span>
@@ -202,18 +211,18 @@ export default function ProductPage() {
               <button type="submit" className="pp__notify-btn">{t.product.notify}</button>
             </form>
           ) : (
-            <p className="pp__notify-thanks">✓ We'll let you know when ordering goes live.</p>
+            <p className="pp__notify-thanks">{t.product.notifySent}</p>
           )}
 
           <a
-            href={`https://wa.me/37360000000?text=${encodeURIComponent(`Hi, I'd like to order ${product.name} (${product.weight[weight]}) from Riar Berry's!`)}`}
+            href={`https://wa.me/37360000000?text=${encodeURIComponent(`${t.whatsapp} ${prodT.name} (${product.weight[weight]})`)}`}
             className="pp__wa" target="_blank" rel="noreferrer"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
               <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.11 1.524 5.836L0 24l6.335-1.507A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.875 9.875 0 01-5.03-1.378l-.36-.214-3.742.89.952-3.653-.235-.374A9.854 9.854 0 012.118 12C2.118 6.533 6.533 2.118 12 2.118c5.468 0 9.882 4.415 9.882 9.882 0 5.468-4.414 9.882-9.882 9.882z"/>
             </svg>
-            Order via WhatsApp
+            {t.product.orderWa}
           </a>
 
           <ShareButtons product={product} />
@@ -223,7 +232,7 @@ export default function ProductPage() {
       {/* Nutrition */}
       {nut && (
         <div className="pp__section">
-          <h2 className="pp__section-title">{t.product.nutrition} <em>per 100g</em></h2>
+          <h2 className="pp__section-title">{t.product.nutrition} <em>{t.product.perHundred}</em></h2>
           <div className="pp__nut-grid">
             {[
               { label:'Calories', value:`${nut.cal} kcal` },
@@ -245,14 +254,14 @@ export default function ProductPage() {
       {/* Related */}
       {related.length > 0 && (
         <div className="pp__section">
-          <h2 className="pp__section-title">You might also like</h2>
+          <h2 className="pp__section-title">{t.product.related}</h2>
           <div className="pp__related">
             {related.map(p => (
               <Link key={p.id} to={`/product/${p.id}`} className="pp__rel-card">
                 <div className="pp__rel-img-wrap">
-                  <img src={p.image} alt={p.name} onError={e => e.target.style.display='none'} />
+                  <img src={p.image} alt={t.products[p.id].name} onError={e => e.target.style.display='none'} />
                 </div>
-                <span className="pp__rel-name">{p.name}</span>
+                <span className="pp__rel-name">{t.products[p.id].name}</span>
               </Link>
             ))}
           </div>

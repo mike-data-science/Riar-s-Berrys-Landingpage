@@ -33,7 +33,7 @@ export default function GiftConfigurator() {
         headers: { 'Content-Type':'application/json', 'Accept':'application/json' },
         body: JSON.stringify({
           email,
-          packages: selected.map(id => PACKAGES.find(p => p.id === id)?.name).join(', '),
+          packages: selected.map(id => t.packages[id]?.name).join(', '),
           _subject: 'Package selection — Riar Berry\'s',
         }),
       });
@@ -95,7 +95,7 @@ export default function GiftConfigurator() {
                 </div>
                 <div className="pkg-card__info">
                   <span className="pkg-card__weight">{pkg.weight}</span>
-                  <span className="pkg-card__name">{pkg.name}</span>
+                  <span className="pkg-card__name">{t.packages[pkg.id].name}</span>
                 </div>
               </button>
             );
@@ -104,8 +104,8 @@ export default function GiftConfigurator() {
 
         <p className="gift__count">
           {selected.length === 0
-            ? 'Tap packages you\'re interested in'
-            : `${selected.length} package${selected.length > 1 ? 's' : ''} selected`
+            ? t.gift.tapHint
+            : `${selected.length} ${t.gift.selectedSuffix}`
           }
         </p>
 
@@ -131,7 +131,7 @@ export default function GiftConfigurator() {
         ) : (
           <div className="gift__thanks">
             <span aria-hidden="true">🎁</span>
-            <p>We've received your selection! We'll be in touch when ordering goes live.</p>
+            <p>{t.gift.thanks}</p>
           </div>
         )}
 

@@ -1,17 +1,12 @@
-/**
- * "Make It Your Package" section
- * Showcases the real 1kg pouch packaging photos.
- * Users pick which packages they want — feeds into the email form.
- */
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PACKAGES } from '../data/packages';
 import { useLang } from '../context/LangContext';
-import './GiftConfigurator.css';
+import SectionHeader from './ui/SectionHeader';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 export default function GiftConfigurator() {
   const { t } = useLang();
@@ -37,100 +32,83 @@ export default function GiftConfigurator() {
           _subject: 'Package selection — Riar Berry\'s',
         }),
       });
-    } catch { /* silent — still show thanks */ }
+    } catch { }
     setSent(true);
   };
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo('.gift__header',
-        { opacity:0, y:36 },
-        { opacity:1, y:0, duration:0.9, ease:'power2.out',
-          scrollTrigger:{ trigger:sectionRef.current, start:'top 80%', once:true } }
-      );
-      const cards = cardsRef.current?.querySelectorAll('.pkg-card');
-      if (cards?.length) {
-        gsap.fromTo(cards,
-          { opacity:0, y:50, scale:0.95 },
-          { opacity:1, y:0, scale:1, stagger:0.08, duration:0.7, ease:'power2.out',
-            scrollTrigger:{ trigger:cardsRef.current, start:'top 85%', once:true } }
-        );
-      }
-    }, sectionRef);
-    return () => ctx.revert();
-  }, []);
+  useScrollReveal(sectionRef, { selector: '.gift__header', duration: 0.9 });
+  useScrollReveal(cardsRef, { selector: '.pkg-card', y: 50, scale: 0.95, stagger: 0.08, duration: 0.7, start: 'top 85%' });
 
   return (
-    <section className="gift" id="gift" ref={sectionRef}>
-      <div className="gift__inner">
+    <section className="bg-brand-orange py-28 px-12 text-white relative z-[2] max-[600px]:py-20 max-[600px]:px-6" id="gift" ref={sectionRef}>
+      <div className="max-w-[1200px] mx-auto">
 
-        <header className="gift__header">
-          <p className="gift__eyebrow">{t.gift.eyebrow}</p>
-          <h2 className="gift__title">
-            {t.gift.title}<br /><em>{t.gift.titleEm}</em>
-          </h2>
-          <p className="gift__sub">{t.gift.sub}</p>
-        </header>
+        <SectionHeader 
+          className="gift__header mb-14"
+          eyebrow={t.gift.eyebrow}
+          title={t.gift.title}
+          titleEm={t.gift.titleEm}
+          subtitle={t.gift.sub}
+          theme="orange"
+        />
 
-        {/* Package showcase grid — real product photos */}
-        <div className="gift__packages" ref={cardsRef} role="list" aria-label="Available packages">
+        <div className="grid grid-cols-6 gap-4 mb-4 max-[1024px]:grid-cols-3 max-[600px]:grid-cols-2 max-[600px]:gap-3" ref={cardsRef} role="list" aria-label="Available packages">
           {PACKAGES.map(pkg => {
             const isSelected = selected.includes(pkg.id);
             return (
               <button
                 key={pkg.id}
-                className={`pkg-card ${isSelected ? 'pkg-card--selected' : ''}`}
+                className={`pkg-card group bg-brand-bg border-2 rounded-2xl p-3.5 cursor-pointer flex flex-col items-center gap-2.5 text-center transition-all duration-300 opacity-0 hover:-translate-y-1 hover:shadow-lg ${isSelected ? 'border-brand-pink shadow-[0_10px_25px_rgba(236,72,153,0.5)]' : 'border-transparent shadow-sm'}`}
                 onClick={() => toggle(pkg.id)}
                 style={{ '--pkg-color': pkg.color }}
                 aria-pressed={isSelected}
                 role="listitem"
               >
-                <div className="pkg-card__img-wrap">
-                  <img src={pkg.image} alt={pkg.name} className="pkg-card__img" loading="lazy" />
-                  <div className="pkg-card__check" aria-hidden="true">
-                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <div className="relative w-full aspect-[3/4] rounded-[10px] overflow-hidden bg-brand-bg">
+                  <img src={pkg.image} alt={pkg.name} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" loading="lazy" />
+                  <div className={`absolute top-2 right-2 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-200 ${isSelected ? 'opacity-100 scale-100 bg-brand-pink border-brand-pink text-white' : 'bg-black/35 border-[1.5px] border-white/50 text-white opacity-0 scale-75'}`} aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-[13px] h-[13px]">
                       <path d="M4 10l4 4 8-8" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                 </div>
-                <div className="pkg-card__info">
-                  <span className="pkg-card__weight">{pkg.weight}</span>
-                  <span className="pkg-card__name">{t.packages[pkg.id].name}</span>
+                <div className="flex flex-col gap-0.5 mt-1">
+                  <span className="text-[0.65rem] tracking-[0.1em] uppercase text-brand-pink font-bold">{pkg.weight}</span>
+                  <span className="text-[0.8rem] font-bold text-brand-text leading-[1.3]">{t.packages[pkg.id].name}</span>
                 </div>
               </button>
             );
           })}
         </div>
 
-        <p className="gift__count">
+        <p className="text-center text-[0.8rem] text-white/50 mb-10 font-medium">
           {selected.length === 0
             ? t.gift.tapHint
             : `${selected.length} ${t.gift.selectedSuffix}`
           }
         </p>
 
-        {/* Email submit */}
         {!sent ? (
-          <form className="gift__form" onSubmit={submit}>
-            <p className="gift__form-label">{t.gift.notifyLabel}</p>
-            <div className="gift__form-row">
+          <form className="w-full" onSubmit={submit}>
+            <p className="text-[0.82rem] text-white/60 mb-3 text-center">{t.gift.notifyLabel}</p>
+            <div className="flex gap-2 flex-wrap justify-center max-w-[480px] mx-auto max-[600px]:flex-col">
               <input
                 type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="your@email.com"
                 required
-                className="gift__input"
+                className="flex-1 min-w-[220px] bg-white/10 border border-white/30 rounded-full py-3 px-5 font-body text-[0.85rem] text-white outline-none transition-colors duration-200 placeholder:text-white/50 focus:border-white focus:bg-white/20 max-[600px]:w-full"
                 aria-label="Email address"
               />
-              <button type="submit" className="gift__btn">
+              <button type="submit" className="bg-[#1f2937] text-white border-none rounded-full py-3 px-7 text-[0.84rem] font-bold cursor-pointer font-body transition-all duration-200 hover:bg-brand-pink hover:-translate-y-0.5 max-[600px]:w-full shadow-md hover:shadow-lg">
                 {t.gift.btn}
               </button>
             </div>
           </form>
         ) : (
-          <div className="gift__thanks">
-            <span aria-hidden="true">🎁</span>
+          <div className="flex items-center justify-center gap-4 max-w-[480px] mx-auto p-6 rounded-2xl bg-white/10 border border-white/30 text-[0.9rem] text-white font-medium text-left">
+            <span aria-hidden="true" className="text-[2rem] shrink-0">🎁</span>
             <p>{t.gift.thanks}</p>
           </div>
         )}

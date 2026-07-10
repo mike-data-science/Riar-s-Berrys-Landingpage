@@ -1,0 +1,14 @@
+{
+  "kiwi":       { "cal":310, "carbs":68, "sugar":52, "fibre":9,  "protein":5, "fat":2 },
+  "mango":      { "cal":319, "carbs":78, "sugar":66, "fibre":3,  "protein":2, "fat":1 },
+  "strawberry": { "cal":286, "carbs":68, "sugar":58, "fibre":10, "protein":3, "fat":1 },
+  "banana":     { "cal":346, "carbs":89, "sugar":35, "fibre":9,  "protein":4, "fat":1 },
+  "raisins":    { "cal":299, "carbs":79, "sugar":59, "fibre":4,  "protein":3, "fat":0 },
+  "apricot":    { "cal":241, "carbs":63, "sugar":53, "fibre":7,  "protein":3, "fat":1 },
+  "pineapple":  { "cal":327, "carbs":83, "sugar":65, "fibre":3,  "protein":1, "fat":1 },
+  "apple":      { "cal":243, "carbs":65, "sugar":57, "fibre":8,  "protein":1, "fat":0 },
+  "fig":        { "cal":249, "carbs":64, "sugar":48, "fibre":10, "protein":3, "fat":1 },
+  "dates":      { "cal":282, "carbs":75, "sugar":63, "fibre":8,  "protein":2, "fat":0 },
+  "blueberries":{ "cal":324, "carbs":77, "sugar":59, "fibre":14, "protein":4, "fat":2 },
+  "premium-mix":{ "cal":305, "carbs":71, "sugar":55, "fibre":7,  "protein":3, "fat":2 }
+}

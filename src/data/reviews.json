@@ -1,0 +1,8 @@
+[
+  { "id": "1", "name":"Elena M.",    "location":"Chișinău", "stars":5 },
+  { "id": "2", "name":"Alexandru P.","location":"Chișinău", "stars":5 },
+  { "id": "3", "name":"Maria K.",    "location":"Bucharest", "stars":5 },
+  { "id": "4", "name":"Ion T.",      "location":"Chișinău", "stars":5 },
+  { "id": "5", "name":"Natalia V.",  "location":"Iași",      "stars":5 },
+  { "id": "6", "name":"Dmitri R.",   "location":"Chișinău", "stars":5 }
+]

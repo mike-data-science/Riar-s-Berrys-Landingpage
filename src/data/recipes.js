@@ -8,9 +8,9 @@ export const RECIPES = [
     tags: ['snack', 'no-cook', 'vegan'],
     image: '/images/gallery/frame_08.jpg',
     ingredients: [
-      { amount: '100g', productId: 'dried-kiwi' },
+      { amount: '100g', productId: 'kiwi' },
       { amount: '100g', productId: 'raisins' },
-      { amount: '80g',  productId: 'dried-apricot' },
+      { amount: '80g',  productId: 'apricot' },
       { amount: '60g',  productId: 'blueberries' },
       { amount: '100g' },
       { amount: '30g' },
@@ -27,8 +27,8 @@ export const RECIPES = [
     ingredients: [
       { amount: '160g' },
       { amount: '400ml' },
-      { amount: '60g',  productId: 'dried-apricot' },
-      { amount: '40g',  productId: 'dried-fig' },
+      { amount: '60g',  productId: 'apricot' },
+      { amount: '40g',  productId: 'fig' },
       { amount: '2 tbsp' },
       { amount: '1 tbsp' },
       { amount: '1 tsp' },
@@ -59,7 +59,7 @@ export const RECIPES = [
     tags: ['snack', 'no-bake', 'vegan', 'meal-prep'],
     image: '/images/gallery/frame_03.jpg',
     ingredients: [
-      { amount: '150g', productId: 'dried-dates' },
+      { amount: '150g', productId: 'dates' },
       { amount: '80g',  productId: 'raisins' },
       { amount: '120g' },
       { amount: '60g' },
@@ -78,8 +78,8 @@ export const RECIPES = [
     tags: ['drink', 'breakfast', 'vegan'],
     image: '/images/gallery/frame_02.jpg',
     ingredients: [
-      { amount: '50g',  productId: 'dried-mango' },
-      { amount: '30g',  productId: 'dried-banana' },
+      { amount: '50g',  productId: 'mango' },
+      { amount: '30g',  productId: 'banana' },
       { amount: '400ml' },
       { amount: '1' },
       { amount: '100ml' },

@@ -2,7 +2,6 @@ import { useState, useEffect, useRef, startTransition } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
 import { useWishlist } from '../context/WishlistContext';
-import './Navbar.css';
 
 export default function Navbar() {
   const { t, lang, setLang } = useLang();
@@ -35,65 +34,67 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`nav ${scrolled || !isHome ? 'nav--scrolled' : 'nav--home-top'} ${hidden ? 'nav--hidden' : ''}`}
+      className={`fixed top-0 left-0 right-0 z-[100] flex justify-between items-center gap-2 px-10 py-5 transition-all duration-400 max-[900px]:px-6 max-[900px]:py-4 ${
+        scrolled || !isHome 
+          ? 'bg-brand-bg/85 backdrop-blur-xl py-3 max-[900px]:py-3 border-b border-brand-orange/20' 
+          : 'bg-gradient-to-b from-brand-bg/80 to-transparent backdrop-blur-md'
+      } ${hidden ? '-translate-y-[110%]' : ''}`}
       role="navigation"
       aria-label="Main navigation"
     >
-      <Link to="/" className="nav__logo" aria-label="Riar Berry's — home">
-        Riar<span className="nav__logo-em"> Berry's</span>
+      <Link to="/" className="font-display text-2xl font-bold text-brand-text no-underline leading-none flex-1" aria-label="Riar Berry's — home">
+        Riar<span className="text-brand-orange italic"> Berry's</span>
       </Link>
 
-      <ul className={`nav__links ${menuOpen ? 'nav__links--open' : ''}`} role="menubar">
+      <ul className={`flex items-center justify-center gap-8 list-none max-[900px]:fixed max-[900px]:inset-0 max-[900px]:bg-brand-bg/95 max-[900px]:flex-col max-[900px]:translate-x-full max-[900px]:transition-transform max-[900px]:duration-300 max-[900px]:pointer-events-none ${menuOpen ? 'max-[900px]:translate-x-0 max-[900px]:pointer-events-auto' : ''}`} role="menubar">
         {[
           { label: t.nav.products,   href: isHome ? '#products'   : '/#products'   },
           { label: t.nav.categories, href: isHome ? '#categories' : '/#categories' },
           { label: t.nav.story,      href: isHome ? '#process'    : '/#process'    },
         ].map(({ label, href }) => (
           <li key={href} role="none">
-            <a href={href} className="nav__link" role="menuitem" onClick={() => setMenuOpen(false)}>
+            <a href={href} className="text-base font-medium text-brand-text-light relative transition-colors hover:text-brand-orange max-[900px]:text-3xl max-[900px]:text-brand-text after:content-[''] after:absolute after:bottom-[-3px] after:left-0 after:right-0 after:h-[2px] after:bg-brand-orange after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-200" role="menuitem" onClick={() => setMenuOpen(false)}>
               {label}
             </a>
           </li>
         ))}
-        {/* Mobile-only: wishlist + contact (desktop shows these in nav__right) */}
-        <li role="none" className="nav__mobile-only">
-          <Link to="/wishlist" className="nav__link nav__link--wish-mobile" onClick={() => setMenuOpen(false)}>
+        {/* Mobile-only: wishlist + contact */}
+        <li role="none" className="hidden max-[900px]:block mt-4">
+          <Link to="/wishlist" className="flex items-center justify-center gap-2 text-xl font-medium text-brand-text transition-colors hover:text-brand-pink" onClick={() => setMenuOpen(false)}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" width="24" height="24">
               <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             Wishlist {wishCount > 0 && `(${wishCount})`}
           </Link>
         </li>
-        <li role="none" className="nav__mobile-only">
-          <a href={isHome ? '#contact' : '/#contact'} className="nav__cta"
+        <li role="none" className="hidden max-[900px]:block mt-2">
+          <a href={isHome ? '#contact' : '/#contact'} className="text-xl font-medium text-brand-orange border-2 border-brand-orange rounded-full px-6 py-2"
              onClick={() => setMenuOpen(false)}>
             {t.nav.contact}
           </a>
         </li>
       </ul>
 
-      {/* Right cluster: wishlist · contact · language — grouped together */}
-      <div className="nav__right">
-        <Link to="/wishlist" className="nav__wish"
+      {/* Right cluster */}
+      <div className="flex items-center justify-end gap-4 flex-1 max-[900px]:ml-auto max-[900px]:gap-2">
+        <Link to="/wishlist" className="relative flex items-center justify-center text-brand-text-light transition-colors hover:text-brand-pink p-1 max-[900px]:hidden"
           aria-label={`Wishlist (${wishCount} items)`}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               strokeWidth="1.8" aria-hidden="true" width="18" height="18">
-            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
-              strokeLinecap="round" strokeLinejoin="round"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" width="20" height="20">
+            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-          {wishCount > 0 && <span className="nav__wish-badge">{wishCount}</span>}
+          {wishCount > 0 && <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-brand-pink text-white text-[10px] font-bold flex items-center justify-center">{wishCount}</span>}
         </Link>
 
-        <a href={isHome ? '#contact' : '/#contact'} className="nav__cta"
+        <a href={isHome ? '#contact' : '/#contact'} className="text-[15px] font-medium tracking-wide text-brand-orange no-underline border-2 border-brand-orange/50 px-5 py-1.5 rounded-full transition-colors whitespace-nowrap hover:bg-brand-orange hover:text-white max-[900px]:hidden"
            onClick={() => setMenuOpen(false)}>
           {t.nav.contact}
         </a>
 
-        <div className="nav__lang" role="group" aria-label="Language">
+        <div className="flex items-center gap-[1px] bg-brand-text/5 border border-brand-orange/20 rounded-full p-[2px] shrink-0 max-[480px]:hidden" role="group" aria-label="Language">
           {['en','ro','ru'].map(l => (
             <button
               key={l}
-              className={`nav__lang-btn ${lang === l ? 'nav__lang-btn--active' : ''}`}
+              className={`font-body text-xs font-medium tracking-wide px-3 py-1 rounded-full border-none bg-transparent cursor-pointer transition-colors leading-relaxed ${lang === l ? 'bg-brand-orange text-white' : 'text-brand-text-light hover:text-brand-text'}`}
               onClick={() => startTransition(() => setLang(l))}
               aria-pressed={lang === l}
               aria-label={`Switch to ${l.toUpperCase()}`}
@@ -105,12 +106,14 @@ export default function Navbar() {
       </div>
 
       <button
-        className={`nav__burger ${menuOpen ? 'nav__burger--open' : ''}`}
+        className="hidden max-[900px]:flex flex-col gap-1.5 p-1.5 bg-none border-none cursor-pointer shrink-0 z-50"
         onClick={() => setMenuOpen(o => !o)}
         aria-label={menuOpen ? 'Close menu' : 'Open menu'}
         aria-expanded={menuOpen}
       >
-        <span aria-hidden="true"/><span aria-hidden="true"/><span aria-hidden="true"/>
+        <span className={`block w-6 h-[2px] bg-brand-text rounded-sm transition-all duration-300 ${menuOpen ? 'translate-y-[8px] rotate-45' : ''}`} aria-hidden="true"/>
+        <span className={`block w-6 h-[2px] bg-brand-text rounded-sm transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} aria-hidden="true"/>
+        <span className={`block w-6 h-[2px] bg-brand-text rounded-sm transition-all duration-300 ${menuOpen ? '-translate-y-[8px] -rotate-45' : ''}`} aria-hidden="true"/>
       </button>
     </nav>
   );

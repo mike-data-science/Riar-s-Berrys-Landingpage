@@ -1,11 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
 import { LangProvider }      from './context/LangContext';
 import { CookieProvider }    from './context/CookieContext';
 import { WishlistProvider }  from './context/WishlistContext';
 import Navbar                from './components/Navbar';
 import HeroSection           from './components/HeroSection';
-import CategoriesSection     from './components/CategoriesSection';
+import MarqueeTransition     from './components/MarqueeTransition';
 import ProductGrid           from './components/ProductGrid';
 import NutritionSection      from './components/NutritionSection';
 import ProcessStory          from './components/ProcessStory';
@@ -29,15 +28,15 @@ import ScrollToTop           from './components/ScrollToTop';
 
 function HomePage() {
   return (
-    <main id="main-content">
+    <main id="main-content" className="relative z-10 page-enter">
       <HeroSection />
-      <CategoriesSection />
+      <MarqueeTransition />
       <ProductGrid />
       <NutritionSection />
       <ProcessStory />
-      <StatsBar />
-      <Reviews />
       <GiftConfigurator />
+      {/* <StatsBar /> */}
+      <Reviews />
       <Newsletter />
       <GalleryLocation />
       <CTASection />

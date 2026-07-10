@@ -1,0 +1,8 @@
+[
+  { "id":"exotic",  "label":"Exotic",       "sublabel":"Dragon Fruit · Melon · Fig",        "color":"#e8501a", "glow":"rgba(232,80,26,0.3)",   "image":"/images/circles/exotic.png",  "fallback":"🐉" },
+  { "id":"berries", "label":"Berries",      "sublabel":"Strawberry · Blueberry · Raspberry", "color":"#d02848", "glow":"rgba(208,40,72,0.3)",   "image":"/images/circles/berries.png", "fallback":"🍓" },
+  { "id":"citrus",  "label":"Citrus",       "sublabel":"Orange · Lemon · Lime",              "color":"#e09010", "glow":"rgba(224,144,16,0.3)",  "image":"/images/circles/citrus.png",  "fallback":"🍊" },
+  { "id":"classic", "label":"Classic",      "sublabel":"Apple · Pear · Green Apple",         "color":"#48a030", "glow":"rgba(72,160,48,0.3)",   "image":"/images/circles/classic.png", "fallback":"🍎" },
+  { "id":"dried",   "label":"Stone & Dried","sublabel":"Apricot · Prune · Dried Fruit",      "color":"#c87820", "glow":"rgba(200,120,32,0.3)",  "image":"/images/circles/dried.png",   "fallback":"🍑" },
+  { "id":"premium", "label":"Premium Mix",  "sublabel":"Nuts · Dried Figs · Berries",        "color":"#ec4899", "glow":"rgba(236,72,153,0.3)",  "image":"/images/circles/premium.png", "fallback":"✨" }
+]

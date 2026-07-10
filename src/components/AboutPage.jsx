@@ -1,15 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
-import './AboutPage.css';
-
-const TIMELINE = [
-  { year:'2018', title:'The idea', text:'Founders Maria and Ion noticed that premium dried fruits in Moldova were either imported at high prices or low quality. They decided to change that.' },
-  { year:'2020', title:'First harvest', text:'Working with three local farms in the Codru region, they dried their first batches by hand — kiwi, apricot, and figs — and shared them with friends and family.' },
-  { year:'2022', title:'Riar Berry\'s is born', text:'After two years of refining the slow-drying process and building supplier relationships, the brand officially launched in Chișinău.' },
-  { year:'2024', title:'Six fruit families', text:'The collection expanded to six distinct fruit families. Every variety is now sourced, dried, and packed in Moldova — nothing leaves the country until it\'s perfect.' },
-  { year:'Now', title:'You\'re here', text:'We\'re still a small team with one obsession: making the best dried fruit you\'ve ever tasted. Thanks for being part of the story.' },
-];
 
 export default function AboutPage() {
   const { t } = useLang();
@@ -17,61 +8,53 @@ export default function AboutPage() {
   useEffect(() => { window.scrollTo(0,0); }, []);
 
   return (
-    <div className="about" id="main-content">
-      <div className="about__nav">
-        <Link to="/" className="about__back">{ta.back}</Link>
+    <div className="bg-white min-h-[100svh] relative z-[2]" id="main-content">
+      <div className="pt-[5.5rem] px-12 max-[600px]:px-6">
+        <Link to="/" className="text-[0.85rem] text-brand-text-light no-underline transition-colors duration-200 hover:text-brand-green font-medium">{ta.back}</Link>
       </div>
 
-      {/* Hero */}
-      <header className="about__hero">
-        <div className="about__hero-img-wrap">
-          <img src="/images/gallery/frame_05.jpg" alt="Fresh fruits" className="about__hero-img" />
-          <div className="about__hero-overlay" />
+      <header className="grid grid-cols-2 min-h-[70svh] relative max-[900px]:grid-cols-1 mt-4">
+        <div className="relative overflow-hidden max-[900px]:h-[300px]">
+          <img src="/images/gallery/frame_05.jpg" alt="Fresh fruits" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/35" />
         </div>
-        <div className="about__hero-content">
-          <p className="about__eyebrow">{ta.eyebrow}</p>
-          <h1 className="about__title">
-            {ta.title}<br /><em>{ta.titleEm}</em>
+        <div className="p-16 flex flex-col justify-center bg-brand-green max-[600px]:p-10 max-[600px]:px-6">
+          <p className="text-[0.72rem] tracking-[0.2em] uppercase text-brand-orange mb-4 font-body font-bold">{ta.eyebrow}</p>
+          <h1 className="font-display text-[clamp(2.2rem,4vw,3.5rem)] font-bold text-white leading-[1.08] mb-6 drop-shadow-sm">
+            {ta.title}<br /><em className="italic text-brand-pink">{ta.titleEm}</em>
           </h1>
-          <p className="about__lead">
+          <p className="text-[1rem] text-white/70 leading-[1.7]">
             {ta.lead}
           </p>
         </div>
       </header>
 
-      {/* Values */}
-      <section className="about__values">
-        <div className="about__values-inner">
-          <h2 className="about__section-title">{ta.valuesTitle}</h2>
-          <div className="about__values-grid">
-            {[
-              { icon:'🌱', title:'Slow is better', text:'72 hours at low temperature. Not 4 hours at high. It takes patience to do it right — and it tastes completely different.' },
-              { icon:'🤝', title:'Direct from farmers', text:'We know the farms our fruit comes from. Short supply chains mean fresher fruit and better conditions for everyone involved.' },
-              { icon:'🚫', title:'Nothing to hide', text:'No additives. No added sugar. No preservatives. No colour enhancers. Just fruit, dried.' },
-              { icon:'📍', title:'Made in Moldova', text:'Everything is sourced, processed and packed here. We believe in building something local before going global.' },
-            ].map((v,i) => (
-              <div key={i} className="about__value-card">
-                <span className="about__value-icon" aria-hidden="true">{v.icon}</span>
-                <h3 className="about__value-title">{v.title}</h3>
-                <p className="about__value-text">{v.text}</p>
+      <section className="py-24 px-12 bg-brand-bg max-[600px]:py-16 max-[600px]:px-6">
+        <div className="max-w-[1100px] mx-auto">
+          <h2 className="font-display text-[clamp(1.6rem,3vw,2.4rem)] font-bold text-brand-text mb-10">{ta.valuesTitle}</h2>
+          <div className="grid grid-cols-4 gap-6 max-[900px]:grid-cols-2 max-[600px]:grid-cols-1">
+            {ta.values.map((v,i) => (
+              <div key={i} className="bg-white rounded-2xl p-7 border border-black/5 shadow-sm">
+                <span className="text-[2rem] block mb-4" aria-hidden="true">{v.icon}</span>
+                <h3 className="font-display text-[1.15rem] font-bold text-brand-text mb-2">{v.title}</h3>
+                <p className="text-[0.85rem] text-brand-text-light leading-[1.6]">{v.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="about__timeline">
-        <div className="about__timeline-inner">
-          <h2 className="about__section-title">{ta.timelineTitle}</h2>
-          <div className="about__tl">
-            {TIMELINE.map((t,i) => (
-              <div key={i} className="about__tl-item">
-                <div className="about__tl-year">{t.year}</div>
-                <div className="about__tl-dot" aria-hidden="true" />
-                <div className="about__tl-body">
-                  <h3 className="about__tl-title">{t.title}</h3>
-                  <p  className="about__tl-text">{t.text}</p>
+      <section className="py-24 px-12 bg-white max-[900px]:py-16 max-[900px]:px-6">
+        <div className="max-w-[800px] mx-auto">
+          <h2 className="font-display text-[clamp(1.6rem,3vw,2.4rem)] font-bold text-brand-text mb-10">{ta.timelineTitle}</h2>
+          <div className="flex flex-col gap-0 relative before:content-[''] before:absolute before:left-[80px] before:top-0 before:bottom-0 before:w-[1px] before:bg-black/10 max-[600px]:before:left-[60px]">
+            {ta.timeline.map((t,i) => (
+              <div key={i} className="grid grid-cols-[80px_20px_1fr] gap-x-6 items-start pb-10 max-[600px]:grid-cols-[60px_20px_1fr]">
+                <div className="font-display text-[1rem] font-bold text-brand-green pt-0.5 text-right">{t.year}</div>
+                <div className="w-2.5 h-2.5 rounded-full bg-brand-green border-2 border-white shadow-[0_0_0_1px_rgba(132,204,22,1)] mt-1.5 justify-self-center relative z-[1]" aria-hidden="true" />
+                <div>
+                  <h3 className="font-display text-[1.1rem] font-bold text-brand-text mb-1.5">{t.title}</h3>
+                  <p className="text-[0.88rem] text-brand-text-light leading-[1.65]">{t.text}</p>
                 </div>
               </div>
             ))}
@@ -79,30 +62,28 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team photo placeholder */}
-      <section className="about__team">
-        <div className="about__team-inner">
-          <h2 className="about__section-title">{ta.teamTitle}</h2>
-          <div className="about__team-img-wrap">
-            <img src="/images/gallery/frame_07.jpg" alt="The Riar Berry's team" />
-            <div className="about__team-caption">
-              Replace this with a real team photo — our customers want to see who's behind the product.
+      <section className="py-24 px-12 bg-brand-bg max-[600px]:py-16 max-[600px]:px-6">
+        <div className="max-w-[900px] mx-auto">
+          <h2 className="font-display text-[clamp(1.6rem,3vw,2.4rem)] font-bold text-brand-text mb-10">{ta.teamTitle}</h2>
+          <div className="relative rounded-[20px] overflow-hidden shadow-sm">
+            <img src="/images/gallery/frame_07.jpg" alt="The Riar Berry's team" className="w-full h-[400px] object-cover block" />
+            <div className="p-4 px-5 text-[0.8rem] text-brand-text-light italic bg-white font-medium">
+              {ta.teamPhotoText}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Privacy anchor */}
-      <section className="about__privacy" id="privacy">
-        <div className="about__privacy-inner">
-          <h2 className="about__section-title">{ta.privacyTitle}</h2>
-          <p>We use Google Analytics to understand how visitors use the site. Analytics only runs after you accept cookies. We never sell personal data. Emails collected via our signup forms are used only to notify you of product launches and news. You can unsubscribe at any time.</p>
-          <p style={{marginTop:'1rem'}}>To request deletion of your data, email: <a href="mailto:hello@riarberry.com">hello@riarberry.com</a></p>
+      <section className="py-16 px-12 bg-white max-[600px]:px-6" id="privacy">
+        <div className="max-w-[700px] mx-auto text-[0.9rem] text-brand-text-light leading-[1.7]">
+          <h2 className="font-display text-[clamp(1.6rem,3vw,2.4rem)] font-bold text-brand-text mb-6">{ta.privacyTitle}</h2>
+          <p>{ta.privacyText1}</p>
+          <p className="mt-4">{ta.privacyText2}<a href="mailto:hello@riarberry.com" className="text-brand-green font-bold no-underline hover:underline">hello@riarberry.com</a></p>
         </div>
       </section>
 
-      <div className="about__cta">
-        <Link to="/" className="about__cta-btn">{ta.ctaText}</Link>
+      <div className="text-center p-12 bg-brand-bg border-t border-black/5">
+        <Link to="/" className="text-[0.9rem] font-bold text-brand-green no-underline border border-brand-green px-8 py-3 rounded-full transition-all duration-200 inline-block hover:bg-brand-green hover:text-white shadow-sm hover:shadow-md">{ta.ctaText}</Link>
       </div>
     </div>
   );

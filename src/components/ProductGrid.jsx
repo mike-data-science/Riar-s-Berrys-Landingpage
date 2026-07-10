@@ -5,56 +5,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PRODUCTS, CATEGORIES } from '../data/fruits';
 import WishlistHeart from './WishlistHeart';
 import { useLang } from '../context/LangContext';
-import './ProductGrid.css';
-
-
-function ProductCardSkeleton() {
-  return (
-    <div className="pcard-skeleton" aria-hidden="true">
-      <div className="pcard-skeleton__img" />
-      <div className="pcard-skeleton__body">
-        <div className="pcard-skeleton__line pcard-skeleton__line--short" />
-        <div className="pcard-skeleton__line pcard-skeleton__line--med" />
-        <div className="pcard-skeleton__line pcard-skeleton__line--tall" />
-        <div className="pcard-skeleton__line pcard-skeleton__line--short" />
-      </div>
-    </div>
-  );
-}
 
 gsap.registerPlugin(ScrollTrigger);
 
-function ProductCard({ product }) {
-  const { t } = useLang();
-  const [failed, setFailed] = useState(false);
-  const cat = CATEGORIES.find(c => c.id === product.category);
-  const catT = t.categories.list[product.category];
-  const prodT = t.products[product.id];
-  return (
-    <Link to={`/product/${product.id}`} className="pcard">
-      <div className="pcard__img-wrap" style={{ background: cat?.color + '15' }}>
-        <WishlistHeart productId={product.id} productName={product.name} />
-        {!failed && product.image
-          ? <img src={product.image} alt={prodT.name} onError={() => setFailed(true)} />
-          : <div className="pcard__img-fallback">{product.emoji ?? cat?.emoji ?? '🍃'}</div>
-        }
-        <div className="pcard__hover-overlay">
-          <span className="pcard__hover-label">{t.productsSection.view} →</span>
-        </div>
-      </div>
-      <div className="pcard__body">
-        <span className="pcard__cat" style={{ color: cat?.color ?? 'var(--c-brown-light)' }}>
-          {catT?.label ?? cat?.label ?? product.category}
-        </span>
-        <h3 className="pcard__name">{prodT.name}</h3>
-        <p className="pcard__desc">{prodT.description}</p>
-        <div className="pcard__weights">
-          {product.weight.map(w => <span key={w} className="pcard__weight">{w}</span>)}
-        </div>
-      </div>
-    </Link>
-  );
-}
+import ProductCard from './ui/ProductCard';
+import SectionHeader from './ui/SectionHeader';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function ProductGrid() {
   const { t } = useLang();
@@ -66,7 +22,6 @@ export default function ProductGrid() {
   const headerRef  = useRef(null);
   const searchRef  = useRef(null);
 
-  // Listen for category picks coming from the circles in CategoriesSection
   useEffect(() => {
     const onCategoryPick = (e) => {
       const catId = e.detail;
@@ -76,7 +31,6 @@ export default function ProductGrid() {
     return () => window.removeEventListener('rb:filter-category', onCategoryPick);
   }, []);
 
-  // Combined filter: category + search query
   const filtered = PRODUCTS.filter(p => {
     const matchesCat   = activecat === 'all' || p.category === activecat;
     const q            = query.toLowerCase().trim();
@@ -89,87 +43,55 @@ export default function ProductGrid() {
     return matchesCat && matchesQuery;
   });
 
-  // Animate cards whenever filtered list changes
   useEffect(() => {
-    // Refresh ScrollTrigger so sections below adjust to the new grid height
     setTimeout(() => ScrollTrigger.refresh(), 50);
-
-    const cards = gridRef.current?.querySelectorAll('.pcard');
-    if (!cards?.length) return;
-    const ctx = gsap.context(() => {
-      gsap.fromTo(cards,
-        { opacity:0, y:24, scale:0.97 },
-        { opacity:1, y:0, scale:1, stagger:0.055, duration:0.45, ease:'power2.out',
-          scrollTrigger:{ trigger:gridRef.current, start:'top 85%', once:true } }
-      );
-    }, gridRef);
-    return () => ctx.revert();
   }, [activecat, query]);
 
-  // Scroll reveal
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(headerRef.current,
-        { opacity:0, y:36 },
-        { opacity:1, y:0, duration:0.9, ease:'power2.out',
-          scrollTrigger:{ trigger:headerRef.current, start:'top 80%', once:true } }
-      );
-      gsap.fromTo(searchRef.current,
-        { opacity:0, y:20 },
-        { opacity:1, y:0, duration:0.7, delay:0.1, ease:'power2.out',
-          scrollTrigger:{ trigger:searchRef.current, start:'top 80%', once:true } }
-      );
-    });
-    return () => ctx.revert();
-  }, []);
+  useScrollReveal(gridRef, { selector: '.pcard', y: 24, scale: 0.97, stagger: 0.055, duration: 0.45, deps: [activecat, query] });
+  useScrollReveal(headerRef);
+  useScrollReveal(searchRef, { y: 20, duration: 0.7, delay: 0.1 });
 
   const clearSearch = useCallback(() => setQuery(''), []);
 
   return (
-    <section className="pgrid" id="products">
-      <div className="pgrid__inner">
+    <section className="bg-white pt-28 pb-32 px-12 relative max-[768px]:pt-20 max-[768px]:pb-24 max-[768px]:px-6" id="products">
+      <div className="max-w-[1300px] mx-auto">
 
-        <header className="pgrid__header" ref={headerRef}>
-          <div className="pgrid__header-row">
-            <div className="pgrid__header-text">
-              <p className="pgrid__eyebrow">{ts.eyebrow}</p>
-              <h2 className="pgrid__title">{ts.title}</h2>
-            </div>
-
-            {/* Search sits beside the title on desktop */}
-            <div className="pgrid__search-wrap" role="search" ref={searchRef}>
-              <svg className="pgrid__search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                <circle cx="8.5" cy="8.5" r="5.5" />
-                <path d="M17 17l-4-4" strokeLinecap="round" />
-              </svg>
-              <input
-                type="search"
-                className="pgrid__search"
-                value={query}
-                onChange={e => setQuery(e.target.value)}
-                placeholder={ts.searchPlaceholder}
-                aria-label="Search products"
-                aria-controls="product-grid"
-              />
-              {query && (
-                <button
-                  className="pgrid__search-clear"
-                  onClick={clearSearch}
-                  aria-label="Clear search"
-                >×</button>
-              )}
-            </div>
+        <SectionHeader 
+          ref={headerRef}
+          eyebrow={ts.eyebrow}
+          title={ts.title}
+          subtitle={ts.subtitle}
+        >
+          <div className="relative flex items-center w-[260px] shrink-0 max-[768px]:w-full" role="search" ref={searchRef}>
+            <svg className="absolute left-3.5 w-4 h-4 text-brand-text-light pointer-events-none" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <circle cx="8.5" cy="8.5" r="5.5" />
+              <path d="M17 17l-4-4" strokeLinecap="round" />
+            </svg>
+            <input
+              type="search"
+              className="w-full py-2.5 pl-10 pr-10 border border-black/10 rounded-full font-body text-[0.85rem] text-brand-text bg-brand-bg-alt outline-none transition-all duration-200 appearance-none focus:border-brand-green focus:bg-white focus:shadow-[0_0_0_3px_rgba(132,204,22,0.15)] placeholder:text-brand-text-light/70"
+              value={query}
+              onChange={e => setQuery(e.target.value)}
+              placeholder={ts.searchPlaceholder}
+              aria-label="Search products"
+              aria-controls="product-grid"
+            />
+            {query && (
+              <button
+                className="absolute right-2.5 w-5 h-5 rounded-full bg-black/10 flex items-center justify-center text-sm leading-none cursor-pointer text-brand-text-light transition-colors hover:bg-black/15 border-none"
+                onClick={clearSearch}
+                aria-label="Clear search"
+              >×</button>
+            )}
           </div>
+        </SectionHeader>
 
-          <p className="pgrid__subtitle">{ts.subtitle}</p>
-        </header>
-
-        {/* Category filter pills — own row, separate from search */}
-        <div className="pgrid__filters" role="group" aria-label="Filter by category">
+        <div className="flex gap-2 flex-wrap mb-10" role="group" aria-label="Filter by category">
           {ALL_CATS.map(cat => (
             <button
               key={cat.id}
-              className={`pgrid__filter ${activecat === cat.id ? 'pgrid__filter--active' : ''}`}
+              className={`font-body text-[0.95rem] font-medium px-5 py-2 rounded-full border cursor-pointer transition-all duration-200 hover:border-brand-text hover:text-brand-text ${activecat === cat.id ? 'bg-brand-text text-white border-brand-text hover:border-brand-text hover:text-white' : 'bg-transparent border-black/10 text-brand-text-light'}`}
               onClick={() => setActiveCat(cat.id)}
               aria-pressed={activecat === cat.id}
             >
@@ -178,24 +100,22 @@ export default function ProductGrid() {
           ))}
         </div>
 
-        {/* Result count */}
-        <p className="pgrid__count" role="status" aria-live="polite">
+        <p className="text-[0.8rem] text-brand-text-light mb-6 font-medium" role="status" aria-live="polite">
           {filtered.length === PRODUCTS.length
             ? `${PRODUCTS.length} ${ts.countSuffix}`
             : `${filtered.length} ${ts.countOf} ${PRODUCTS.length} ${ts.countSuffix}`
           }
-          {query && <span className="pgrid__count-query"> {ts.forQuery} "<strong>{query}</strong>"</span>}
+          {query && <span className="ml-1"> {ts.forQuery} "<strong className="text-brand-text font-bold">{query}</strong>"</span>}
         </p>
 
-        {/* Grid */}
-        <div className="pgrid__grid" aria-busy={false} ref={gridRef} id="product-grid" role="list"
+        <div className="grid grid-cols-4 gap-6 max-[1100px]:grid-cols-3 max-[768px]:grid-cols-2 max-[768px]:gap-4" aria-busy={false} ref={gridRef} id="product-grid" role="list"
           aria-label={`Product grid — ${filtered.length} results`}>
           {filtered.length > 0
             ? filtered.map(p => <ProductCard key={p.id} product={p} />)
             : (
-              <div className="pgrid__empty" role="listitem">
+              <div className="col-span-full text-center py-16 px-8 text-brand-text-light text-[0.95rem]" role="listitem">
                 <p>{ts.noResults}{query ? ` ${ts.forQuery} "${query}"` : ''}.</p>
-                <button onClick={clearSearch} className="pgrid__empty-reset">{ts.showAll}</button>
+                <button onClick={clearSearch} className="mt-4 text-[0.85rem] text-brand-green bg-transparent border-none cursor-pointer underline font-body font-bold">{ts.showAll}</button>
               </div>
             )
           }

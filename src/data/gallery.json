@@ -1,0 +1,8 @@
+[
+  { "src":"/images/gallery/frame_03.jpg", "alt":"Fruits exploding outward in slow motion",    "span":"wide"   },
+  { "src":"/images/gallery/frame_05.jpg", "alt":"Premium fruits floating after explosion",    "span":"tall"   },
+  { "src":"/images/gallery/frame_04.jpg", "alt":"Colourful fruit spread across dark space",   "span":"normal" },
+  { "src":"/images/gallery/frame_07.jpg", "alt":"Six fruit families fully grouped",           "span":"wide"   },
+  { "src":"/images/gallery/frame_06.jpg", "alt":"Dragon fruit and tropical selection",        "span":"normal" },
+  { "src":"/images/gallery/frame_02.jpg", "alt":"Fruits beginning to scatter outward",        "span":"normal" }
+]

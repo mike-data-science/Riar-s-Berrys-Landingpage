@@ -1,48 +1,55 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary SEO -->
-    <title>Riar Berry's — Premium Dried Fruits from Moldova</title>
-    <meta name="description" content="Riar Berry's offers premium dried fruits — kiwi, mango, berries, apricots, figs and more. Slowly dried, no additives, handpacked in Chișinău, Moldova. Discover six fruit families." />
-    <meta name="keywords" content="dried fruits, premium dried fruit, Moldova, kiwi, mango, berries, apricot, figs, natural snacks, healthy snacks, Chișinău" />
-    <meta name="author" content="Riar Berry's" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://riarberry.com/" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Open Graph (WhatsApp, Facebook, Instagram) -->
-    <meta property="og:type"        content="website" />
-    <meta property="og:url"         content="https://riarberry.com/" />
-    <meta property="og:title"       content="Riar Berry's — Premium Dried Fruits" />
-    <meta property="og:description" content="Nature's finest dried fruits — slowly dried, no additives, handpacked in Moldova. Six fruit families. Free shipping available." />
-    <meta property="og:image"       content="https://riarberry.com/images/og-image.jpg" />
-    <meta property="og:image:width"  content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale"      content="en_US" />
-    <meta property="og:site_name"   content="Riar Berry's" />
+  <!-- Primary SEO -->
+  <title>Riar Berry's — Premium Dried Fruits from Moldova</title>
+  <meta name="description"
+    content="Riar Berry's offers premium dried fruits — kiwi, mango, berries, apricots, figs and more. Slowly dried, no additives, handpacked in Chișinău, Moldova. Discover six fruit families." />
+  <meta name="keywords"
+    content="dried fruits, premium dried fruit, Moldova, kiwi, mango, berries, apricot, figs, natural snacks, healthy snacks, Chișinău" />
+  <meta name="author" content="Riar Berry's" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://riarberry.com/" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card"        content="summary_large_image" />
-    <meta name="twitter:title"       content="Riar Berry's — Premium Dried Fruits" />
-    <meta name="twitter:description" content="Nature's finest dried fruits — slowly dried, no additives, handpacked in Moldova." />
-    <meta name="twitter:image"       content="https://riarberry.com/images/og-image.jpg" />
+  <!-- Open Graph (WhatsApp, Facebook, Instagram) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://riarberry.com/" />
+  <meta property="og:title" content="Riar Berry's — Premium Dried Fruits" />
+  <meta property="og:description"
+    content="Nature's finest dried fruits — slowly dried, no additives, handpacked in Moldova. Six fruit families. Free shipping available." />
+  <meta property="og:image" content="https://riarberry.com/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Riar Berry's" />
 
-    <!-- Favicon -->
-    <link rel="icon"             type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon"             type="image/png"     href="/favicon-32.png" sizes="32x32" />
-    <link rel="apple-touch-icon"                      href="/apple-touch-icon.png" />
-    <link rel="manifest"                              href="/site.webmanifest" />
-    <meta name="theme-color" content="#1e3d1e" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Riar Berry's — Premium Dried Fruits" />
+  <meta name="twitter:description"
+    content="Nature's finest dried fruits — slowly dried, no additives, handpacked in Moldova." />
+  <meta name="twitter:image" content="https://riarberry.com/images/og-image.jpg" />
 
-    <!-- Structured data (Google rich results) -->
-    <script type="application/ld+json">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#f97316" />
+
+  <!-- Structured data (Google rich results) -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
@@ -68,31 +75,33 @@
     }
     </script>
 
-    <!-- Google Analytics 4 (fires only after GDPR consent — see CookieBanner.jsx) -->
-    <script>
-      window.__GA_ID = 'G-XXXXXXXXXX'; // ← replace with your real GA4 Measurement ID
-      window.__gaLoaded = false;
-      window.loadGA = function() {
-        if (window.__gaLoaded) return;
-        window.__gaLoaded = true;
-        var s = document.createElement('script');
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.__GA_ID;
-        s.async = true;
-        document.head.appendChild(s);
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){ dataLayer.push(arguments); }
-        window.gtag = gtag;
-        gtag('js', new Date());
-        gtag('config', window.__GA_ID, { anonymize_ip: true });
-      };
-      // Auto-load if previously consented
-      if (localStorage.getItem('rb_cookie_consent') === 'accepted') {
-        document.addEventListener('DOMContentLoaded', window.loadGA);
-      }
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <!-- Google Analytics 4 (fires only after GDPR consent — see CookieBanner.jsx) -->
+  <script>
+    window.__GA_ID = 'G-XXXXXXXXXX'; // ← replace with your real GA4 Measurement ID
+    window.__gaLoaded = false;
+    window.loadGA = function () {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.__GA_ID;
+      s.async = true;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', window.__GA_ID, { anonymize_ip: true });
+    };
+    // Auto-load if previously consented
+    if (localStorage.getItem('rb_cookie_consent') === 'accepted') {
+      document.addEventListener('DOMContentLoaded', window.loadGA);
+    }
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

@@ -8,16 +8,16 @@ export const CATEGORIES = [
 ];
 
 export const PRODUCTS = [
-  { id:'dried-kiwi',       category:'exotic',   weight:['100g','250g','500g'], emoji:'🥝' },
-  { id:'dried-mango',      category:'exotic',   weight:['100g','250g','500g'], emoji:'🥭' },
-  { id:'dried-strawberry', category:'berries',  weight:['100g','250g'],        emoji:'🍓' },
-  { id:'dried-banana',     category:'exotic',   weight:['100g','250g','500g'], emoji:'🍌' },
-  { id:'raisins',          category:'berries',  weight:['250g','500g','1kg'],  emoji:'🍇' },
-  { id:'dried-apricot',    category:'dried',    weight:['100g','250g','500g'], emoji:'🍑' },
-  { id:'dried-pineapple',  category:'citrus',   weight:['100g','250g'],        emoji:'🍍' },
-  { id:'dried-apple',      category:'classic',  weight:['100g','250g','500g'], emoji:'🍎' },
-  { id:'dried-fig',        category:'dried',    weight:['100g','250g'],        emoji:'🌰' },
-  { id:'dried-dates',      category:'dried',    weight:['250g','500g'],        emoji:'🌴' },
-  { id:'blueberries',      category:'berries',  weight:['100g','250g'],        emoji:'🫐' },
-  { id:'premium-mix',      category:'premium',  weight:['250g','500g'],        emoji:'✨' },
+  { id:'kiwi',       category:'exotic',   weight:['100g','250g','500g'], emoji:'🥝', image:'/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/kiwi_with_background_1783676480763.png' },
+  { id:'mango',      category:'exotic',   weight:['100g','250g','500g'], emoji:'🥭', image:'/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/mango_fresh_no_leaves_1783677472972.png' },
+  { id:'strawberry', category:'berries',  weight:['100g','250g'],        emoji:'🍓', image:'/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/strawberry_with_background_1783676559320.png' },
+  { id:'banana',     category:'exotic',   weight:['100g','250g','500g'], emoji:'🍌', image:'/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/banana_with_background_1783676576505.png' },
+  { id:'raisins',          category:'berries',  weight:['250g','500g','1kg'],  emoji:'🍇', image:'/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/raisins_with_background_1783676694086.png' },
+  { id:'apricot',    category:'dried',    weight:['100g','250g','500g'], emoji:'🍑', image:'/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/apricot_whole_and_half_1783725361991.png' },
+  { id:'pineapple',  category:'citrus',   weight:['100g','250g'],        emoji:'🍍', image:'/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/pineapple_with_background_1783676684006.png' },
+  { id:'apple',      category:'classic',  weight:['100g','250g','500g'], emoji:'🍎', image:'/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/red_apple_whole_and_half_1783725378691.png' },
+  { id:'fig',        category:'dried',    weight:['100g','250g'],        emoji:'🌰', image:'/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/fig_with_background_1783676804657.png' },
+  { id:'dates',      category:'dried',    weight:['250g','500g'],        emoji:'🌴', image:'/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/dates_with_background_1783676903106.png' },
+  { id:'blueberries',      category:'berries',  weight:['100g','250g'],        emoji:'🫐', image:'/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/blueberries_with_background_1783676911568.png' },
+  { id:'premium-mix',      category:'premium',  weight:['250g','500g'],        emoji:'✨', image:'/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/premium_mix_with_background_1783676972318.png' },
 ];

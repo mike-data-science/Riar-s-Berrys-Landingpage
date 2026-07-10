@@ -57,30 +57,30 @@
       "view": "View Product"
     },
     "nutrition": {
-      "eyebrow": "Why dried fruit",
-      "title": "The smarter",
-      "titleEm": "snack choice.",
-      "sub": "Compared to processed alternatives, premium dried fruit delivers more fibre, more vitamins, and real natural sweetness — with nothing you don't need.",
+      "eyebrow": "The healthy choice",
+      "title": "Nature's candy,",
+      "titleEm": "upgraded.",
+      "sub": "Ditch the artificial sugars and heavy processing. Our premium dried fruits lock in real, vibrant flavors along with the fibre and nutrients your body actually craves.",
       "benefits": [
         {
           "icon": "⚡",
-          "title": "Natural energy",
-          "text": "Concentrated natural sugars give sustained energy without the crash of processed snacks."
+          "title": "Feel-good energy",
+          "text": "Skip the midday crash. You get a steady, natural boost of energy that keeps you going without the sugar hangover."
         },
         {
           "icon": "🫀",
-          "title": "Heart health",
-          "text": "High in potassium and antioxidants. Studies link regular dried fruit consumption to lower heart disease risk."
+          "title": "Love your heart",
+          "text": "Packed with potassium and antioxidants. It's a sweet habit that your heart will actually thank you for."
         },
         {
           "icon": "🌱",
-          "title": "High in fibre",
-          "text": "Aids digestion and keeps you feeling fuller longer — most dried fruits have 3–10g fibre per 100g."
+          "title": "Keeps you full",
+          "text": "Loaded with dietary fibre, so a small handful goes a long way in curbing those afternoon cravings."
         },
         {
           "icon": "🔬",
-          "title": "Rich in vitamins",
-          "text": "Drying concentrates vitamins C, A, B6 and minerals like iron, calcium and magnesium."
+          "title": "Nutrient dense",
+          "text": "The drying process perfectly preserves all the good stuff—like iron, calcium, and essential vitamins—in every bite."
         }
       ],
       "compareTitle": "Calories per 30g serving",
@@ -345,7 +345,16 @@
       "sending": "Sending…",
       "successTitle": "Inquiry received!",
       "successText": "We'll be in touch within one business day with pricing details.",
-      "errorText": "Something went wrong. Please email us directly at hello@riarberry.com"
+      "errorText": "Something went wrong. Please email us directly at hello@riarberry.com",
+      "benefits": [
+        { "icon": "📦", "title": "Minimum Order 5kg", "desc": "Per variety, mixed varieties welcome." },
+        { "icon": "💰", "title": "Volume Pricing", "desc": "Tiered discounts from 10kg upward." },
+        { "icon": "🏷", "title": "Private Label", "desc": "Custom packaging with your brand." },
+        { "icon": "🚚", "title": "Weekly Delivery", "desc": "Regular schedule to Chișinău & surrounds." },
+        { "icon": "📋", "title": "Certificates", "desc": "Quality and origin documentation on request." },
+        { "icon": "🤝", "title": "Dedicated Contact", "desc": "One person, always available." }
+      ],
+      "clientTypes": ["Café / Restaurant", "Hotel", "Gift Company", "Retailer", "Corporate Gifting", "Other"]
     },
     "aboutPage": {
       "back": "← Back to home",
@@ -357,77 +366,114 @@
       "timelineTitle": "How we got here",
       "teamTitle": "The team",
       "privacyTitle": "Privacy",
-      "ctaText": "Browse our products →"
+      "ctaText": "Browse our products →",
+      "timeline": [
+        { "year": "2018", "title": "The idea", "text": "Founders Maria and Ion noticed that premium dried fruits in Moldova were either imported at high prices or low quality. They decided to change that." },
+        { "year": "2020", "title": "First harvest", "text": "Working with three local farms in the Codru region, they dried their first batches by hand — kiwi, apricot, and figs — and shared them with friends and family." },
+        { "year": "2022", "title": "Riar Berry's is born", "text": "After two years of refining the slow-drying process and building supplier relationships, the brand officially launched in Chișinău." },
+        { "year": "2024", "title": "Six fruit families", "text": "The collection expanded to six distinct fruit families. Every variety is now sourced, dried, and packed in Moldova — nothing leaves the country until it's perfect." },
+        { "year": "Now", "title": "You're here", "text": "We're still a small team with one obsession: making the best dried fruit you've ever tasted. Thanks for being part of the story." }
+      ],
+      "values": [
+        { "icon": "🌱", "title": "Slow is better", "text": "72 hours at low temperature. Not 4 hours at high. It takes patience to do it right — and it tastes completely different." },
+        { "icon": "🤝", "title": "Direct from farmers", "text": "We know the farms our fruit comes from. Short supply chains mean fresher fruit and better conditions for everyone involved." },
+        { "icon": "🚫", "title": "Nothing to hide", "text": "No additives. No added sugar. No preservatives. No colour enhancers. Just fruit, dried." },
+        { "icon": "📍", "title": "Made in Moldova", "text": "Everything is sourced, processed and packed here. We believe in building something local before going global." }
+      ],
+      "teamPhotoText": "Replace this with a real team photo — our customers want to see who's behind the product.",
+      "privacyText1": "We use Google Analytics to understand how visitors use the site. Analytics only runs after you accept cookies. We never sell personal data. Emails collected via our signup forms are used only to notify you of product launches and news. You can unsubscribe at any time.",
+      "privacyText2": "To request deletion of your data, email: "
+    },
+    "sitemapPage": {
+      "title": "Site Map",
+      "products": "Products",
+      "discover": "Discover",
+      "company": "Company & Legal",
+      "links": {
+        "allFruits": "All Fruits",
+        "categories": "Categories",
+        "buildGiftBox": "Build a Gift Box",
+        "myWishlist": "My Wishlist",
+        "wholesaleB2B": "Wholesale B2B",
+        "howWeMakeIt": "How We Make It",
+        "whyDriedFruit": "Why Dried Fruit",
+        "photoGallery": "Photo Gallery",
+        "customerReviews": "Customer Reviews",
+        "recipes": "Recipes",
+        "ourStory": "Our Story",
+        "contactLocation": "Contact & Location",
+        "privacyPolicy": "Privacy Policy"
+      }
     },
     "whatsapp": "Hi, I'd like to order from Riar Berry's!",
     "products": {
-      "dried-kiwi": {
-        "name": "Dried Kiwi",
-        "description": "Sun-ripened kiwi sliced and slowly air-dried. Sweet-tart, chewy, vibrant green."
+      "kiwi": {
+        "name": "Kiwi",
+        "description": "Fresh, sun-ripened kiwi. Sweet-tart, juicy, and vibrant green."
       },
-      "dried-mango": {
-        "name": "Dried Mango",
-        "description": "Alphonso mangoes at peak sweetness, dried to a golden caramel-like chew."
+      "mango": {
+        "name": "Mango",
+        "description": "Fresh Alphonso mangoes at peak sweetness. Juicy and naturally golden."
       },
-      "dried-strawberry": {
-        "name": "Dried Strawberry",
-        "description": "Garden strawberries freeze-dried to lock in colour and intense berry flavour."
+      "strawberry": {
+        "name": "Strawberry",
+        "description": "Fresh garden strawberries with a vibrant colour and intense berry flavour."
       },
-      "dried-banana": {
-        "name": "Dried Banana",
-        "description": "Cavendish bananas sliced thin and gently dried. Naturally sweet, no added sugar."
+      "banana": {
+        "name": "Banana",
+        "description": "Fresh Cavendish bananas. Naturally sweet and rich in flavour."
       },
       "raisins": {
         "name": "Golden Raisins",
         "description": "Thompson seedless grapes, sun-dried for six weeks. Plump, honeyed, versatile."
       },
-      "dried-apricot": {
-        "name": "Dried Apricot",
+      "apricot": {
+        "name": "Apricot",
         "description": "Turkish apricots, unsulfured. Deep amber, tangy-sweet stone-fruit flavour."
       },
-      "dried-pineapple": {
-        "name": "Dried Pineapple",
-        "description": "Pineapple rings, slow-dried for a chewy caramelised texture. No preservatives."
+      "pineapple": {
+        "name": "Pineapple",
+        "description": "Fresh pineapple slices, naturally juicy and sweet. No preservatives."
       },
-      "dried-apple": {
-        "name": "Dried Apple Rings",
-        "description": "Crisp Cox apples peeled and ring-cut. Lightly sweet, perfect for snacking."
+      "apple": {
+        "name": "Apple",
+        "description": "Fresh, crisp Cox apples, peeled and cut. Lightly sweet and perfect for snacking."
       },
-      "dried-fig": {
-        "name": "Dried Figs",
+      "fig": {
+        "name": "Figs",
         "description": "Turkish figs, sun-dried whole. Intensely sweet with a jammy, honeyed centre."
       },
-      "dried-dates": {
+      "dates": {
         "name": "Medjool Dates",
         "description": "Medjool dates from the Jordan Valley. Caramel-soft, naturally sugary."
       },
       "blueberries": {
-        "name": "Dried Blueberries",
-        "description": "Wild blueberries, freeze-dried whole. Intensely fruity with a pleasant chew."
+        "name": "Blueberries",
+        "description": "Fresh wild blueberries. Intensely fruity and bursting with flavour."
       },
       "premium-mix": {
         "name": "Premium Mix",
-        "description": "Our signature blend — dried fruits, berries and a touch of gold."
+        "description": "Our signature blend of fresh fruits and berries."
       }
     },
     "packages": {
       "kiwi": {
-        "name": "Freeze Dried Kiwi"
+        "name": "Dried Kiwi"
       },
       "dragonfruit": {
-        "name": "Freeze Dried Dragon Fruit"
+        "name": "Dried Dragon Fruit"
       },
       "pineapple": {
-        "name": "Freeze Dried Pineapple"
+        "name": "Dried Pineapple"
       },
       "strawberry": {
-        "name": "Freeze Dried Strawberries"
+        "name": "Dried Strawberries"
       },
       "banana": {
-        "name": "Freeze Dried Banana"
+        "name": "Dried Banana"
       },
       "apple": {
-        "name": "Freeze Dried Apples"
+        "name": "Dried Apples"
       }
     },
     "recipes": {
@@ -436,10 +482,10 @@
         "intro": "The perfect on-the-go snack. Naturally sweet, high in fibre, and endlessly customisable. Make a big batch and keep it in a jar.",
         "tip": "Add a pinch of sea salt and a teaspoon of cinnamon for a more complex flavour.",
         "ingredients": [
-          "Dried Kiwi",
+          "Kiwi",
           "Golden Raisins",
-          "Dried Apricot, chopped",
-          "Dried Blueberries",
+          "Apricot, chopped",
+          "Blueberries",
           "Mixed nuts (cashews, almonds, hazelnuts)",
           "Dark chocolate chips (optional)"
         ],
@@ -456,8 +502,8 @@
         "ingredients": [
           "Rolled oats",
           "Plant milk (oat or almond works best)",
-          "Dried Apricot, thinly sliced",
-          "Dried Figs, quartered",
+          "Apricot, thinly sliced",
+          "Figs, quartered",
           "Chia seeds",
           "Honey or maple syrup",
           "Vanilla extract"
@@ -515,8 +561,8 @@
         "intro": "Dried fruit makes smoothies far more intense than fresh. Soak the fruit for 15 minutes first and you get a naturally thick, ultra-flavourful shake.",
         "tip": "Add a tablespoon of our Premium Mix on top as a garnish — it adds texture and looks beautiful.",
         "ingredients": [
-          "Dried Mango",
-          "Dried Banana",
+          "Mango",
+          "Banana",
           "Coconut milk",
           "Fresh banana",
           "Orange juice",
@@ -577,7 +623,7 @@
     },
     "productsSection": {
       "eyebrow": "Colecția",
-      "title": "Fructele noastre uscate",
+      "title": "Fructele noastre",
       "subtitle": "Fiecare soi recoltat la coacerea maximă, uscat lent pentru a păstra aroma, culoarea și nutriția. Nimic adăugat. Nimic eliminat.",
       "searchPlaceholder": "Caută fructe…",
       "all": "Toate",
@@ -877,7 +923,16 @@
       "sending": "Se trimite…",
       "successTitle": "Cerere primită!",
       "successText": "Te contactăm în maxim o zi lucrătoare cu detalii de preț.",
-      "errorText": "Ceva nu a mers bine. Te rugăm să ne scrii direct la hello@riarberry.com"
+      "errorText": "Ceva nu a mers bine. Vă rugăm să ne trimiteți un e-mail direct la hello@riarberry.com",
+      "benefits": [
+        { "icon": "📦", "title": "Comandă Minimă 5kg", "desc": "Per soi, mix de soiuri acceptat." },
+        { "icon": "💰", "title": "Preț de Volum", "desc": "Reduceri în trepte de la 10kg în sus." },
+        { "icon": "🏷", "title": "Marcă Proprie", "desc": "Ambalaj personalizat cu brandul tău." },
+        { "icon": "🚚", "title": "Livrare Săptămânală", "desc": "Program regulat în Chișinău și împrejurimi." },
+        { "icon": "📋", "title": "Certificate", "desc": "Documentație de calitate și origine la cerere." },
+        { "icon": "🤝", "title": "Contact Dedicat", "desc": "O singură persoană, mereu disponibilă." }
+      ],
+      "clientTypes": ["Cafenea / Restaurant", "Hotel", "Companie de Cadouri", "Retailer", "Cadouri Corporate", "Altele"]
     },
     "aboutPage": {
       "back": "← Înapoi acasă",
@@ -889,57 +944,94 @@
       "timelineTitle": "Cum am ajuns aici",
       "teamTitle": "Echipa",
       "privacyTitle": "Confidențialitate",
-      "ctaText": "Explorează produsele noastre →"
+      "ctaText": "Vezi produsele noastre →",
+      "timeline": [
+        { "year": "2018", "title": "Ideea", "text": "Fondatorii Maria și Ion au observat că fructele uscate premium din Moldova erau fie importate la prețuri mari, fie de calitate slabă. Au decis să schimbe asta." },
+        { "year": "2020", "title": "Prima recoltă", "text": "Lucrând cu trei ferme locale din regiunea Codru, au uscat manual primele loturi — kiwi, caise și smochine — și le-au împărțit cu prietenii și familia." },
+        { "year": "2022", "title": "Se naște Riar Berry's", "text": "După doi ani de perfecționare a procesului de uscare lentă și construire a relațiilor cu furnizorii, brandul s-a lansat oficial în Chișinău." },
+        { "year": "2024", "title": "Șase familii de fructe", "text": "Colecția s-a extins la șase familii distincte de fructe. Fiecare soi este acum procurat, uscat și ambalat în Moldova — nimic nu părăsește țara până nu este perfect." },
+        { "year": "Acum", "title": "Ești aici", "text": "Suntem încă o echipă mică, cu o obsesie: să facem cele mai bune fructe uscate pe care le-ai gustat vreodată. Îți mulțumim că faci parte din poveste." }
+      ],
+      "values": [
+        { "icon": "🌱", "title": "Lent este mai bine", "text": "72 de ore la temperatură scăzută. Nu 4 ore la temperatură mare. E nevoie de răbdare pentru a o face corect — și gustul este complet diferit." },
+        { "icon": "🤝", "title": "Direct de la fermieri", "text": "Știm de la ce ferme provin fructele noastre. Lanțurile scurte de aprovizionare înseamnă fructe mai proaspete și condiții mai bune pentru toți cei implicați." },
+        { "icon": "🚫", "title": "Nimic de ascuns", "text": "Fără aditivi. Fără zahăr adăugat. Fără conservanți. Fără potențiatori de culoare. Doar fructe, uscate." },
+        { "icon": "📍", "title": "Fabricat în Moldova", "text": "Totul este procurat, procesat și ambalat aici. Credem în construirea a ceva local înainte de a deveni global." }
+      ],
+      "teamPhotoText": "Înlocuiește asta cu o fotografie reală a echipei — clienții noștri vor să vadă cine se află în spatele produsului.",
+      "privacyText1": "Folosim Google Analytics pentru a înțelege cum vizitatorii folosesc site-ul. Analytics rulează doar după ce accepți cookie-urile. Nu vindem niciodată date personale. E-mailurile colectate prin formularele noastre sunt folosite doar pentru a te anunța despre lansări de produse și noutăți. Te poți dezabona oricând.",
+      "privacyText2": "Pentru a solicita ștergerea datelor tale, trimite un e-mail la: "
+    },
+    "sitemapPage": {
+      "title": "Harta Site-ului",
+      "products": "Produse",
+      "discover": "Descoperă",
+      "company": "Companie & Legal",
+      "links": {
+        "allFruits": "Toate Fructele",
+        "categories": "Categorii",
+        "buildGiftBox": "Creează o Cutie Cadou",
+        "myWishlist": "Lista mea de Dorințe",
+        "wholesaleB2B": "Vânzări Angro B2B",
+        "howWeMakeIt": "Cum le Facem",
+        "whyDriedFruit": "De ce Fructe Uscate",
+        "photoGallery": "Galerie Foto",
+        "customerReviews": "Recenzii Clienți",
+        "recipes": "Rețete",
+        "ourStory": "Povestea Noastră",
+        "contactLocation": "Contact & Locație",
+        "privacyPolicy": "Politica de Confidențialitate"
+      }
     },
     "whatsapp": "Bună, aș dori să comand de la Riar Berry's!",
     "products": {
-      "dried-kiwi": {
-        "name": "Kiwi Uscat",
-        "description": "Kiwi copt la soare, feliat și uscat lent. Dulce-acrișor, gumat, verde vibrant."
+      "kiwi": {
+        "name": "Kiwi",
+        "description": "Kiwi proaspăt, copt la soare. Dulce-acrișor, zemos și verde vibrant."
       },
-      "dried-mango": {
-        "name": "Mango Uscat",
-        "description": "Mango Alphonso la dulceața maximă, uscat pentru o textură gumată de caramel."
+      "mango": {
+        "name": "Mango",
+        "description": "Mango Alphonso proaspăt, la dulceața maximă. Zemos și auriu natural."
       },
-      "dried-strawberry": {
-        "name": "Căpșuni Uscate",
-        "description": "Căpșuni de grădină liofilizate pentru a păstra culoarea și aroma intensă."
+      "strawberry": {
+        "name": "Căpșuni",
+        "description": "Căpșuni proaspete de grădină, cu o culoare vibrantă și aromă intensă."
       },
-      "dried-banana": {
-        "name": "Banane Uscate",
-        "description": "Banane Cavendish feliate subțire și uscate delicat. Dulci natural, fără zahăr."
+      "banana": {
+        "name": "Banane",
+        "description": "Banane Cavendish proaspete. Dulci natural și bogate în arome."
       },
       "raisins": {
         "name": "Stafide Aurii",
         "description": "Struguri Thompson fără sâmburi, uscați la soare timp de șase săptămâni. Cărnoase, versatile."
       },
-      "dried-apricot": {
-        "name": "Caise Uscate",
+      "apricot": {
+        "name": "Caise",
         "description": "Caise turcești, nesulfurate. Chihlimbar închis, aromă dulce-acrișoară."
       },
-      "dried-pineapple": {
-        "name": "Ananas Uscat",
-        "description": "Inele de ananas, uscate lent pentru o textură caramelizată. Fără conservanți."
+      "pineapple": {
+        "name": "Ananas",
+        "description": "Felii proaspete de ananas, dulci și zemoase natural. Fără conservanți."
       },
-      "dried-apple": {
-        "name": "Inele de Măr Uscat",
-        "description": "Mere Cox crocante, curățate și tăiate inele. Ușor dulci, perfecte pentru gustare."
+      "apple": {
+        "name": "Măr",
+        "description": "Mere proaspete și crocante. Ușor dulci, perfecte pentru gustare."
       },
-      "dried-fig": {
-        "name": "Smochine Uscate",
+      "fig": {
+        "name": "Smochine",
         "description": "Smochine turcești, uscate întregi la soare. Intens de dulci, cu un centru de miere."
       },
-      "dried-dates": {
+      "dates": {
         "name": "Curmale Medjool",
         "description": "Curmale Medjool din Valea Iordanului. Moi ca un caramel, dulci natural."
       },
       "blueberries": {
-        "name": "Afine Uscate",
-        "description": "Afine sălbatice, liofilizate întregi. Intens fructate, cu o textură plăcută."
+        "name": "Afine",
+        "description": "Afine sălbatice proaspete. Intens fructate și pline de savoare."
       },
       "premium-mix": {
         "name": "Mix Premium",
-        "description": "Amestecul nostru semnătură — fructe uscate, fructe de pădure și o notă de aur."
+        "description": "Amestecul nostru semnătură de fructe proaspete și fructe de pădure."
       }
     },
     "packages": {
@@ -1403,7 +1495,16 @@
       "sending": "Отправка…",
       "successTitle": "Запрос получен!",
       "successText": "Свяжемся в течение одного рабочего дня с деталями цен.",
-      "errorText": "Что-то пошло не так. Пожалуйста, напишите нам напрямую на hello@riarberry.com"
+      "errorText": "Что-то пошло не так. Пожалуйста, напишите нам напрямую на hello@riarberry.com",
+      "benefits": [
+        { "icon": "📦", "title": "Минимальный заказ 5 кг", "desc": "На сорт, принимаются смешанные сорта." },
+        { "icon": "💰", "title": "Оптовые цены", "desc": "Скидки от 10 кг и выше." },
+        { "icon": "🏷", "title": "Собственная марка", "desc": "Индивидуальная упаковка с вашим брендом." },
+        { "icon": "🚚", "title": "Еженедельная доставка", "desc": "Регулярный график по Кишиневу и окрестностям." },
+        { "icon": "📋", "title": "Сертификаты", "desc": "Документация о качестве и происхождении по запросу." },
+        { "icon": "🤝", "title": "Персональный менеджер", "desc": "Один человек, всегда на связи." }
+      ],
+      "clientTypes": ["Кафе / Ресторан", "Отель", "Подарочная компания", "Розничный продавец", "Корпоративные подарки", "Другое"]
     },
     "aboutPage": {
       "back": "← На главную",
@@ -1415,57 +1516,94 @@
       "timelineTitle": "Как мы пришли к этому",
       "teamTitle": "Команда",
       "privacyTitle": "Конфиденциальность",
-      "ctaText": "Смотреть наши продукты →"
+      "ctaText": "Смотреть наши продукты →",
+      "timeline": [
+        { "year": "2018", "title": "Идея", "text": "Основатели Мария и Ион заметили, что качественные сухофрукты в Молдове либо дорого импортировались, либо были низкого качества. Они решили это изменить." },
+        { "year": "2020", "title": "Первый урожай", "text": "Работая с тремя местными фермами в регионе Кодру, они вручную высушили первые партии — киви, курагу и инжир — и поделились ими с друзьями и семьей." },
+        { "year": "2022", "title": "Рождение Riar Berry's", "text": "После двух лет совершенствования процесса медленной сушки и налаживания связей с поставщиками бренд официально запустился в Кишиневе." },
+        { "year": "2024", "title": "Шесть семейств фруктов", "text": "Коллекция расширилась до шести семейств фруктов. Каждый сорт теперь выращивается, сушится и упаковывается в Молдове — ничего не покидает страну, пока не станет идеальным." },
+        { "year": "Сейчас", "title": "Вы здесь", "text": "Мы по-прежнему небольшая команда с одной навязчивой идеей: делать лучшие сухофрукты, которые вы когда-либо пробовали. Спасибо, что вы часть нашей истории." }
+      ],
+      "values": [
+        { "icon": "🌱", "title": "Медленнее значит лучше", "text": "72 часа при низкой температуре. А не 4 часа при высокой. Нужно терпение, чтобы сделать все правильно — и вкус получается совершенно другим." },
+        { "icon": "🤝", "title": "Напрямую от фермеров", "text": "Мы знаем фермы, откуда поступают наши фрукты. Короткие цепочки поставок означают более свежие фрукты и лучшие условия для всех." },
+        { "icon": "🚫", "title": "Нечего скрывать", "text": "Никаких добавок. Никакого добавленного сахара. Никаких консервантов и красителей. Только сушеные фрукты." },
+        { "icon": "📍", "title": "Сделано в Молдове", "text": "Все выращивается, перерабатывается и упаковывается здесь. Мы верим в создание локального продукта, прежде чем выходить на мировой рынок." }
+      ],
+      "teamPhotoText": "Замените это реальной фотографией команды — наши клиенты хотят видеть, кто стоит за продуктом.",
+      "privacyText1": "Мы используем Google Analytics, чтобы понять, как посетители используют сайт. Аналитика работает только после того, как вы примете файлы cookie. Мы никогда не продаем личные данные. Письма, собранные через формы подписки, используются только для уведомления вас о запусках новых продуктов и новостях. Вы можете отказаться от подписки в любое время.",
+      "privacyText2": "Чтобы запросить удаление ваших данных, напишите нам: "
+    },
+    "sitemapPage": {
+      "title": "Карта Сайта",
+      "products": "Продукты",
+      "discover": "Узнать",
+      "company": "Компания",
+      "links": {
+        "allFruits": "Все Фрукты",
+        "categories": "Категории",
+        "buildGiftBox": "Собрать Подарок",
+        "myWishlist": "Мой Список Желаний",
+        "wholesaleB2B": "Опт B2B",
+        "howWeMakeIt": "Как Мы Это Делаем",
+        "whyDriedFruit": "Почему Сухофрукты",
+        "photoGallery": "Фотогалерея",
+        "customerReviews": "Отзывы",
+        "recipes": "Рецепты",
+        "ourStory": "Наша История",
+        "contactLocation": "Контакты",
+        "privacyPolicy": "Политика Конфиденциальности"
+      }
     },
     "whatsapp": "Здравствуйте, хочу заказать в Riar Berry's!",
     "products": {
-      "dried-kiwi": {
-        "name": "Сушёный Киви",
-        "description": "Созревший на солнце киви, нарезанный и медленно высушенный. Кисло-сладкий, жевательный."
+      "kiwi": {
+        "name": "Киви",
+        "description": "Свежий, созревший на солнце киви. Кисло-сладкий, сочный и ярко-зеленый."
       },
-      "dried-mango": {
-        "name": "Сушёное Манго",
-        "description": "Манго сорта Альфонсо на пике сладости, высушенное до карамельной текстуры."
+      "mango": {
+        "name": "Манго",
+        "description": "Свежее манго сорта Альфонсо на пике сладости. Сочное и натурально золотистое."
       },
-      "dried-strawberry": {
-        "name": "Сушёная Клубника",
-        "description": "Садовая клубника, сублимированная для сохранения цвета и интенсивного вкуса."
+      "strawberry": {
+        "name": "Клубника",
+        "description": "Свежая садовая клубника яркого цвета с интенсивным ягодным вкусом."
       },
-      "dried-banana": {
-        "name": "Сушёный Банан",
-        "description": "Бананы Кавендиш, тонко нарезанные и бережно высушенные. Натурально сладкие."
+      "banana": {
+        "name": "Банан",
+        "description": "Свежие бананы Кавендиш. Натурально сладкие и насыщенные."
       },
       "raisins": {
         "name": "Золотистый Изюм",
         "description": "Виноград Томпсон без косточек, высушенный на солнце. Мясистый, медовый, универсальный."
       },
-      "dried-apricot": {
+      "apricot": {
         "name": "Курага",
         "description": "Турецкие абрикосы, без серы. Тёмно-янтарные, с кисло-сладким вкусом косточковых."
       },
-      "dried-pineapple": {
-        "name": "Сушёный Ананас",
-        "description": "Кольца ананаса, медленно высушенные для карамельной текстуры. Без консервантов."
+      "pineapple": {
+        "name": "Ананас",
+        "description": "Свежие ломтики ананаса, натурально сладкие и сочные. Без консервантов."
       },
-      "dried-apple": {
-        "name": "Сушёные Яблочные Кольца",
-        "description": "Хрустящие яблоки Кокс, очищенные и нарезанные кольцами. Слегка сладкие."
+      "apple": {
+        "name": "Яблочные Кольца",
+        "description": "Свежие, хрустящие яблоки Кокс, очищенные и нарезанные. Слегка сладкие, идеальны для перекуса."
       },
-      "dried-fig": {
-        "name": "Сушёный Инжир",
+      "fig": {
+        "name": "Инжир",
         "description": "Турецкий инжир, высушенный целиком. Интенсивно сладкий с медовой серединкой."
       },
-      "dried-dates": {
+      "dates": {
         "name": "Финики Меджул",
         "description": "Финики Меджул из долины реки Иордан. Мягкие как карамель, натурально сладкие."
       },
       "blueberries": {
-        "name": "Сушёная Черника",
-        "description": "Дикая черника, сублимированная целиком. Интенсивно фруктовая, приятная на вкус."
+        "name": "Черника",
+        "description": "Свежая дикая черника. Интенсивно фруктовая, взрыв вкуса."
       },
       "premium-mix": {
         "name": "Премиум Микс",
-        "description": "Наша фирменная смесь — сухофрукты, ягоды и немного золота."
+        "description": "Наша фирменная смесь свежих фруктов и ягод."
       }
     },
     "packages": {

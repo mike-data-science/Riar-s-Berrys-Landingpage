@@ -33,7 +33,7 @@ export default function CTASection() {
 
   return (
     <section className="relative py-36 px-12 flex items-center justify-center text-center overflow-hidden min-h-[65vh] max-[600px]:py-24 max-[600px]:px-6" id="contact" aria-label="Contact us">
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/contact_background_1783727875832.png)' }} />
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/contact_background.png)' }} />
       <div className="absolute inset-0 bg-gradient-to-t from-brand-bg/80 via-transparent to-transparent" />
 
       <div className="relative z-[1] max-w-[600px] w-full flex flex-col items-center gap-4">

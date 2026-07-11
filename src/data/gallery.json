@@ -1,8 +1,8 @@
 [
-  { "src":"/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/gallery_orchard_1783772081810.png", "alt":"A lush, sun-drenched fruit orchard in the summer with vibrant green trees", "span":"wide" },
-  { "src":"/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/gallery_harvest_1783772092576.png", "alt":"Farmer hands gently holding freshly harvested golden apricots under warm sunlight", "span":"tall" },
-  { "src":"/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/gallery_board_1783772103507.png", "alt":"Premium dried figs, kiwis, and strawberries on a rustic wooden board", "span":"normal" },
-  { "src":"/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/gallery_drying_1783772124477.png", "alt":"Traditional wooden drying racks filled with bright red sliced strawberries in the sun", "span":"wide" },
-  { "src":"/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/gallery_picnic_1783772134102.png", "alt":"A beautiful summer picnic with a ceramic bowl filled with vibrant dried fruits", "span":"normal" },
-  { "src":"/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/gallery_macro_1783772142998.png", "alt":"Stunning macro shot of premium dried fruit mix on a soft warm cream background", "span":"normal" }
+  { "src":"/images/gallery/gallery_orchard.png", "alt":"A lush, sun-drenched fruit orchard in the summer with vibrant green trees", "span":"wide" },
+  { "src":"/images/gallery/gallery_harvest.png", "alt":"Farmer hands gently holding freshly harvested golden apricots under warm sunlight", "span":"tall" },
+  { "src":"/images/gallery/gallery_board.png", "alt":"Premium dried figs, kiwis, and strawberries on a rustic wooden board", "span":"normal" },
+  { "src":"/images/gallery/gallery_drying.png", "alt":"Traditional wooden drying racks filled with bright red sliced strawberries in the sun", "span":"wide" },
+  { "src":"/images/gallery/gallery_picnic.png", "alt":"A beautiful summer picnic with a ceramic bowl filled with vibrant dried fruits", "span":"normal" },
+  { "src":"/images/gallery/gallery_macro.png", "alt":"Stunning macro shot of premium dried fruit mix on a soft warm cream background", "span":"normal" }
 ]

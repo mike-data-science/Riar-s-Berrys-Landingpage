@@ -70,7 +70,7 @@ export default function ProductGrid() {
             </svg>
             <input
               type="search"
-              className="w-full py-2.5 pl-10 pr-10 border border-black/10 rounded-full font-body text-[0.85rem] text-brand-text bg-brand-bg-alt outline-none transition-all duration-200 appearance-none focus:border-brand-green focus:bg-white focus:shadow-[0_0_0_3px_rgba(132,204,22,0.15)] placeholder:text-brand-text-light/70"
+              className="w-full py-2.5 pl-10 pr-10 border border-black/10 rounded-full font-body text-[0.85rem] text-brand-text bg-brand-bg outline-none transition-all duration-200 appearance-none focus:border-brand-green focus:bg-white focus:shadow-[0_0_0_3px_rgba(132,204,22,0.15)] placeholder:text-brand-text-light/70"
               value={query}
               onChange={e => setQuery(e.target.value)}
               placeholder={ts.searchPlaceholder}

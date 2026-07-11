@@ -19,14 +19,14 @@ export default function MarqueeTransition() {
   }, []);
 
   const items = [
-    "100% REAL FRUIT",
-    "🍓",
-    "STICKY GUMMIES",
-    "✨",
-    "VEGAN",
-    "🥝",
-    "NO ARTIFICIAL COLORS",
-    "🍒"
+    { type: 'text', value: "FRESH FRUITS" },
+    { type: 'image', value: "/images/gsap/strawberry.png" },
+    { type: 'text', value: "DRIED FRUITS" },
+    { type: 'image', value: "/images/gsap/cherries.png" },
+    { type: 'text', value: "EXOTIC FRUITS" },
+    { type: 'image', value: "/images/gsap/kiwi.png" },
+    { type: 'text', value: "TROPICAL FRUITS" },
+    { type: 'image', value: "/images/gsap/raspberry.png" }
   ];
 
   return (
@@ -52,9 +52,15 @@ export default function MarqueeTransition() {
               {items.map((item, j) => (
                 <span 
                   key={`${i}-${j}`} 
-                  className={`font-display text-[clamp(1.5rem,3vw,2rem)] font-black tracking-widest text-white uppercase flex-shrink-0 ${item.length > 2 ? 'drop-shadow-sm' : 'text-4xl scale-125'}`}
+                  className="flex items-center justify-center flex-shrink-0"
                 >
-                  {item}
+                  {item.type === 'text' ? (
+                    <span className="font-display text-[clamp(1.5rem,3vw,2rem)] font-black tracking-widest text-white uppercase drop-shadow-sm">
+                      {item.value}
+                    </span>
+                  ) : (
+                    <img src={item.value} alt="" className="w-[3.5rem] h-[3.5rem] object-contain drop-shadow-md -rotate-12 hover:rotate-12 transition-transform duration-300" />
+                  )}
                 </span>
               ))}
             </React.Fragment>

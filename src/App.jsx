@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { LangProvider }      from './context/LangContext';
 import { CookieProvider }    from './context/CookieContext';
@@ -17,27 +18,24 @@ import CTASection            from './components/CTASection';
 import Footer                from './components/Footer';
 import ProductPage           from './components/ProductPage';
 import AboutPage             from './components/AboutPage';
-import SitemapPage           from './components/SitemapPage';
 import WishlistPage          from './components/WishlistPage';
 import RecipesPage           from './components/RecipesPage';
-import WholesalePage         from './components/WholesalePage';
 import NotFoundPage          from './components/NotFoundPage';
 import WhatsAppButton        from './components/WhatsAppButton';
 import CookieBanner          from './components/CookieBanner';
 import ScrollToTop           from './components/ScrollToTop';
 
-function HomePage() {
+function HomePage({ heroVariant }) {
   return (
     <main id="main-content" className="relative z-10 page-enter">
-      <HeroSection />
-      <MarqueeTransition />
+      <HeroSection variant={heroVariant} />
+      {heroVariant !== 'C' && heroVariant !== 'D' && <MarqueeTransition />}
       <ProductGrid />
       <NutritionSection />
       <ProcessStory />
       <GiftConfigurator />
       {/* <StatsBar /> */}
       <Reviews />
-      <Newsletter />
       <GalleryLocation />
       <CTASection />
     </main>
@@ -45,21 +43,20 @@ function HomePage() {
 }
 
 export default function App() {
+  const [heroVariant, setHeroVariant] = useState('A');
+
   return (
     <LangProvider>
       <CookieProvider>
         <WishlistProvider>
-          <a href="#main-content" className="skip-link">Skip to content</a>
-          <Navbar />
+          <Navbar heroVariant={heroVariant} setHeroVariant={setHeroVariant} />
           <Routes>
-            <Route path="/"                element={<HomePage />} />
+            <Route path="/"                element={<HomePage heroVariant={heroVariant} />} />
             <Route path="/product/:id"     element={<ProductPage />} />
             <Route path="/about"           element={<AboutPage />} />
-            <Route path="/sitemap"         element={<SitemapPage />} />
             <Route path="/wishlist"        element={<WishlistPage />} />
             <Route path="/recipes"         element={<RecipesPage />} />
             <Route path="/recipes/:id"     element={<RecipesPage />} />
-            <Route path="/wholesale"       element={<WholesalePage />} />
             <Route path="*"               element={<NotFoundPage />} />
           </Routes>
           <Footer />

@@ -98,8 +98,8 @@ export default function GalleryLocation() {
       const imgs = galleryRef.current?.querySelectorAll('.gl-img');
       if (imgs?.length) {
         gsap.fromTo(imgs,
-          { opacity:0, y:40, scale:0.96 },
-          { opacity:1, y:0, scale:1, stagger:{ amount:0.7 }, duration:0.75, ease:'power2.out',
+          { opacity:0, y:40 },
+          { opacity:1, y:0, stagger:{ amount:0.6 }, duration:1, ease:'power3.out',
             scrollTrigger:{ trigger:galleryRef.current, start:'top 85%', once:true } }
         );
       }
@@ -122,18 +122,41 @@ export default function GalleryLocation() {
           </h2>
         </header>
 
-        <div className="grid grid-cols-12 auto-rows-[220px] gap-3 mb-24 max-[1024px]:grid-cols-6 max-[1024px]:auto-rows-[200px] max-[768px]:grid-cols-2 max-[768px]:auto-rows-[180px] max-[480px]:grid-cols-1" ref={galleryRef}>
+        {/* Desktop: Expanding Accordion | Mobile: Horizontal Scroll Snap */}
+        <div 
+          className="flex flex-row gap-3 h-[500px] mb-24 w-full overflow-hidden max-[900px]:overflow-x-auto max-[900px]:snap-x max-[900px]:snap-mandatory max-[900px]:h-[420px] max-[900px]:-mx-6 max-[900px]:px-6 max-[900px]:w-[calc(100%+3rem)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" 
+          ref={galleryRef}
+        >
           {GALLERY.map((img, i) => (
-            <div key={i} className={`overflow-hidden rounded-2xl ${GL_CLASSES[i]}`}>
+            <div 
+              key={i} 
+              className="relative overflow-hidden rounded-[2rem] group cursor-zoom-in flex-1 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] hover:flex-[3.5] max-[900px]:flex-none max-[900px]:w-[80vw] max-[900px]:snap-center gl-img opacity-0 translate-y-10"
+            >
               <button
-                className="relative w-full h-full overflow-hidden rounded-2xl block bg-none border-none p-0 cursor-zoom-in opacity-0 group gl-img"
+                className="absolute inset-0 w-full h-full block bg-none border-none p-0"
                 onClick={() => openLb(i)}
                 aria-label={`View image: ${img.alt}`}
               >
-                <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover block transition-transform duration-500 group-hover:scale-[1.05]" />
-                <div className="absolute inset-0 bg-black/35 flex items-center justify-center opacity-0 transition-opacity duration-300 rounded-2xl group-hover:opacity-100">
-                  <svg className="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" aria-hidden="true">
-                    <circle cx="11" cy="11" r="7"/>
+                <img 
+                  src={img.src} 
+                  alt={img.alt} 
+                  loading="lazy" 
+                  className="w-full h-full object-cover block transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.08] max-[900px]:group-hover:scale-100" 
+                />
+                
+                {/* Desktop hover gradient/icon */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 transition-opacity duration-500 rounded-[2rem] group-hover:opacity-100 max-[900px]:hidden flex flex-col justify-end p-8 pb-10">
+                  <div className="flex items-center justify-between translate-y-4 opacity-0 transition-all duration-500 delay-100 group-hover:translate-y-0 group-hover:opacity-100">
+                    <p className="text-white font-medium text-lg leading-snug max-w-[80%] drop-shadow-md">{img.alt}</p>
+                    <svg className="w-10 h-10 shrink-0" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" aria-hidden="true">
+                      <path d="M21 21l-4.35-4.35M11 8v6M8 11h6" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Mobile tap icon */}
+                <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-md rounded-full p-2 hidden max-[900px]:block">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" aria-hidden="true">
                     <path d="M21 21l-4.35-4.35M11 8v6M8 11h6" strokeLinecap="round"/>
                   </svg>
                 </div>

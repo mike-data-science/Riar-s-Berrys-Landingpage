@@ -33,15 +33,15 @@ export default function CTASection() {
 
   return (
     <section className="relative py-36 px-12 flex items-center justify-center text-center overflow-hidden min-h-[65vh] max-[600px]:py-24 max-[600px]:px-6" id="contact" aria-label="Contact us">
-      <div className="absolute inset-0 bg-cover bg-center bg-[#6e4630] brightness-50 saturate-75" style={{ backgroundImage: 'url(/images/gallery/frame_03.jpg)' }} />
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-green-deep/60 to-brand-green-deep/90" />
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/@fs/C:/Users/Mike/.gemini/antigravity-ide/brain/1afc9f8e-8a90-46fe-b05d-18957946fcc4/contact_background_1783727875832.png)' }} />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-bg/80 via-transparent to-transparent" />
 
       <div className="relative z-[1] max-w-[600px] w-full flex flex-col items-center gap-4">
         <p className="text-[0.72rem] tracking-[0.2em] uppercase text-brand-orange font-body font-bold">{t.cta.eyebrow}</p>
-        <h2 className="font-display text-[clamp(2.6rem,6vw,4.6rem)] font-bold leading-[1.05] text-white drop-shadow-sm">
+        <h2 className="font-display text-[clamp(2.6rem,6vw,4.6rem)] font-bold leading-[1.05] text-brand-text drop-shadow-sm">
           {t.cta.title}<br /><em className="italic text-brand-pink">{t.cta.titleEm}</em>
         </h2>
-        <p className="text-[0.95rem] text-white/70 leading-[1.6] max-w-[420px] mb-2">{t.cta.sub}</p>
+        <p className="text-[0.95rem] text-brand-text/70 leading-[1.6] max-w-[420px] mb-2">{t.cta.sub}</p>
 
         <div className="w-full max-w-[480px]">
           {status === 'success' ? (

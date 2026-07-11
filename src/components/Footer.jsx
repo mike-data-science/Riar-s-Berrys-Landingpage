@@ -38,10 +38,8 @@ export default function Footer() {
           <div className="flex flex-col gap-2.5">
             <span className="text-xs tracking-widest uppercase text-brand-orange mb-1 font-semibold">{tf.productsCol}</span>
             <a href="#products" className="text-sm text-brand-text-light no-underline transition-colors leading-relaxed hover:text-brand-orange">{tf.allFruits}</a>
-            <a href="#categories" className="text-sm text-brand-text-light no-underline transition-colors leading-relaxed hover:text-brand-orange">{tf.byCategory}</a>
             <a href="#gift" className="text-sm text-brand-text-light no-underline transition-colors leading-relaxed hover:text-brand-orange">{tf.giftBox}</a>
             <Link to="/wishlist" className="text-sm text-brand-text-light no-underline transition-colors leading-relaxed hover:text-brand-orange">{tf.myWishlist}</Link>
-            <Link to="/wholesale" className="text-sm text-brand-text-light no-underline transition-colors leading-relaxed hover:text-brand-orange">{tf.wholesale}</Link>
           </div>
           <div className="flex flex-col gap-2.5">
             <span className="text-xs tracking-widest uppercase text-brand-orange mb-1 font-semibold">{tf.discoverCol}</span>
@@ -54,9 +52,7 @@ export default function Footer() {
           <div className="flex flex-col gap-2.5">
             <span className="text-xs tracking-widest uppercase text-brand-orange mb-1 font-semibold">{tf.companyCol}</span>
             <Link to="/about" className="text-sm text-brand-text-light no-underline transition-colors leading-relaxed hover:text-brand-orange">{tf.ourStory}</Link>
-            <a href="#newsletter" className="text-sm text-brand-text-light no-underline transition-colors leading-relaxed hover:text-brand-orange">{tf.newsletterLink}</a>
             <Link to="/about#privacy" className="text-sm text-brand-text-light no-underline transition-colors leading-relaxed hover:text-brand-orange">{tf.privacyPolicy}</Link>
-            <Link to="/sitemap" className="text-sm text-brand-text-light no-underline transition-colors leading-relaxed hover:text-brand-orange">{tf.sitemap}</Link>
           </div>
           <div className="flex flex-col gap-2.5">
             <span className="text-xs tracking-widest uppercase text-brand-orange mb-1 font-semibold">{tf.contactCol}</span>
@@ -72,10 +68,6 @@ export default function Footer() {
         <span>© {new Date().getFullYear()} Riar Berry's. {tf.rights}</span>
         <span className="flex gap-2">
           <Link to="/about#privacy" className="hover:text-brand-orange transition-colors">Privacy</Link>
-          <span>·</span>
-          <Link to="/wholesale" className="hover:text-brand-orange transition-colors">{tf.wholesale}</Link>
-          <span>·</span>
-          <Link to="/sitemap" className="hover:text-brand-orange transition-colors">{tf.sitemap}</Link>
           <span>·</span>
           {tf.madeIn} 🇲🇩
         </span>

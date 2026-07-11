@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
 import { useWishlist } from '../context/WishlistContext';
 
-export default function Navbar() {
+export default function Navbar({ heroVariant, setHeroVariant }) {
   const { t, lang, setLang } = useLang();
   const { count: wishCount }  = useWishlist();
   const [scrolled, setScrolled] = useState(false);
@@ -34,10 +34,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[100] flex justify-between items-center gap-2 px-10 py-5 transition-all duration-400 max-[900px]:px-6 max-[900px]:py-4 ${
+      className={`fixed top-0 left-0 right-0 z-[100] flex justify-between items-center gap-2 px-10 py-5 transition-all duration-400 max-[900px]:px-6 max-[900px]:py-4 border-b ${
         scrolled || !isHome 
-          ? 'bg-brand-bg/85 backdrop-blur-xl py-3 max-[900px]:py-3 border-b border-brand-orange/20' 
-          : 'bg-gradient-to-b from-brand-bg/80 to-transparent backdrop-blur-md'
+          ? 'bg-brand-bg/85 backdrop-blur-xl py-3 max-[900px]:py-3 border-brand-orange/20' 
+          : 'bg-transparent border-transparent'
       } ${hidden ? '-translate-y-[110%]' : ''}`}
       role="navigation"
       aria-label="Main navigation"
@@ -46,11 +46,12 @@ export default function Navbar() {
         Riar<span className="text-brand-orange italic"> Berry's</span>
       </Link>
 
-      <ul className={`flex items-center justify-center gap-8 list-none max-[900px]:fixed max-[900px]:inset-0 max-[900px]:bg-brand-bg/95 max-[900px]:flex-col max-[900px]:translate-x-full max-[900px]:transition-transform max-[900px]:duration-300 max-[900px]:pointer-events-none ${menuOpen ? 'max-[900px]:translate-x-0 max-[900px]:pointer-events-auto' : ''}`} role="menubar">
+      <ul className={`flex items-center justify-center gap-8 list-none max-[900px]:fixed max-[900px]:inset-0 max-[900px]:bg-brand-bg/95 max-[900px]:flex-col max-[900px]:transition-transform max-[900px]:duration-300 ${menuOpen ? 'max-[900px]:translate-x-0 max-[900px]:pointer-events-auto' : 'max-[900px]:translate-x-full max-[900px]:pointer-events-none'}`} role="menubar">
         {[
           { label: t.nav.products,   href: isHome ? '#products'   : '/#products'   },
-          { label: t.nav.categories, href: isHome ? '#categories' : '/#categories' },
           { label: t.nav.story,      href: isHome ? '#process'    : '/#process'    },
+          { label: t.nav.packages,   href: isHome ? '#packages'   : '/#packages'   },
+          { label: t.nav.gallery,    href: isHome ? '#gallery'    : '/#gallery'    },
         ].map(({ label, href }) => (
           <li key={href} role="none">
             <a href={href} className="text-base font-medium text-brand-text-light relative transition-colors hover:text-brand-orange max-[900px]:text-3xl max-[900px]:text-brand-text after:content-[''] after:absolute after:bottom-[-3px] after:left-0 after:right-0 after:h-[2px] after:bg-brand-orange after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-200" role="menuitem" onClick={() => setMenuOpen(false)}>
@@ -89,6 +90,15 @@ export default function Navbar() {
            onClick={() => setMenuOpen(false)}>
           {t.nav.contact}
         </a>
+
+        {/* Hero Variant Toggle */}
+        <button 
+          onClick={() => setHeroVariant(prev => prev === 'A' ? 'B' : prev === 'B' ? 'C' : prev === 'C' ? 'D' : 'A')}
+          className="text-xs font-bold px-3 py-1.5 rounded-full border border-brand-text/20 hover:bg-brand-text/5 transition-colors max-[900px]:hidden"
+          title="Toggle Design Variant"
+        >
+          {heroVariant === 'A' ? 'Design A' : heroVariant === 'B' ? 'Design B' : heroVariant === 'C' ? 'Design C' : 'Design D'}
+        </button>
 
         <div className="flex items-center gap-[1px] bg-brand-text/5 border border-brand-orange/20 rounded-full p-[2px] shrink-0 max-[480px]:hidden" role="group" aria-label="Language">
           {['en','ro','ru'].map(l => (

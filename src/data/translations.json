@@ -4,7 +4,9 @@
       "products": "Products",
       "categories": "Categories",
       "story": "Our Story",
-      "contact": "Contact"
+      "contact": "Contact",
+      "packages": "Packages",
+      "gallery": "Gallery"
     },
     "hero": {
       "eyebrow": "Premium Dried Fruits",
@@ -184,9 +186,9 @@
       "ratingText": "4.9 / 5 · 200+ customers"
     },
     "gift": {
-      "eyebrow": "Build your box",
+      "eyebrow": "Build your package",
       "title": "Curate your own",
-      "titleEm": "gift box.",
+      "titleEm": "dried fruits package.",
       "sub": "Pick up to 6 varieties. We'll pack them in a premium wooden organizer.",
       "btn": "Save My Selection",
       "notifyLabel": "Enter your email and we'll contact you when ordering goes live.",
@@ -263,7 +265,7 @@
       "productsCol": "Products",
       "allFruits": "All Fruits",
       "byCategory": "By Category",
-      "giftBox": "Gift Box",
+      "giftBox": "Dried Fruits Packages",
       "myWishlist": "My Wishlist",
       "wholesale": "Wholesale",
       "discoverCol": "Discover",
@@ -392,7 +394,7 @@
       "links": {
         "allFruits": "All Fruits",
         "categories": "Categories",
-        "buildGiftBox": "Build a Gift Box",
+        "buildGiftBox": "Dried Fruits Packages",
         "myWishlist": "My Wishlist",
         "wholesaleB2B": "Wholesale B2B",
         "howWeMakeIt": "How We Make It",
@@ -582,7 +584,9 @@
       "products": "Produse",
       "categories": "Categorii",
       "story": "Povestea noastră",
-      "contact": "Contact"
+      "contact": "Contact",
+      "packages": "Pachete",
+      "gallery": "Galerie"
     },
     "hero": {
       "eyebrow": "Fructe Uscate Premium",
@@ -1160,7 +1164,9 @@
       "products": "Продукты",
       "categories": "Категории",
       "story": "О нас",
-      "contact": "Контакт"
+      "contact": "Контакт",
+      "packages": "Упаковки",
+      "gallery": "Галерея"
     },
     "hero": {
       "eyebrow": "Премиум Сухофрукты",

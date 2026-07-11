@@ -34,10 +34,10 @@ export default function Navbar({ heroVariant, setHeroVariant }) {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[100] flex justify-between items-center gap-2 px-10 py-5 transition-all duration-400 max-[900px]:px-6 max-[900px]:py-4 border-b ${
+      className={`fixed top-0 left-0 right-0 z-[100] flex justify-between items-center gap-2 px-10 transition-all duration-400 max-[900px]:px-6 border-b ${
         scrolled || !isHome 
-          ? 'bg-brand-bg/85 backdrop-blur-xl py-3 max-[900px]:py-3 border-brand-orange/20' 
-          : 'bg-transparent border-transparent'
+          ? `bg-brand-bg/85 ${menuOpen ? '' : 'backdrop-blur-xl'} py-3 max-[900px]:py-3 border-brand-orange/20` 
+          : 'bg-transparent border-transparent py-5 max-[900px]:py-4'
       } ${hidden ? '-translate-y-[110%]' : ''}`}
       role="navigation"
       aria-label="Main navigation"
@@ -73,6 +73,33 @@ export default function Navbar({ heroVariant, setHeroVariant }) {
              onClick={() => setMenuOpen(false)}>
             {t.nav.contact}
           </a>
+        </li>
+        <li role="none" className="hidden max-[900px]:flex flex-col gap-4 items-center mt-6">
+          {/* Mobile Language Selector */}
+          <div className="flex items-center gap-[1px] bg-brand-text/5 border border-brand-orange/20 rounded-full p-[2px]" role="group" aria-label="Language">
+            {['en','ro','ru'].map(l => (
+              <button
+                key={l}
+                className={`font-body text-sm font-medium tracking-wide px-4 py-1.5 rounded-full border-none bg-transparent cursor-pointer transition-colors leading-relaxed ${lang === l ? 'bg-brand-orange text-white' : 'text-brand-text-light hover:text-brand-text'}`}
+                onClick={() => { startTransition(() => setLang(l)); setMenuOpen(false); }}
+                aria-pressed={lang === l}
+                aria-label={`Switch to ${l.toUpperCase()}`}
+              >
+                {l.toUpperCase()}
+              </button>
+            ))}
+          </div>
+
+          {/* Mobile Design Variant Toggle */}
+          <button 
+            onClick={() => {
+              setHeroVariant(prev => prev === 'A' ? 'B' : prev === 'B' ? 'C' : prev === 'C' ? 'D' : 'A');
+              setMenuOpen(false);
+            }}
+            className="text-lg font-bold text-brand-text border-2 border-brand-text/20 rounded-full px-6 py-2 hover:bg-brand-text/5 transition-colors"
+          >
+            {heroVariant === 'A' ? 'Design A' : heroVariant === 'B' ? 'Design B' : heroVariant === 'C' ? 'Design C' : 'Design D'}
+          </button>
         </li>
       </ul>
 

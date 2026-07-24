@@ -193,13 +193,13 @@ export default function HeroSection() {
           <div className="block overflow-hidden font-display text-[clamp(2.2rem,4vw,3.4rem)] font-extrabold drop-shadow-sm text-brand-text" ref={line1Ref}>
             <span className="inline-block overflow-hidden align-bottom"><span className="inline-block opacity-0 translate-y-[105%] word">{t.hero.titleLine1}</span></span>
           </div>
-          <div className="block overflow-hidden font-display text-[clamp(2.2rem,4vw,3.4rem)] font-extrabold drop-shadow-sm text-brand-text" ref={line2Ref}>
+          <div className="block overflow-hidden font-display text-[clamp(2.2rem,4vw,3.4rem)] font-extrabold drop-shadow-sm text-brand-orange" ref={line2Ref}>
             <span className="inline-block overflow-hidden align-bottom"><span className="inline-block opacity-0 translate-y-[105%] word">{t.hero.titleLine2}</span></span>
           </div>
         </div>
-        <p className="text-[1.05rem] font-medium tracking-wide leading-[1.6] max-w-[42ch] mb-8 opacity-0 max-[860px]:mx-auto text-brand-text-light" ref={subRef}>{t.hero.sub}</p>
+        <p className="text-[1.05rem] font-medium tracking-wide leading-[1.6] max-w-[42ch] mb-8 opacity-0 max-[860px]:mx-auto text-brand-text-light drop-shadow-sm" ref={subRef}>{t.hero.sub}</p>
         <div>
-          <a href="#products" className="pointer-events-auto inline-block text-[15px] font-bold tracking-wider px-8 py-3.5 rounded-full transition-all duration-200 relative overflow-hidden opacity-0 hover:-translate-y-[2px] bg-brand-text text-white shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:bg-black hover:scale-105 active:scale-95" ref={btnRef}>{t.hero.btn}</a>
+          <a href="#products" className="pointer-events-auto inline-block text-[15px] font-bold tracking-wider px-8 py-3.5 rounded-full transition-all duration-200 relative overflow-hidden opacity-0 hover:-translate-y-[2px] bg-brand-orange text-white shadow-[0_12px_35px_rgba(0,0,0,0.25)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.35)] hover:scale-105 active:scale-95" ref={btnRef}>{t.hero.btn}</a>
         </div>
       </div>
 

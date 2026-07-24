@@ -24,7 +24,7 @@ const FRUITS = [
   '/images/gsap/mango_slice.webp',
 ];
 
-export default function HeroSection({ variant = 'A' }) {
+export default function HeroSection() {
   const { t } = useLang();
 
   const [phase, setPhase] = useState(0);
@@ -50,9 +50,6 @@ export default function HeroSection({ variant = 'A' }) {
     // Animate text
     const showText = () => {
       const tl = gsap.timeline();
-      tl.fromTo(eyebrowRef.current,
-        { opacity:0, y:14 }, { opacity:1, y:0, duration:0.7, ease:'power2.out' }
-      );
       tl.fromTo(line1Ref.current?.querySelectorAll('.word') ?? [],
         { opacity:0, y:'105%' },
         { opacity:1, y:'0%', stagger:0.08, duration:0.7, ease:'power3.out' }, '-=0.3'
@@ -152,24 +149,15 @@ export default function HeroSection({ variant = 'A' }) {
 
 
   return (
-    <section className={`relative w-full h-[100svh] min-h-[600px] flex items-center justify-end isolate overflow-hidden ${variant === 'C' || variant === 'D' ? 'bg-brand-pink' : 'bg-brand-bg'}`} ref={heroRef} id="hero" aria-label="Hero">
+    <section className="relative w-full h-[100svh] min-h-[600px] flex items-center justify-center isolate overflow-hidden bg-brand-bg" ref={heroRef} id="hero" aria-label="Hero">
       
       {/* Wave Stage Layer */}
       <div className="absolute inset-0 w-full h-full pointer-events-none -z-10">
         <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" className="w-full h-full">
           {/* Back wave */}
-          <path className={`wave-fill back ${variant === 'C' ? 'fill-white opacity-40' : variant === 'D' ? 'fill-white !opacity-100' : 'fill-brand-pink'}`} d="M 0 250 C 500 300, 500 900, 1000 900 L 1000 1000 L 0 1000 Z"/>
+          <path className="wave-fill back fill-brand-pink" d="M 0 250 C 500 300, 500 900, 1000 900 L 1000 1000 L 0 1000 Z"/>
           {/* Main wave */}
-          <path className={`${variant === 'D' ? 'wave-fill-d' : 'wave-fill'} ${variant === 'C' ? 'fill-white' : 'fill-brand-orange'}`} d={variant === 'D' ? "M 0 350 C 300 400, 600 950, 900 950 C 900 1050, 500 920, 0 1000 Z" : "M 0 350 C 400 400, 600 850, 1000 850 L 1000 1000 L 0 1000 Z"}/>
-          
-          {variant === 'A' && (
-            <>
-              {/* Top-Right Back wave */}
-              <path className="wave-fill-top back fill-brand-pink" d="M 400 0 C 600 200, 800 100, 1000 350 L 1000 0 Z"/>
-              {/* Top-Right Main wave */}
-              <path className="wave-fill-top fill-brand-orange" d="M 500 0 C 700 150, 850 50, 1000 250 L 1000 0 Z"/>
-            </>
-          )}
+          <path className="wave-fill fill-brand-orange" d="M 0 350 C 400 400, 600 850, 1000 850 L 1000 1000 L 0 1000 Z"/>
         </svg>
       </div>
 
@@ -200,26 +188,25 @@ export default function HeroSection({ variant = 'A' }) {
       </div>
 
       {/* Right Column Content */}
-      <div className="relative z-[2] w-[55%] pr-[5vw] text-left pointer-events-none flex flex-col justify-center max-[860px]:w-full max-[860px]:px-[6vw] max-[860px]:items-center max-[860px]:text-center max-[860px]:mt-[15vh]" id="main-content">
-        <p className={`font-body text-[13px] font-bold tracking-[0.14em] uppercase mb-4 opacity-0 ${variant === 'C' || variant === 'D' ? 'text-white' : 'text-brand-orange'}`} ref={eyebrowRef}>{t.hero.eyebrow}</p>
-        <div className="mb-4 leading-[1.05]" aria-label="Riar Berry's">
-          <div className={`block overflow-hidden font-display text-[clamp(2.2rem,4vw,3.4rem)] font-extrabold drop-shadow-sm ${variant === 'C' || variant === 'D' ? 'text-white' : 'text-brand-text'}`} ref={line1Ref}>
-            <span className="inline-block overflow-hidden align-bottom"><span className="inline-block opacity-0 translate-y-[105%] word">Riar</span></span>
+      <div className="relative z-[2] w-full max-w-[800px] px-[5vw] text-center pointer-events-none flex flex-col justify-center items-center max-[860px]:w-full max-[860px]:px-[6vw] max-[860px]:mt-[15vh]" id="main-content">
+        <div className="mb-4 leading-[1.05]" aria-label={`${t.hero.titleLine1} ${t.hero.titleLine2}`}>
+          <div className="block overflow-hidden font-display text-[clamp(2.2rem,4vw,3.4rem)] font-extrabold drop-shadow-sm text-brand-text" ref={line1Ref}>
+            <span className="inline-block overflow-hidden align-bottom"><span className="inline-block opacity-0 translate-y-[105%] word">{t.hero.titleLine1}</span></span>
           </div>
-          <div className={`block overflow-hidden font-display text-[clamp(2.2rem,4vw,3.4rem)] font-extrabold drop-shadow-sm ${variant === 'C' || variant === 'D' ? 'text-white' : 'text-brand-text'}`} ref={line2Ref}>
-            <span className="inline-block overflow-hidden align-bottom"><span className="inline-block opacity-0 translate-y-[105%] word">Berry's</span></span>
+          <div className="block overflow-hidden font-display text-[clamp(2.2rem,4vw,3.4rem)] font-extrabold drop-shadow-sm text-brand-text" ref={line2Ref}>
+            <span className="inline-block overflow-hidden align-bottom"><span className="inline-block opacity-0 translate-y-[105%] word">{t.hero.titleLine2}</span></span>
           </div>
         </div>
-        <p className={`text-[1.05rem] font-medium tracking-wide leading-[1.6] max-w-[42ch] mb-8 opacity-0 max-[860px]:mx-auto ${variant === 'C' || variant === 'D' ? 'text-white/90' : 'text-brand-text-light'}`} ref={subRef}>{t.hero.sub}</p>
+        <p className="text-[1.05rem] font-medium tracking-wide leading-[1.6] max-w-[42ch] mb-8 opacity-0 max-[860px]:mx-auto text-brand-text-light" ref={subRef}>{t.hero.sub}</p>
         <div>
-          <a href="#products" className={`pointer-events-auto inline-block text-[15px] font-bold tracking-wider px-8 py-3.5 rounded-full transition-all duration-200 relative overflow-hidden opacity-0 hover:-translate-y-[2px] ${variant === 'C' || variant === 'D' ? 'bg-white text-brand-pink shadow-[0_8px_24px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_28px_rgba(255,255,255,0.4)]' : 'bg-brand-orange text-white shadow-[0_8px_24px_rgba(249,115,22,0.3)] hover:shadow-[0_12px_28px_rgba(249,115,22,0.4)]'}`} ref={btnRef}>{t.hero.btn}</a>
+          <a href="#products" className="pointer-events-auto inline-block text-[15px] font-bold tracking-wider px-8 py-3.5 rounded-full transition-all duration-200 relative overflow-hidden opacity-0 hover:-translate-y-[2px] bg-brand-text text-white shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:bg-black hover:scale-105 active:scale-95" ref={btnRef}>{t.hero.btn}</a>
         </div>
       </div>
 
       {/* Loading Overlay */}
       <div className={`fixed inset-0 z-20 bg-brand-bg flex flex-col items-center justify-center gap-8 transition-all duration-[800ms] ${phase >= 1 ? 'opacity-0 invisible pointer-events-none' : ''}`}
         aria-hidden="true" role="presentation">
-        <div className="font-display text-[clamp(2rem,5vw,3rem)] font-bold text-brand-text tracking-widest animate-pulse">Riar Berry's</div>
+        <div className="font-display text-[clamp(2rem,5vw,3rem)] font-bold text-brand-text tracking-widest animate-pulse">Natural Fruits</div>
         <div className="w-[min(220px,50vw)] h-[3px] bg-brand-text/10 rounded-full overflow-hidden">
           <div className="h-full w-1/2 bg-brand-orange rounded-full animate-pulse" />
         </div>

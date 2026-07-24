@@ -29,7 +29,7 @@ export default function GiftConfigurator() {
         body: JSON.stringify({
           email,
           packages: selected.map(id => t.packages[id]?.name).join(', '),
-          _subject: 'Package selection — Riar Berry\'s',
+          _subject: 'Package selection — mikeberry\'s',
         }),
       });
     } catch { }

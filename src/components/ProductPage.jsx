@@ -8,8 +8,8 @@ import NUTRITION from '../data/nutrition.json';
 function ShareButtons({ product }) {
   const { t } = useLang();
   const prodT = t.products[product.id];
-  const url     = `https://riarberry.com/product/${product.id}`;
-  const text    = `Check out ${prodT.name} at Riar Berry's 🍃`;
+  const url     = `https://mikeberry.com/product/${product.id}`;
+  const text    = `Check out ${prodT.name} at Mike Berry's 🍃`;
   const [copied, setCopied] = useState(false);
 
   const copyLink = () => {
@@ -112,7 +112,7 @@ export default function ProductPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = prodT ? `${prodT.name} — Riar Berry's` : 'Riar Berry\'s';
+    document.title = prodT ? `${prodT.name} — Mike Berry's` : 'Mike Berry\'s';
   }, [id, prodT]);
 
   useEffect(() => {

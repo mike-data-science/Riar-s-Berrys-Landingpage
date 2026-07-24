@@ -14,7 +14,7 @@ export default function WholesalePage() {
 
   useEffect(() => {
     window.scrollTo(0,0);
-    document.title = 'Wholesale — Riar Berry\'s';
+    document.title = 'Wholesale — Mike Berry\'s';
   }, []);
 
   const set = (k,v) => setForm(f => ({ ...f, [k]:v }));
@@ -69,7 +69,7 @@ export default function WholesalePage() {
             <div className="flex flex-col gap-2.5">
               <p className="text-[0.8rem] text-brand-text-light m-0">{tw.preferCall}</p>
               <a href="tel:+37360000000" className="text-[1.1rem] font-bold text-brand-green no-underline hover:text-brand-pink transition-colors">+373 60 000 000</a>
-              <a href="https://wa.me/37360000000?text=Hi, I'm interested in wholesale pricing from Riar Berry's"
+              <a href="https://wa.me/37360000000?text=Hi, I'm interested in wholesale pricing from Mike Berry's"
                  target="_blank" rel="noreferrer" className="text-[0.85rem] text-[#128C7E] no-underline inline-flex items-center gap-1.5 hover:underline font-medium">
                 {tw.whatsappInstead}
               </a>

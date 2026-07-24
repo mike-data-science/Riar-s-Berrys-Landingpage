@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLang } from '../context/LangContext';
@@ -22,7 +23,7 @@ function Lightbox({ images, index, onClose, onPrev, onNext }) {
     };
   }, [onClose, onNext, onPrev]);
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-[1000] bg-black/95 backdrop-blur-md flex items-center justify-center animate-[lbIn_0.25s_ease]"
       role="dialog"
@@ -69,7 +70,8 @@ function Lightbox({ images, index, onClose, onPrev, onNext }) {
         @keyframes lbIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes lbImgIn { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: scale(1); } }
       `}</style>
-    </div>
+    </div>,
+    document.body
   );
 }
 
@@ -180,7 +182,7 @@ export default function GalleryLocation() {
               </div>
               <div className="flex items-start gap-4">
                 <span className="text-[1.1rem] mt-0.5 shrink-0">📞</span>
-                <div><strong className="block text-[0.78rem] font-bold tracking-[0.05em] uppercase text-brand-text-light mb-1">{tl.contact}</strong><p className="text-[0.9rem] text-brand-text leading-[1.55]"><a href="tel:+37360000000" className="text-brand-green no-underline transition-colors duration-200 hover:text-brand-pink">+373 60 000 000</a><br/><a href="mailto:hello@riarberry.com" className="text-brand-green no-underline transition-colors duration-200 hover:text-brand-pink">hello@riarberry.com</a></p></div>
+                <div><strong className="block text-[0.78rem] font-bold tracking-[0.05em] uppercase text-brand-text-light mb-1">{tl.contact}</strong><p className="text-[0.9rem] text-brand-text leading-[1.55]"><a href="tel:+37360000000" className="text-brand-green no-underline transition-colors duration-200 hover:text-brand-pink">+373 60 000 000</a><br/><a href="mailto:hello@mikeberry.com" className="text-brand-green no-underline transition-colors duration-200 hover:text-brand-pink">hello@mikeberry.com</a></p></div>
               </div>
             </div>
             <a href="https://www.google.com/maps/place/Chișinău" target="_blank" rel="noreferrer" className="inline-block self-start text-[0.82rem] tracking-[0.06em] px-6 py-3 rounded-full bg-brand-green text-white no-underline transition-all duration-200 mt-auto hover:bg-brand-pink hover:-translate-y-0.5 hover:shadow-lg font-bold">
@@ -189,7 +191,7 @@ export default function GalleryLocation() {
           </div>
           <div className="relative min-h-[440px] bg-brand-bg-alt max-[768px]:min-h-[280px]">
             <iframe
-              title="Riar Berry's location"
+              title="Mike Berry's location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87135.72787538734!2d28.7734!3d47.0245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97c3628b769a1%3A0x37d1d6305749dd3b!2sChisinau%2C%20Moldova!5e0!3m2!1sen!2sus!4v1700000000000"
               width="100%" height="100%" style={{border:0, filter: 'grayscale(30%) contrast(1.05)'}} allowFullScreen loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

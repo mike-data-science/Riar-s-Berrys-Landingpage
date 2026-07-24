@@ -1,4 +1,4 @@
-# Riar Berry's — Branding Website
+# Mike Berry's — Branding Website
 
 A premium scroll-driven branding site for a dried fruits company.
 

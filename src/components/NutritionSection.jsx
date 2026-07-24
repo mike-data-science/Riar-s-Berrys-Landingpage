@@ -24,7 +24,8 @@ export default function NutritionSection() {
     <section className="bg-brand-bg pt-32 pb-32 px-12 relative z-[2] max-[600px]:py-20 max-[600px]:px-6" id="nutrition" ref={sectionRef}>
       <div className="max-w-[1200px] mx-auto">
         <SectionHeader 
-          className="nutr-header max-w-[700px] mb-16 mx-auto text-center"
+          className="nutr-header max-w-[700px] mb-16 mx-auto"
+          align="center"
           eyebrow={tn.eyebrow}
           title={tn.title}
           titleEm={tn.titleEm}

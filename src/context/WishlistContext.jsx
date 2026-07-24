@@ -1,11 +1,15 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import { PRODUCTS } from '../data/fruits';
 
 const WishCtx = createContext(null);
 export const useWishlist = () => useContext(WishCtx);
 
 export function WishlistProvider({ children }) {
   const [items, setItems] = useState(() => {
-    try { return JSON.parse(localStorage.getItem('rb_wishlist') || '[]'); }
+    try { 
+      const stored = JSON.parse(localStorage.getItem('rb_wishlist') || '[]');
+      return stored.filter(id => PRODUCTS.some(p => p.id === id));
+    }
     catch { return []; }
   });
 

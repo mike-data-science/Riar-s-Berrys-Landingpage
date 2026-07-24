@@ -9,8 +9,10 @@
       "gallery": "Gallery"
     },
     "hero": {
-      "eyebrow": "Premium Dried Fruits",
-      "sub": "Nature's finest — slowly dried, never rushed.",
+      "titleLine1": "Natural",
+      "titleLine2": "Fruits",
+      "eyebrow": "Premium Fresh Fruits",
+      "sub": "Nature's finest — freshly picked, bursting with flavor.",
       "btn": "Explore the Collection"
     },
     "categories": {
@@ -35,20 +37,20 @@
           "label": "Classic",
           "sublabel": "Apple · Pear · Green Apple"
         },
-        "dried": {
-          "label": "Stone & Dried",
-          "sublabel": "Apricot · Prune · Dried Fruit"
+        "fresh": {
+          "label": "Stone",
+          "sublabel": "Apricot · Prune · Fresh Fruit"
         },
         "premium": {
           "label": "Premium Mix",
-          "sublabel": "Nuts · Dried Figs · Berries"
+          "sublabel": "Nuts · Fresh Figs · Berries"
         }
       }
     },
     "productsSection": {
       "eyebrow": "The Collection",
-      "title": "Our dried fruits",
-      "subtitle": "Every variety sourced at peak ripeness, dried slowly to preserve flavour, colour and nutrition. Nothing added. Nothing removed.",
+      "title": "Our fresh fruits",
+      "subtitle": "Every variety sourced at peak ripeness, carefully selected to preserve flavour, colour and nutrition. Nothing added. Nothing removed.",
       "searchPlaceholder": "Search fruits…",
       "all": "All",
       "countSuffix": "products",
@@ -62,7 +64,7 @@
       "eyebrow": "The healthy choice",
       "title": "Nature's candy,",
       "titleEm": "upgraded.",
-      "sub": "Ditch the artificial sugars and heavy processing. Our premium dried fruits lock in real, vibrant flavors along with the fibre and nutrients your body actually craves.",
+      "sub": "Ditch the artificial sugars and heavy processing. Our premium fresh fruits lock in real, vibrant flavors along with the fibre and nutrients your body actually craves.",
       "benefits": [
         {
           "icon": "⚡",
@@ -90,7 +92,7 @@
       "ourProduct": "Our product",
       "compareItems": [
         {
-          "label": "Dried Fruit (30g)",
+          "label": "Fresh Fruit (30g)",
           "cal": 90
         },
         {
@@ -109,7 +111,7 @@
     },
     "process": {
       "eyebrow": "How we make it",
-      "title": "Slow dried.",
+      "title": "Slow fresh.",
       "titleEm": "Never rushed.",
       "steps": [
         {
@@ -139,7 +141,7 @@
       {
         "value": 72,
         "suffix": "h",
-        "label": "Slow Dried",
+        "label": "Slow Fresh",
         "note": "Low temperature, full flavour"
       },
       {
@@ -157,28 +159,28 @@
     ],
     "reviews": {
       "1": {
-        "text": "I never thought dried fruit could taste this fresh. The kiwi has an incredible flavour — like biting into the real thing.",
-        "product": "Dried Kiwi"
+        "text": "I never thought fresh fruit could taste this fresh. The kiwi has an incredible flavour — like biting into the real thing.",
+        "product": "Fresh Kiwi"
       },
       "2": {
         "text": "Ordered as a gift for my wife. She loved the wooden box presentation. The fruits were incredible — totally worth the premium price.",
         "product": "Premium Mix"
       },
       "3": {
-        "text": "I have tried many brands but Riar Berry's mango is in a completely different league. Rich, chewy and naturally sweet.",
-        "product": "Dried Mango"
+        "text": "I have tried many brands but Mike Berry's mango is in a completely different league. Rich, chewy and naturally sweet.",
+        "product": "Fresh Mango"
       },
       "4": {
-        "text": "The dates are enormous and incredibly soft. We ordered three times already. Never going back to supermarket dried fruits.",
+        "text": "The dates are enormous and incredibly soft. We ordered three times already. Never going back to supermarket fresh fruits.",
         "product": "Medjool Dates"
       },
       "5": {
         "text": "Perfect snack for work. I love that there are no added sugars or preservatives. You can actually taste the real fruit.",
-        "product": "Dried Berries"
+        "product": "Fresh Berries"
       },
       "6": {
         "text": "The apricots are the best I have ever had. The colour, the flavour, the texture — everything is perfect.",
-        "product": "Dried Apricot"
+        "product": "Fresh Apricot"
       },
       "eyebrow": "What people say",
       "title": "Loved by",
@@ -188,8 +190,8 @@
     "gift": {
       "eyebrow": "Build your package",
       "title": "Curate your own",
-      "titleEm": "dried fruits package.",
-      "sub": "Pick up to 6 varieties. We'll pack them in a premium wooden organizer.",
+      "titleEm": "fresh fruits package.",
+      "sub": "Pick up to 6 varieties. We'll pack them in our premium packages.",
       "btn": "Save My Selection",
       "notifyLabel": "Enter your email and we'll contact you when ordering goes live.",
       "tapHint": "Tap packages you're interested in",
@@ -205,7 +207,7 @@
       "btn": "Join the list",
       "sending": "Joining…",
       "successTitle": "You're in!",
-      "successText": "Welcome to the Riar Berry's community.",
+      "successText": "Welcome to the Mike Berry's community.",
       "legal": "No spam. Unsubscribe anytime. See our",
       "privacyLink": "privacy policy",
       "error": "Something went wrong. Try again."
@@ -217,7 +219,7 @@
     },
     "location": {
       "eyebrow": "Find us",
-      "title": "Visit Riar Berry's",
+      "title": "Visit Mike Berry's",
       "address": "Address",
       "hours": "Hours",
       "contact": "Contact",
@@ -225,15 +227,15 @@
       "directions": "Get Directions"
     },
     "cta": {
-      "eyebrow": "Riar Berry's",
+      "eyebrow": "Mike Berry's",
       "title": "Ready to taste",
       "titleEm": "the difference?",
-      "sub": "Premium dried fruits, curated for those who care about what they eat.",
+      "sub": "Premium fresh fruits, curated for those who care about what they eat.",
       "browse": "Browse Products",
       "touch": "Get in Touch",
       "sending": "Sending…",
       "successText": "Message received! We'll reply within 24 hours.",
-      "errorText": "Something went wrong. Email us directly at hello@riarberry.com",
+      "errorText": "Something went wrong. Email us directly at hello@mikeberry.com",
       "namePlaceholder": "Your name",
       "emailPlaceholder": "your@email.com",
       "messagePlaceholder": "Tell us what you're looking for…"
@@ -261,16 +263,16 @@
       "notifySent": "✓ We'll let you know when ordering goes live."
     },
     "footer": {
-      "tagline": "Premium dried fruits.\nNature's finest, slowly crafted.",
+      "tagline": "Premium fresh fruits.\nNature's finest, slowly crafted.",
       "productsCol": "Products",
       "allFruits": "All Fruits",
       "byCategory": "By Category",
-      "giftBox": "Dried Fruits Packages",
+      "giftBox": "Fresh Fruits Packages",
       "myWishlist": "My Wishlist",
       "wholesale": "Wholesale",
       "discoverCol": "Discover",
       "recipes": "Recipes",
-      "whyDried": "Why Dried Fruit",
+      "whyFresh": "Why Fresh Fruit",
       "howWeMake": "How We Make It",
       "galleryLink": "Gallery",
       "reviewsLink": "Reviews",
@@ -317,8 +319,8 @@
     "recipesPage": {
       "eyebrow": "Ideas for your kitchen",
       "title": "Recipes with",
-      "titleEm": "Riar Berry's.",
-      "sub": "Five easy ways to use our dried fruits — from 5-minute breakfasts to snacks you'll make on repeat.",
+      "titleEm": "Mike Berry's.",
+      "sub": "Five easy ways to use our fresh fruits — from 5-minute breakfasts to snacks you'll make on repeat.",
       "ingredients": "Ingredients",
       "method": "Method",
       "tip": "Tip",
@@ -328,7 +330,7 @@
     },
     "wholesalePage": {
       "eyebrow": "For businesses",
-      "title": "Premium dried fruit",
+      "title": "Premium fresh fruit",
       "titleEm": "at scale.",
       "sub": "We supply cafés, hotels, gift companies and retailers across Moldova. Consistent quality, flexible quantities, and a team that actually picks up the phone.",
       "getQuote": "Get a quote",
@@ -347,7 +349,7 @@
       "sending": "Sending…",
       "successTitle": "Inquiry received!",
       "successText": "We'll be in touch within one business day with pricing details.",
-      "errorText": "Something went wrong. Please email us directly at hello@riarberry.com",
+      "errorText": "Something went wrong. Please email us directly at hello@mikeberry.com",
       "benefits": [
         { "icon": "📦", "title": "Minimum Order 5kg", "desc": "Per variety, mixed varieties welcome." },
         { "icon": "💰", "title": "Volume Pricing", "desc": "Tiered discounts from 10kg upward." },
@@ -363,23 +365,23 @@
       "eyebrow": "Our story",
       "title": "We didn't like",
       "titleEm": "what was available.",
-      "lead": "So we made something better. Riar Berry's is a small premium dried fruit company based in Chișinău, Moldova. We work directly with local farms, dry slowly at low temperatures, and pack everything by hand.",
+      "lead": "So we made something better. Mike Berry's is a small premium fresh fruit company based in Chișinău, Moldova. We work directly with local farms, dry slowly at low temperatures, and pack everything by hand.",
       "valuesTitle": "What we believe",
       "timelineTitle": "How we got here",
       "teamTitle": "The team",
       "privacyTitle": "Privacy",
       "ctaText": "Browse our products →",
       "timeline": [
-        { "year": "2018", "title": "The idea", "text": "Founders Maria and Ion noticed that premium dried fruits in Moldova were either imported at high prices or low quality. They decided to change that." },
-        { "year": "2020", "title": "First harvest", "text": "Working with three local farms in the Codru region, they dried their first batches by hand — kiwi, apricot, and figs — and shared them with friends and family." },
-        { "year": "2022", "title": "Riar Berry's is born", "text": "After two years of refining the slow-drying process and building supplier relationships, the brand officially launched in Chișinău." },
-        { "year": "2024", "title": "Six fruit families", "text": "The collection expanded to six distinct fruit families. Every variety is now sourced, dried, and packed in Moldova — nothing leaves the country until it's perfect." },
-        { "year": "Now", "title": "You're here", "text": "We're still a small team with one obsession: making the best dried fruit you've ever tasted. Thanks for being part of the story." }
+        { "year": "2018", "title": "The idea", "text": "Founders Maria and Ion noticed that premium fresh fruits in Moldova were either imported at high prices or low quality. They decided to change that." },
+        { "year": "2020", "title": "First harvest", "text": "Working with three local farms in the Codru region, they fresh their first batches by hand — kiwi, apricot, and figs — and shared them with friends and family." },
+        { "year": "2022", "title": "Mike Berry's is born", "text": "After two years of refining the slow-drying process and building supplier relationships, the brand officially launched in Chișinău." },
+        { "year": "2024", "title": "Six fruit families", "text": "The collection expanded to six distinct fruit families. Every variety is now sourced, fresh, and packed in Moldova — nothing leaves the country until it's perfect." },
+        { "year": "Now", "title": "You're here", "text": "We're still a small team with one obsession: making the best fresh fruit you've ever tasted. Thanks for being part of the story." }
       ],
       "values": [
         { "icon": "🌱", "title": "Slow is better", "text": "72 hours at low temperature. Not 4 hours at high. It takes patience to do it right — and it tastes completely different." },
         { "icon": "🤝", "title": "Direct from farmers", "text": "We know the farms our fruit comes from. Short supply chains mean fresher fruit and better conditions for everyone involved." },
-        { "icon": "🚫", "title": "Nothing to hide", "text": "No additives. No added sugar. No preservatives. No colour enhancers. Just fruit, dried." },
+        { "icon": "🚫", "title": "Nothing to hide", "text": "No additives. No added sugar. No preservatives. No colour enhancers. Just fruit, fresh." },
         { "icon": "📍", "title": "Made in Moldova", "text": "Everything is sourced, processed and packed here. We believe in building something local before going global." }
       ],
       "teamPhotoText": "Replace this with a real team photo — our customers want to see who's behind the product.",
@@ -394,11 +396,11 @@
       "links": {
         "allFruits": "All Fruits",
         "categories": "Categories",
-        "buildGiftBox": "Dried Fruits Packages",
+        "buildGiftBox": "Fresh Fruits Packages",
         "myWishlist": "My Wishlist",
         "wholesaleB2B": "Wholesale B2B",
         "howWeMakeIt": "How We Make It",
-        "whyDriedFruit": "Why Dried Fruit",
+        "whyFreshFruit": "Why Fresh Fruit",
         "photoGallery": "Photo Gallery",
         "customerReviews": "Customer Reviews",
         "recipes": "Recipes",
@@ -407,7 +409,7 @@
         "privacyPolicy": "Privacy Policy"
       }
     },
-    "whatsapp": "Hi, I'd like to order from Riar Berry's!",
+    "whatsapp": "Hi, I'd like to order from Mike Berry's!",
     "products": {
       "kiwi": {
         "name": "Kiwi",
@@ -427,7 +429,7 @@
       },
       "raisins": {
         "name": "Golden Raisins",
-        "description": "Thompson seedless grapes, sun-dried for six weeks. Plump, honeyed, versatile."
+        "description": "Thompson seedless grapes, sun-fresh for six weeks. Plump, honeyed, versatile."
       },
       "apricot": {
         "name": "Apricot",
@@ -443,7 +445,7 @@
       },
       "fig": {
         "name": "Figs",
-        "description": "Turkish figs, sun-dried whole. Intensely sweet with a jammy, honeyed centre."
+        "description": "Turkish figs, sun-fresh whole. Intensely sweet with a jammy, honeyed centre."
       },
       "dates": {
         "name": "Medjool Dates",
@@ -460,27 +462,27 @@
     },
     "packages": {
       "kiwi": {
-        "name": "Dried Kiwi"
+        "name": "Fresh Kiwi"
       },
       "dragonfruit": {
-        "name": "Dried Dragon Fruit"
+        "name": "Fresh Dragon Fruit"
       },
       "pineapple": {
-        "name": "Dried Pineapple"
+        "name": "Fresh Pineapple"
       },
       "strawberry": {
-        "name": "Dried Strawberries"
+        "name": "Fresh Strawberries"
       },
       "banana": {
-        "name": "Dried Banana"
+        "name": "Fresh Banana"
       },
       "apple": {
-        "name": "Dried Apples"
+        "name": "Fresh Apples"
       }
     },
     "recipes": {
       "trail-mix": {
-        "title": "Riar Berry's Trail Mix",
+        "title": "Mike Berry's Trail Mix",
         "intro": "The perfect on-the-go snack. Naturally sweet, high in fibre, and endlessly customisable. Make a big batch and keep it in a jar.",
         "tip": "Add a pinch of sea salt and a teaspoon of cinnamon for a more complex flavour.",
         "ingredients": [
@@ -492,14 +494,14 @@
           "Dark chocolate chips (optional)"
         ],
         "steps": [
-          "Chop the dried apricot and kiwi into similar-sized pieces.",
+          "Chop the fresh apricot and kiwi into similar-sized pieces.",
           "Combine everything in a large bowl and toss to mix evenly.",
           "Divide into 4 portions or store in an airtight jar for up to 2 weeks."
         ]
       },
       "overnight-oats": {
         "title": "Apricot & Fig Overnight Oats",
-        "intro": "Prep the night before, wake up to a premium breakfast. The dried apricot and figs soften overnight and release a natural honeyed sweetness.",
+        "intro": "Prep the night before, wake up to a premium breakfast. The fresh apricot and figs soften overnight and release a natural honeyed sweetness.",
         "tip": "The oats thicken overnight. Add a splash of milk in the morning if you prefer a looser texture.",
         "ingredients": [
           "Rolled oats",
@@ -512,7 +514,7 @@
         ],
         "steps": [
           "Mix oats, chia seeds, milk, honey, and vanilla in a bowl or jar. Stir well.",
-          "Layer in half the dried apricot and figs, stir gently.",
+          "Layer in half the fresh apricot and figs, stir gently.",
           "Cover and refrigerate overnight (minimum 6 hours).",
           "In the morning, top with remaining fruit and a drizzle of honey."
         ]
@@ -559,8 +561,8 @@
         ]
       },
       "banana-smoothie": {
-        "title": "Tropical Dried Fruit Smoothie",
-        "intro": "Dried fruit makes smoothies far more intense than fresh. Soak the fruit for 15 minutes first and you get a naturally thick, ultra-flavourful shake.",
+        "title": "Tropical Fresh Fruit Smoothie",
+        "intro": "Fresh fruit makes smoothies far more intense than fresh. Soak the fruit for 15 minutes first and you get a naturally thick, ultra-flavourful shake.",
         "tip": "Add a tablespoon of our Premium Mix on top as a garnish — it adds texture and looks beautiful.",
         "ingredients": [
           "Mango",
@@ -571,7 +573,7 @@
           "Ice cubes"
         ],
         "steps": [
-          "Soak the dried mango and banana in the orange juice for 15 minutes.",
+          "Soak the fresh mango and banana in the orange juice for 15 minutes.",
           "Add everything to a blender including the soaking liquid.",
           "Blend on high for 60 seconds until completely smooth.",
           "Adjust thickness with more coconut milk or ice."
@@ -589,8 +591,10 @@
       "gallery": "Galerie"
     },
     "hero": {
-      "eyebrow": "Fructe Uscate Premium",
-      "sub": "Cele mai bune din natură — uscate lent, niciodată grăbit.",
+      "titleLine1": "Fructe",
+      "titleLine2": "Naturale",
+      "eyebrow": "Fructe Proaspete Premium",
+      "sub": "Cele mai bune din natură — proaspăt culese, pline de savoare.",
       "btn": "Explorează Colecția"
     },
     "categories": {
@@ -615,20 +619,20 @@
           "label": "Clasic",
           "sublabel": "Măr · Pară · Măr Verde"
         },
-        "dried": {
-          "label": "Sâmburoase Uscate",
-          "sublabel": "Caisă · Prună · Fructe Uscate"
+        "fresh": {
+          "label": "Sâmburoase",
+          "sublabel": "Caisă · Prună · Fructe Proaspete"
         },
         "premium": {
           "label": "Mix Premium",
-          "sublabel": "Nuci · Smochine Uscate · Fructe de pădure"
+          "sublabel": "Nuci · Smochine Proaspete · Fructe de pădure"
         }
       }
     },
     "productsSection": {
       "eyebrow": "Colecția",
       "title": "Fructele noastre",
-      "subtitle": "Fiecare soi recoltat la coacerea maximă, uscat lent pentru a păstra aroma, culoarea și nutriția. Nimic adăugat. Nimic eliminat.",
+      "subtitle": "Fiecare soi recoltat la coacerea maximă, atent selectat pentru a păstra aroma, culoarea și nutriția. Nimic adăugat. Nimic eliminat.",
       "searchPlaceholder": "Caută fructe…",
       "all": "Toate",
       "countSuffix": "produse",
@@ -639,10 +643,10 @@
       "view": "Vezi produsul"
     },
     "nutrition": {
-      "eyebrow": "De ce fructe uscate",
+      "eyebrow": "De ce fructe proaspete",
       "title": "Gustarea mai",
       "titleEm": "inteligentă.",
-      "sub": "Comparativ cu alternativele procesate, fructele uscate premium oferă mai multe fibre, mai multe vitamine și dulceață naturală reală — fără ce nu ai nevoie.",
+      "sub": "Comparativ cu alternativele procesate, fructele proaspete premium oferă mai multe fibre, mai multe vitamine și dulceață naturală reală — fără ce nu ai nevoie.",
       "benefits": [
         {
           "icon": "⚡",
@@ -652,12 +656,12 @@
         {
           "icon": "🫀",
           "title": "Sănătatea inimii",
-          "text": "Bogat în potasiu și antioxidanți. Studiile leagă consumul regulat de fructe uscate de un risc mai mic de boli de inimă."
+          "text": "Bogat în potasiu și antioxidanți. Studiile leagă consumul regulat de fructe proaspete de un risc mai mic de boli de inimă."
         },
         {
           "icon": "🌱",
           "title": "Bogat în fibre",
-          "text": "Ajută digestia și menține senzația de sațietate — majoritatea fructelor uscate au 3-10g fibre la 100g."
+          "text": "Ajută digestia și menține senzația de sațietate — majoritatea fructelor proaspete au 3-10g fibre la 100g."
         },
         {
           "icon": "🔬",
@@ -670,7 +674,7 @@
       "ourProduct": "Produsul nostru",
       "compareItems": [
         {
-          "label": "Fructe Uscate (30g)",
+          "label": "Fructe Proaspete (30g)",
           "cal": 90
         },
         {
@@ -689,7 +693,7 @@
     },
     "process": {
       "eyebrow": "Cum le facem",
-      "title": "Uscate lent.",
+      "title": "Proaspete lent.",
       "titleEm": "Niciodată grăbit.",
       "steps": [
         {
@@ -737,7 +741,7 @@
     ],
     "reviews": {
       "1": {
-        "text": "Nu m-am gândit niciodată că fructele uscate pot avea un gust atât de proaspăt. Kiwi-ul are o aromă incredibilă.",
+        "text": "Nu m-am gândit niciodată că fructele proaspete pot avea un gust atât de proaspăt. Kiwi-ul are o aromă incredibilă.",
         "product": "Kiwi Uscat"
       },
       "2": {
@@ -745,11 +749,11 @@
         "product": "Mix Premium"
       },
       "3": {
-        "text": "Am încercat multe branduri, dar mango-ul Riar Berry's este într-o cu totul altă ligă. Bogat, gumat și dulce natural.",
+        "text": "Am încercat multe branduri, dar mango-ul Mike Berry's este într-o cu totul altă ligă. Bogat, gumat și dulce natural.",
         "product": "Mango Uscat"
       },
       "4": {
-        "text": "Curmalele sunt enorme și incredibil de moi. Am comandat deja de trei ori. Nu mă mai întorc la fructele uscate din supermarket.",
+        "text": "Curmalele sunt enorme și incredibil de moi. Am comandat deja de trei ori. Nu mă mai întorc la fructele proaspete din supermarket.",
         "product": "Curmale Medjool"
       },
       "5": {
@@ -758,7 +762,7 @@
       },
       "6": {
         "text": "Caisele sunt cele mai bune pe care le-am mâncat vreodată. Culoarea, aroma, textura — totul este perfect.",
-        "product": "Caise Uscate"
+        "product": "Caise Proaspete"
       },
       "eyebrow": "Ce spun clienții",
       "title": "Iubit de",
@@ -769,7 +773,7 @@
       "eyebrow": "Creează cutia ta",
       "title": "Configurează propriul tău",
       "titleEm": "cadou.",
-      "sub": "Alege până la 6 soiuri. Le ambalăm într-un organizator din lemn premium.",
+      "sub": "Alege până la 6 soiuri. Le vom ambala în pachetele noastre premium.",
       "btn": "Salvează Selecția",
       "notifyLabel": "Introdu emailul și te contactăm când comenzile sunt disponibile.",
       "tapHint": "Atinge pachetele care te interesează",
@@ -785,7 +789,7 @@
       "btn": "Alătură-te",
       "sending": "Se procesează…",
       "successTitle": "Ești înăuntru!",
-      "successText": "Bun venit în comunitatea Riar Berry's.",
+      "successText": "Bun venit în comunitatea Mike Berry's.",
       "legal": "Fără spam. Dezabonare oricând. Vezi",
       "privacyLink": "politica de confidențialitate",
       "error": "Ceva nu a mers bine. Încearcă din nou."
@@ -797,7 +801,7 @@
     },
     "location": {
       "eyebrow": "Găsește-ne",
-      "title": "Vizitează Riar Berry's",
+      "title": "Vizitează Mike Berry's",
       "address": "Adresă",
       "hours": "Program",
       "contact": "Contact",
@@ -805,15 +809,15 @@
       "directions": "Vezi traseul"
     },
     "cta": {
-      "eyebrow": "Riar Berry's",
+      "eyebrow": "Mike Berry's",
       "title": "Gata să guști",
       "titleEm": "diferența?",
-      "sub": "Fructe uscate premium, alese pentru cei care prețuiesc calitatea.",
+      "sub": "Fructe proaspete premium, alese pentru cei care prețuiesc calitatea.",
       "browse": "Explorează produsele",
       "touch": "Contactează-ne",
       "sending": "Se trimite…",
       "successText": "Mesaj primit! Răspundem în 24 de ore.",
-      "errorText": "Ceva nu a mers bine. Scrie-ne direct la hello@riarberry.com",
+      "errorText": "Ceva nu a mers bine. Scrie-ne direct la hello@mikeberry.com",
       "namePlaceholder": "Numele tău",
       "emailPlaceholder": "emailul@tau.com",
       "messagePlaceholder": "Spune-ne ce cauți…"
@@ -841,7 +845,7 @@
       "notifySent": "✓ Te anunțăm când comenzile sunt disponibile."
     },
     "footer": {
-      "tagline": "Fructe uscate premium.\nCele mai bune din natură, cu grijă.",
+      "tagline": "Fructe proaspete premium.\nCele mai bune din natură, cu grijă.",
       "productsCol": "Produse",
       "allFruits": "Toate Fructele",
       "byCategory": "Pe Categorii",
@@ -850,7 +854,7 @@
       "wholesale": "Angro",
       "discoverCol": "Descoperă",
       "recipes": "Rețete",
-      "whyDried": "De ce Fructe Uscate",
+      "whyFresh": "De ce Fructe Proaspete",
       "howWeMake": "Cum le Facem",
       "galleryLink": "Galerie",
       "reviewsLink": "Recenzii",
@@ -897,8 +901,8 @@
     "recipesPage": {
       "eyebrow": "Idei pentru bucătăria ta",
       "title": "Rețete cu",
-      "titleEm": "Riar Berry's.",
-      "sub": "Cinci moduri ușoare de a folosi fructele noastre uscate — de la mic dejunuri în 5 minute la gustări pe care le vei face din nou.",
+      "titleEm": "Mike Berry's.",
+      "sub": "Cinci moduri ușoare de a folosi fructele noastre proaspete — de la mic dejunuri în 5 minute la gustări pe care le vei face din nou.",
       "ingredients": "Ingrediente",
       "method": "Mod de preparare",
       "tip": "Sfat",
@@ -908,7 +912,7 @@
     },
     "wholesalePage": {
       "eyebrow": "Pentru afaceri",
-      "title": "Fructe uscate premium",
+      "title": "Fructe proaspete premium",
       "titleEm": "la scară mare.",
       "sub": "Furnizăm cafenele, hoteluri, companii de cadouri și retaileri din Moldova. Calitate constantă, cantități flexibile și o echipă care chiar răspunde la telefon.",
       "getQuote": "Obține o ofertă",
@@ -927,7 +931,7 @@
       "sending": "Se trimite…",
       "successTitle": "Cerere primită!",
       "successText": "Te contactăm în maxim o zi lucrătoare cu detalii de preț.",
-      "errorText": "Ceva nu a mers bine. Vă rugăm să ne trimiteți un e-mail direct la hello@riarberry.com",
+      "errorText": "Ceva nu a mers bine. Vă rugăm să ne trimiteți un e-mail direct la hello@mikeberry.com",
       "benefits": [
         { "icon": "📦", "title": "Comandă Minimă 5kg", "desc": "Per soi, mix de soiuri acceptat." },
         { "icon": "💰", "title": "Preț de Volum", "desc": "Reduceri în trepte de la 10kg în sus." },
@@ -943,23 +947,23 @@
       "eyebrow": "Povestea noastră",
       "title": "Nu ne-a plăcut",
       "titleEm": "ce era disponibil.",
-      "lead": "Așa că am făcut ceva mai bun. Riar Berry's este o mică companie premium de fructe uscate cu sediul în Chișinău, Moldova. Lucrăm direct cu fermele locale, uscăm lent la temperaturi scăzute și ambalăm totul manual.",
+      "lead": "Așa că am făcut ceva mai bun. Mike Berry's este o mică companie premium de fructe proaspete cu sediul în Chișinău, Moldova. Lucrăm direct cu fermele locale, uscăm lent la temperaturi scăzute și ambalăm totul manual.",
       "valuesTitle": "În ce credem",
       "timelineTitle": "Cum am ajuns aici",
       "teamTitle": "Echipa",
       "privacyTitle": "Confidențialitate",
       "ctaText": "Vezi produsele noastre →",
       "timeline": [
-        { "year": "2018", "title": "Ideea", "text": "Fondatorii Maria și Ion au observat că fructele uscate premium din Moldova erau fie importate la prețuri mari, fie de calitate slabă. Au decis să schimbe asta." },
+        { "year": "2018", "title": "Ideea", "text": "Fondatorii Maria și Ion au observat că fructele proaspete premium din Moldova erau fie importate la prețuri mari, fie de calitate slabă. Au decis să schimbe asta." },
         { "year": "2020", "title": "Prima recoltă", "text": "Lucrând cu trei ferme locale din regiunea Codru, au uscat manual primele loturi — kiwi, caise și smochine — și le-au împărțit cu prietenii și familia." },
-        { "year": "2022", "title": "Se naște Riar Berry's", "text": "După doi ani de perfecționare a procesului de uscare lentă și construire a relațiilor cu furnizorii, brandul s-a lansat oficial în Chișinău." },
+        { "year": "2022", "title": "Se naște Mike Berry's", "text": "După doi ani de perfecționare a procesului de uscare lentă și construire a relațiilor cu furnizorii, brandul s-a lansat oficial în Chișinău." },
         { "year": "2024", "title": "Șase familii de fructe", "text": "Colecția s-a extins la șase familii distincte de fructe. Fiecare soi este acum procurat, uscat și ambalat în Moldova — nimic nu părăsește țara până nu este perfect." },
-        { "year": "Acum", "title": "Ești aici", "text": "Suntem încă o echipă mică, cu o obsesie: să facem cele mai bune fructe uscate pe care le-ai gustat vreodată. Îți mulțumim că faci parte din poveste." }
+        { "year": "Acum", "title": "Ești aici", "text": "Suntem încă o echipă mică, cu o obsesie: să facem cele mai bune fructe proaspete pe care le-ai gustat vreodată. Îți mulțumim că faci parte din poveste." }
       ],
       "values": [
         { "icon": "🌱", "title": "Lent este mai bine", "text": "72 de ore la temperatură scăzută. Nu 4 ore la temperatură mare. E nevoie de răbdare pentru a o face corect — și gustul este complet diferit." },
         { "icon": "🤝", "title": "Direct de la fermieri", "text": "Știm de la ce ferme provin fructele noastre. Lanțurile scurte de aprovizionare înseamnă fructe mai proaspete și condiții mai bune pentru toți cei implicați." },
-        { "icon": "🚫", "title": "Nimic de ascuns", "text": "Fără aditivi. Fără zahăr adăugat. Fără conservanți. Fără potențiatori de culoare. Doar fructe, uscate." },
+        { "icon": "🚫", "title": "Nimic de ascuns", "text": "Fără aditivi. Fără zahăr adăugat. Fără conservanți. Fără potențiatori de culoare. Doar fructe, proaspete." },
         { "icon": "📍", "title": "Fabricat în Moldova", "text": "Totul este procurat, procesat și ambalat aici. Credem în construirea a ceva local înainte de a deveni global." }
       ],
       "teamPhotoText": "Înlocuiește asta cu o fotografie reală a echipei — clienții noștri vor să vadă cine se află în spatele produsului.",
@@ -978,7 +982,7 @@
         "myWishlist": "Lista mea de Dorințe",
         "wholesaleB2B": "Vânzări Angro B2B",
         "howWeMakeIt": "Cum le Facem",
-        "whyDriedFruit": "De ce Fructe Uscate",
+        "whyFreshFruit": "De ce Fructe Proaspete",
         "photoGallery": "Galerie Foto",
         "customerReviews": "Recenzii Clienți",
         "recipes": "Rețete",
@@ -987,7 +991,7 @@
         "privacyPolicy": "Politica de Confidențialitate"
       }
     },
-    "whatsapp": "Bună, aș dori să comand de la Riar Berry's!",
+    "whatsapp": "Bună, aș dori să comand de la Mike Berry's!",
     "products": {
       "kiwi": {
         "name": "Kiwi",
@@ -1023,7 +1027,7 @@
       },
       "fig": {
         "name": "Smochine",
-        "description": "Smochine turcești, uscate întregi la soare. Intens de dulci, cu un centru de miere."
+        "description": "Smochine turcești, proaspete întregi la soare. Intens de dulci, cu un centru de miere."
       },
       "dates": {
         "name": "Curmale Medjool",
@@ -1060,14 +1064,14 @@
     },
     "recipes": {
       "trail-mix": {
-        "title": "Mix Riar Berry's",
+        "title": "Mix Mike Berry's",
         "intro": "Gustarea perfectă pentru drum. Dulce natural, bogată în fibre și personalizabilă. Fă o cantitate mare și păstreaz-o într-un borcan.",
         "tip": "Adaugă un praf de sare de mare și o linguriță de scorțișoară pentru o aromă mai complexă.",
         "ingredients": [
           "Kiwi Uscat",
           "Stafide Aurii",
-          "Caise Uscate, tocate",
-          "Afine Uscate",
+          "Caise Proaspete, tocate",
+          "Afine Proaspete",
           "Nuci mixte (caju, migdale, alune)",
           "Chipsuri de ciocolată neagră (opțional)"
         ],
@@ -1084,8 +1088,8 @@
         "ingredients": [
           "Fulgi de ovăz",
           "Lapte vegetal (de ovăz sau migdale)",
-          "Caise Uscate, feliate subțire",
-          "Smochine Uscate, tăiate sferturi",
+          "Caise Proaspete, feliate subțire",
+          "Smochine Proaspete, tăiate sferturi",
           "Semințe de chia",
           "Miere sau sirop de arțar",
           "Extract de vanilie"
@@ -1140,11 +1144,11 @@
       },
       "banana-smoothie": {
         "title": "Smoothie Tropical",
-        "intro": "Fructele uscate fac smoothie-urile mult mai intense. Înmoaie fructele 15 minute.",
+        "intro": "Fructele proaspete fac smoothie-urile mult mai intense. Înmoaie fructele 15 minute.",
         "tip": "Adaugă o lingură de Mix Premium deasupra ca decor.",
         "ingredients": [
           "Mango Uscat",
-          "Banane Uscate",
+          "Banane Proaspete",
           "Lapte de cocos",
           "Banană proaspătă",
           "Suc de portocale",
@@ -1169,8 +1173,10 @@
       "gallery": "Галерея"
     },
     "hero": {
-      "eyebrow": "Премиум Сухофрукты",
-      "sub": "Лучшее от природы — медленная сушка, без спешки.",
+      "titleLine1": "Натуральные",
+      "titleLine2": "Фрукты",
+      "eyebrow": "Премиум Свежие фрукты",
+      "sub": "Лучшее от природы — только свежий урожай, полный вкуса.",
       "btn": "Изучить коллекцию"
     },
     "categories": {
@@ -1195,9 +1201,9 @@
           "label": "Классика",
           "sublabel": "Яблоко · Груша · Зелёное яблоко"
         },
-        "dried": {
-          "label": "Косточковые и сушёные",
-          "sublabel": "Абрикос · Чернослив · Сухофрукты"
+        "fresh": {
+          "label": "Косточковые",
+          "sublabel": "Абрикос · Чернослив · Свежие фрукты"
         },
         "premium": {
           "label": "Премиум Микс",
@@ -1207,8 +1213,8 @@
     },
     "productsSection": {
       "eyebrow": "Коллекция",
-      "title": "Наши сухофрукты",
-      "subtitle": "Каждый сорт собран на пике зрелости, медленно высушен для сохранения вкуса, цвета и питательности. Ничего лишнего. Ничего не убрано.",
+      "title": "Наши свежие фрукты",
+      "subtitle": "Каждый сорт собран на пике зрелости, тщательно отобран для сохранения вкуса, цвета и питательности. Ничего лишнего. Ничего не убрано.",
       "searchPlaceholder": "Поиск фруктов…",
       "all": "Все",
       "countSuffix": "товаров",
@@ -1219,10 +1225,10 @@
       "view": "Посмотреть товар"
     },
     "nutrition": {
-      "eyebrow": "Почему сухофрукты",
+      "eyebrow": "Почему свежие фрукты",
       "title": "Более разумный",
       "titleEm": "выбор перекуса.",
-      "sub": "По сравнению с переработанными альтернативами, премиум сухофрукты дают больше клетчатки, больше витаминов и настоящую натуральную сладость — без лишнего.",
+      "sub": "По сравнению с переработанными альтернативами, премиум свежие фрукты дают больше клетчатки, больше витаминов и настоящую натуральную сладость — без лишнего.",
       "benefits": [
         {
           "icon": "⚡",
@@ -1250,7 +1256,7 @@
       "ourProduct": "Наш продукт",
       "compareItems": [
         {
-          "label": "Сухофрукты (30г)",
+          "label": "Свежие фрукты (30г)",
           "cal": 90
         },
         {
@@ -1317,16 +1323,16 @@
     ],
     "reviews": {
       "1": {
-        "text": "Никогда не думала, что сухофрукты могут быть такими свежими. У киви невероятный вкус.",
-        "product": "Сушёный Киви"
+        "text": "Никогда не думала, что свежие фрукты могут быть такими свежими. У киви невероятный вкус.",
+        "product": "Свежий Киви"
       },
       "2": {
         "text": "Заказал в подарок жене. Ей очень понравилась деревянная коробка. Фрукты были невероятными — полностью стоят своей цены.",
         "product": "Премиум Микс"
       },
       "3": {
-        "text": "Я пробовала много брендов, но манго Riar Berry's на совершенно другом уровне. Насыщенное, жевательное и натурально сладкое.",
-        "product": "Сушёное Манго"
+        "text": "Я пробовала много брендов, но манго Mike Berry's на совершенно другом уровне. Насыщенное, жевательное и натурально сладкое.",
+        "product": "Свежее Манго"
       },
       "4": {
         "text": "Финики огромные и невероятно мягкие. Мы заказывали уже три раза. Никогда не вернусь к сухофруктам из супермаркета.",
@@ -1334,11 +1340,11 @@
       },
       "5": {
         "text": "Идеальный перекус для работы. Мне нравится, что нет добавленного сахара или консервантов. Вы действительно чувствуете вкус настоящих фруктов.",
-        "product": "Сушёные Ягоды"
+        "product": "Свежие Ягоды"
       },
       "6": {
         "text": "Абрикосы лучшие из тех, что я когда-либо ел. Цвет, вкус, текстура — всё идеально.",
-        "product": "Курага"
+        "product": "Свежий Абрикос"
       },
       "eyebrow": "Что говорят клиенты",
       "title": "Любимо",
@@ -1349,7 +1355,7 @@
       "eyebrow": "Собери свою коробку",
       "title": "Создай свой",
       "titleEm": "подарок.",
-      "sub": "Выбери до 6 сортов. Упакуем в премиум деревянный органайзер.",
+      "sub": "Выбери до 6 сортов. Мы упакуем их в наши премиальные упаковки.",
       "btn": "Сохранить выбор",
       "notifyLabel": "Укажи email и свяжемся, когда откроем заказы.",
       "tapHint": "Выбери интересующие тебя упаковки",
@@ -1365,7 +1371,7 @@
       "btn": "Подписаться",
       "sending": "Подписываем…",
       "successTitle": "Готово!",
-      "successText": "Добро пожаловать в сообщество Riar Berry's.",
+      "successText": "Добро пожаловать в сообщество Mike Berry's.",
       "legal": "Без спама. Отписка в любое время. См.",
       "privacyLink": "политику конфиденциальности",
       "error": "Что-то пошло не так. Попробуй снова."
@@ -1377,7 +1383,7 @@
     },
     "location": {
       "eyebrow": "Найди нас",
-      "title": "Посети Riar Berry's",
+      "title": "Посети Mike Berry's",
       "address": "Адрес",
       "hours": "Часы работы",
       "contact": "Контакт",
@@ -1385,15 +1391,15 @@
       "directions": "Проложить маршрут"
     },
     "cta": {
-      "eyebrow": "Riar Berry's",
+      "eyebrow": "Mike Berry's",
       "title": "Готов попробовать",
       "titleEm": "разницу?",
-      "sub": "Премиум сухофрукты для тех, кто ценит качество.",
+      "sub": "Премиум свежие фрукты для тех, кто ценит качество.",
       "browse": "Смотреть продукты",
       "touch": "Написать нам",
       "sending": "Отправка…",
       "successText": "Сообщение получено! Ответим в течение 24 часов.",
-      "errorText": "Что-то пошло не так. Напишите нам напрямую на hello@riarberry.com",
+      "errorText": "Что-то пошло не так. Напишите нам напрямую на hello@mikeberry.com",
       "namePlaceholder": "Ваше имя",
       "emailPlaceholder": "ваш@email.com",
       "messagePlaceholder": "Расскажите, что вы ищете…"
@@ -1415,7 +1421,7 @@
       "notifySent": "✓ Сообщим, когда заказы станут доступны."
     },
     "footer": {
-      "tagline": "Премиум сухофрукты.\nЛучшее от природы, с заботой.",
+      "tagline": "Премиум свежие фрукты.\nЛучшее от природы, с заботой.",
       "productsCol": "Продукты",
       "allFruits": "Все Фрукты",
       "byCategory": "По Категориям",
@@ -1424,7 +1430,7 @@
       "wholesale": "Опт",
       "discoverCol": "Узнать больше",
       "recipes": "Рецепты",
-      "whyDried": "Почему Сухофрукты",
+      "whyFresh": "Почему Свежие фрукты",
       "howWeMake": "Как Мы Делаем",
       "galleryLink": "Галерея",
       "reviewsLink": "Отзывы",
@@ -1471,8 +1477,8 @@
     "recipesPage": {
       "eyebrow": "Идеи для вашей кухни",
       "title": "Рецепты с",
-      "titleEm": "Riar Berry's.",
-      "sub": "Пять простых способов использовать наши сухофрукты — от 5-минутных завтраков до перекусов, которые вы будете готовить снова и снова.",
+      "titleEm": "Mike Berry's.",
+      "sub": "Пять простых способов использовать наши свежие фрукты — от 5-минутных завтраков до перекусов, которые вы будете готовить снова и снова.",
       "ingredients": "Ингредиенты",
       "method": "Способ приготовления",
       "tip": "Совет",
@@ -1482,7 +1488,7 @@
     },
     "wholesalePage": {
       "eyebrow": "Для бизнеса",
-      "title": "Премиум сухофрукты",
+      "title": "Премиум свежие фрукты",
       "titleEm": "в большом объёме.",
       "sub": "Мы поставляем кафе, отелям, подарочным компаниям и ритейлерам по всей Молдове. Стабильное качество, гибкие объёмы и команда, которая действительно отвечает на звонки.",
       "getQuote": "Получить предложение",
@@ -1501,7 +1507,7 @@
       "sending": "Отправка…",
       "successTitle": "Запрос получен!",
       "successText": "Свяжемся в течение одного рабочего дня с деталями цен.",
-      "errorText": "Что-то пошло не так. Пожалуйста, напишите нам напрямую на hello@riarberry.com",
+      "errorText": "Что-то пошло не так. Пожалуйста, напишите нам напрямую на hello@mikeberry.com",
       "benefits": [
         { "icon": "📦", "title": "Минимальный заказ 5 кг", "desc": "На сорт, принимаются смешанные сорта." },
         { "icon": "💰", "title": "Оптовые цены", "desc": "Скидки от 10 кг и выше." },
@@ -1517,23 +1523,23 @@
       "eyebrow": "Наша история",
       "title": "Нам не нравилось",
       "titleEm": "то, что было доступно.",
-      "lead": "Поэтому мы сделали кое-что получше. Riar Berry's — небольшая премиум компания сухофруктов, базирующаяся в Кишинёве, Молдова. Мы работаем напрямую с местными фермами, медленно сушим при низких температурах и упаковываем всё вручную.",
+      "lead": "Поэтому мы сделали кое-что получше. Mike Berry's — небольшая премиум компания сухофруктов, базирующаяся в Кишинёве, Молдова. Мы работаем напрямую с местными фермами, медленно сушим при низких температурах и упаковываем всё вручную.",
       "valuesTitle": "Во что мы верим",
       "timelineTitle": "Как мы пришли к этому",
       "teamTitle": "Команда",
       "privacyTitle": "Конфиденциальность",
       "ctaText": "Смотреть наши продукты →",
       "timeline": [
-        { "year": "2018", "title": "Идея", "text": "Основатели Мария и Ион заметили, что качественные сухофрукты в Молдове либо дорого импортировались, либо были низкого качества. Они решили это изменить." },
+        { "year": "2018", "title": "Идея", "text": "Основатели Мария и Ион заметили, что качественные свежие фрукты в Молдове либо дорого импортировались, либо были низкого качества. Они решили это изменить." },
         { "year": "2020", "title": "Первый урожай", "text": "Работая с тремя местными фермами в регионе Кодру, они вручную высушили первые партии — киви, курагу и инжир — и поделились ими с друзьями и семьей." },
-        { "year": "2022", "title": "Рождение Riar Berry's", "text": "После двух лет совершенствования процесса медленной сушки и налаживания связей с поставщиками бренд официально запустился в Кишиневе." },
+        { "year": "2022", "title": "Рождение Mike Berry's", "text": "После двух лет совершенствования процесса медленной сушки и налаживания связей с поставщиками бренд официально запустился в Кишиневе." },
         { "year": "2024", "title": "Шесть семейств фруктов", "text": "Коллекция расширилась до шести семейств фруктов. Каждый сорт теперь выращивается, сушится и упаковывается в Молдове — ничего не покидает страну, пока не станет идеальным." },
-        { "year": "Сейчас", "title": "Вы здесь", "text": "Мы по-прежнему небольшая команда с одной навязчивой идеей: делать лучшие сухофрукты, которые вы когда-либо пробовали. Спасибо, что вы часть нашей истории." }
+        { "year": "Сейчас", "title": "Вы здесь", "text": "Мы по-прежнему небольшая команда с одной навязчивой идеей: делать лучшие свежие фрукты, которые вы когда-либо пробовали. Спасибо, что вы часть нашей истории." }
       ],
       "values": [
         { "icon": "🌱", "title": "Медленнее значит лучше", "text": "72 часа при низкой температуре. А не 4 часа при высокой. Нужно терпение, чтобы сделать все правильно — и вкус получается совершенно другим." },
         { "icon": "🤝", "title": "Напрямую от фермеров", "text": "Мы знаем фермы, откуда поступают наши фрукты. Короткие цепочки поставок означают более свежие фрукты и лучшие условия для всех." },
-        { "icon": "🚫", "title": "Нечего скрывать", "text": "Никаких добавок. Никакого добавленного сахара. Никаких консервантов и красителей. Только сушеные фрукты." },
+        { "icon": "🚫", "title": "Нечего скрывать", "text": "Никаких добавок. Никакого добавленного сахара. Никаких консервантов и красителей. Только свежие фрукты." },
         { "icon": "📍", "title": "Сделано в Молдове", "text": "Все выращивается, перерабатывается и упаковывается здесь. Мы верим в создание локального продукта, прежде чем выходить на мировой рынок." }
       ],
       "teamPhotoText": "Замените это реальной фотографией команды — наши клиенты хотят видеть, кто стоит за продуктом.",
@@ -1552,7 +1558,7 @@
         "myWishlist": "Мой Список Желаний",
         "wholesaleB2B": "Опт B2B",
         "howWeMakeIt": "Как Мы Это Делаем",
-        "whyDriedFruit": "Почему Сухофрукты",
+        "whyFreshFruit": "Почему Свежие фрукты",
         "photoGallery": "Фотогалерея",
         "customerReviews": "Отзывы",
         "recipes": "Рецепты",
@@ -1561,7 +1567,7 @@
         "privacyPolicy": "Политика Конфиденциальности"
       }
     },
-    "whatsapp": "Здравствуйте, хочу заказать в Riar Berry's!",
+    "whatsapp": "Здравствуйте, хочу заказать в Mike Berry's!",
     "products": {
       "kiwi": {
         "name": "Киви",
@@ -1634,14 +1640,14 @@
     },
     "recipes": {
       "trail-mix": {
-        "title": "Трейл Микс Riar Berry's",
+        "title": "Трейл Микс Mike Berry's",
         "intro": "Идеальный перекус в дорогу. Натурально сладкий, богатый клетчаткой.",
         "tip": "Добавьте щепотку морской соли и чайную ложку корицы для более сложного вкуса.",
         "ingredients": [
-          "Сушёный Киви",
+          "Свежий Киви",
           "Золотистый Изюм",
           "Курага, нарезанная",
-          "Сушёная Черника",
+          "Свежая Черника",
           "Смесь орехов (кешью, миндаль, фундук)",
           "Темный шоколад (по желанию)"
         ],
@@ -1714,10 +1720,10 @@
       },
       "banana-smoothie": {
         "title": "Тропический Смузи",
-        "intro": "Сухофрукты делают смузи гораздо интенсивнее. Замочите фрукты на 15 минут.",
+        "intro": "Свежие фрукты делают смузи гораздо интенсивнее. Замочите фрукты на 15 минут.",
         "tip": "Добавьте столовую ложку Премиум Микса сверху.",
         "ingredients": [
-          "Сушёное Манго",
+          "Свежее Манго",
           "Сушёный Банан",
           "Кокосовое молоко",
           "Свежий банан",

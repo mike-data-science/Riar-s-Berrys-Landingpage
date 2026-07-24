@@ -1,4 +1,4 @@
-# Gemini Video Prompts for Riar Berry's
+# Gemini Video Prompts for Mike Berry's
 
 ## VIDEO 1 — Hero Loop (goes in /public/video/canny_transparent.webm)
 

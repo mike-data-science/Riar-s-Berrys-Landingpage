@@ -66,7 +66,7 @@ export default function AboutPage() {
         <div className="max-w-[900px] mx-auto">
           <h2 className="font-display text-[clamp(1.6rem,3vw,2.4rem)] font-bold text-brand-text mb-10">{ta.teamTitle}</h2>
           <div className="relative rounded-[20px] overflow-hidden shadow-sm">
-            <img src="/images/gallery/frame_07.jpg" alt="The Riar Berry's team" className="w-full h-[400px] object-cover block" />
+            <img src="/images/gallery/frame_07.jpg" alt="The Mike Berry's team" className="w-full h-[400px] object-cover block" />
             <div className="p-4 px-5 text-[0.8rem] text-brand-text-light italic bg-white font-medium">
               {ta.teamPhotoText}
             </div>
@@ -78,7 +78,7 @@ export default function AboutPage() {
         <div className="max-w-[700px] mx-auto text-[0.9rem] text-brand-text-light leading-[1.7]">
           <h2 className="font-display text-[clamp(1.6rem,3vw,2.4rem)] font-bold text-brand-text mb-6">{ta.privacyTitle}</h2>
           <p>{ta.privacyText1}</p>
-          <p className="mt-4">{ta.privacyText2}<a href="mailto:hello@riarberry.com" className="text-brand-green font-bold no-underline hover:underline">hello@riarberry.com</a></p>
+          <p className="mt-4">{ta.privacyText2}<a href="mailto:hello@mikeberry.com" className="text-brand-green font-bold no-underline hover:underline">hello@mikeberry.com</a></p>
         </div>
       </section>
 

@@ -5,7 +5,7 @@ import { useLang } from '../context/LangContext';
 export default function NotFoundPage() {
   const { t } = useLang();
   const t4 = t.notFoundPage;
-  useEffect(() => { window.scrollTo(0, 0); document.title = '404 — Riar Berry\'s'; }, []);
+  useEffect(() => { window.scrollTo(0, 0); document.title = '404 — Mike Berry\'s'; }, []);
 
   return (
     <div className="min-h-[100svh] bg-brand-green flex items-center justify-center text-center py-24 px-8 relative z-[2]" id="main-content">
@@ -32,7 +32,7 @@ export default function NotFoundPage() {
 
         <p className="text-[0.82rem] text-white/35">
           Looking for something specific?{' '}
-          <a href="mailto:hello@riarberry.com" className="text-brand-orange no-underline hover:underline">Email us</a> or{' '}
+          <a href="mailto:hello@mikeberry.com" className="text-brand-orange no-underline hover:underline">Email us</a> or{' '}
           <a href="https://wa.me/37360000000" target="_blank" rel="noreferrer" className="text-brand-orange no-underline hover:underline">WhatsApp us</a>.
         </p>
         <style>{`

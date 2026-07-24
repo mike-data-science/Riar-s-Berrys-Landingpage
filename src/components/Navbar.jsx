@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
 import { useWishlist } from '../context/WishlistContext';
 
-export default function Navbar({ heroVariant, setHeroVariant }) {
+export default function Navbar() {
   const { t, lang, setLang } = useLang();
   const { count: wishCount }  = useWishlist();
   const [scrolled, setScrolled] = useState(false);
@@ -42,19 +42,19 @@ export default function Navbar({ heroVariant, setHeroVariant }) {
       role="navigation"
       aria-label="Main navigation"
     >
-      <Link to="/" className="font-display text-2xl font-bold text-brand-text no-underline leading-none flex-1" aria-label="Riar Berry's — home">
-        Riar<span className="text-brand-orange italic"> Berry's</span>
+      <Link to="/" className="font-display text-2xl font-bold text-brand-text no-underline leading-none flex-1" aria-label="Mike Berry's — home">
+        Mike<span className="text-brand-orange italic"> Berry's</span>
       </Link>
 
       <ul className={`flex items-center justify-center gap-8 list-none max-[900px]:fixed max-[900px]:inset-0 max-[900px]:bg-brand-bg/95 max-[900px]:flex-col max-[900px]:transition-transform max-[900px]:duration-300 ${menuOpen ? 'max-[900px]:translate-x-0 max-[900px]:pointer-events-auto' : 'max-[900px]:translate-x-full max-[900px]:pointer-events-none'}`} role="menubar">
         {[
           { label: t.nav.products,   href: isHome ? '#products'   : '/#products'   },
           { label: t.nav.story,      href: isHome ? '#process'    : '/#process'    },
-          { label: t.nav.packages,   href: isHome ? '#packages'   : '/#packages'   },
+          { label: t.nav.packages,   href: isHome ? '#gift'       : '/#gift'       },
           { label: t.nav.gallery,    href: isHome ? '#gallery'    : '/#gallery'    },
         ].map(({ label, href }) => (
           <li key={href} role="none">
-            <a href={href} className="text-base font-medium text-brand-text-light relative transition-colors hover:text-brand-orange max-[900px]:text-3xl max-[900px]:text-brand-text after:content-[''] after:absolute after:bottom-[-3px] after:left-0 after:right-0 after:h-[2px] after:bg-brand-orange after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-200" role="menuitem" onClick={() => setMenuOpen(false)}>
+            <a href={href} className="text-[15px] font-medium text-brand-text-light relative transition-colors hover:text-brand-orange max-[900px]:text-3xl max-[900px]:text-brand-text after:content-[''] after:absolute after:bottom-[-3px] after:left-0 after:right-0 after:h-[2px] after:bg-brand-orange after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-200" role="menuitem" onClick={() => setMenuOpen(false)}>
               {label}
             </a>
           </li>
@@ -68,38 +68,30 @@ export default function Navbar({ heroVariant, setHeroVariant }) {
             Wishlist {wishCount > 0 && `(${wishCount})`}
           </Link>
         </li>
-        <li role="none" className="hidden max-[900px]:block mt-2">
-          <a href={isHome ? '#contact' : '/#contact'} className="text-xl font-medium text-brand-orange border-2 border-brand-orange rounded-full px-6 py-2"
+        <li role="none" className="hidden max-[900px]:flex flex-col gap-4 items-center mt-4">
+          {/* Mobile Language Selector */}
+          <button
+            className="flex items-center gap-2 font-body text-xl font-medium tracking-wide text-brand-text cursor-pointer transition-colors hover:text-brand-pink uppercase"
+            onClick={() => {
+              const nextLang = lang === 'en' ? 'ro' : lang === 'ro' ? 'ru' : 'en';
+              startTransition(() => setLang(nextLang));
+              setMenuOpen(false);
+            }}
+            aria-label="Switch Language"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" width="24" height="24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              <path d="M2 12h20"></path>
+            </svg>
+            <span className="mt-[2px]">{lang}</span>
+          </button>
+        </li>
+        <li role="none" className="hidden max-[900px]:block mt-6 mb-2">
+          <a href={isHome ? '#contact' : '/#contact'} className="inline-block text-xl font-medium text-brand-orange border-2 border-brand-orange rounded-full px-6 py-2"
              onClick={() => setMenuOpen(false)}>
             {t.nav.contact}
           </a>
-        </li>
-        <li role="none" className="hidden max-[900px]:flex flex-col gap-4 items-center mt-6">
-          {/* Mobile Language Selector */}
-          <div className="flex items-center gap-[1px] bg-brand-text/5 border border-brand-orange/20 rounded-full p-[2px]" role="group" aria-label="Language">
-            {['en','ro','ru'].map(l => (
-              <button
-                key={l}
-                className={`font-body text-sm font-medium tracking-wide px-4 py-1.5 rounded-full border-none bg-transparent cursor-pointer transition-colors leading-relaxed ${lang === l ? 'bg-brand-orange text-white' : 'text-brand-text-light hover:text-brand-text'}`}
-                onClick={() => { startTransition(() => setLang(l)); setMenuOpen(false); }}
-                aria-pressed={lang === l}
-                aria-label={`Switch to ${l.toUpperCase()}`}
-              >
-                {l.toUpperCase()}
-              </button>
-            ))}
-          </div>
-
-          {/* Mobile Design Variant Toggle */}
-          <button 
-            onClick={() => {
-              setHeroVariant(prev => prev === 'A' ? 'B' : prev === 'B' ? 'C' : prev === 'C' ? 'D' : 'A');
-              setMenuOpen(false);
-            }}
-            className="text-lg font-bold text-brand-text border-2 border-brand-text/20 rounded-full px-6 py-2 hover:bg-brand-text/5 transition-colors"
-          >
-            {heroVariant === 'A' ? 'Design A' : heroVariant === 'B' ? 'Design B' : heroVariant === 'C' ? 'Design C' : 'Design D'}
-          </button>
         </li>
       </ul>
 
@@ -113,33 +105,26 @@ export default function Navbar({ heroVariant, setHeroVariant }) {
           {wishCount > 0 && <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-brand-pink text-white text-[10px] font-bold flex items-center justify-center">{wishCount}</span>}
         </Link>
 
+        <button
+          className="flex items-center gap-1.5 text-[15px] font-medium text-brand-text-light transition-colors hover:text-brand-pink p-1 shrink-0 max-[480px]:hidden uppercase"
+          onClick={() => {
+            const nextLang = lang === 'en' ? 'ro' : lang === 'ro' ? 'ru' : 'en';
+            startTransition(() => setLang(nextLang));
+          }}
+          aria-label="Switch Language"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" width="20" height="20">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            <path d="M2 12h20"></path>
+          </svg>
+          <span className="mt-[2px]">{lang}</span>
+        </button>
+
         <a href={isHome ? '#contact' : '/#contact'} className="text-[15px] font-medium tracking-wide text-brand-orange no-underline border-2 border-brand-orange/50 px-5 py-1.5 rounded-full transition-colors whitespace-nowrap hover:bg-brand-orange hover:text-white max-[900px]:hidden"
            onClick={() => setMenuOpen(false)}>
           {t.nav.contact}
         </a>
-
-        {/* Hero Variant Toggle */}
-        <button 
-          onClick={() => setHeroVariant(prev => prev === 'A' ? 'B' : prev === 'B' ? 'C' : prev === 'C' ? 'D' : 'A')}
-          className="text-xs font-bold px-3 py-1.5 rounded-full border border-brand-text/20 hover:bg-brand-text/5 transition-colors max-[900px]:hidden"
-          title="Toggle Design Variant"
-        >
-          {heroVariant === 'A' ? 'Design A' : heroVariant === 'B' ? 'Design B' : heroVariant === 'C' ? 'Design C' : 'Design D'}
-        </button>
-
-        <div className="flex items-center gap-[1px] bg-brand-text/5 border border-brand-orange/20 rounded-full p-[2px] shrink-0 max-[480px]:hidden" role="group" aria-label="Language">
-          {['en','ro','ru'].map(l => (
-            <button
-              key={l}
-              className={`font-body text-xs font-medium tracking-wide px-3 py-1 rounded-full border-none bg-transparent cursor-pointer transition-colors leading-relaxed ${lang === l ? 'bg-brand-orange text-white' : 'text-brand-text-light hover:text-brand-text'}`}
-              onClick={() => startTransition(() => setLang(l))}
-              aria-pressed={lang === l}
-              aria-label={`Switch to ${l.toUpperCase()}`}
-            >
-              {l.toUpperCase()}
-            </button>
-          ))}
-        </div>
       </div>
 
       <button

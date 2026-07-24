@@ -7,7 +7,7 @@ export default function SitemapPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Sitemap — Riar Berry's`;
+    document.title = `Sitemap — Mike Berry's`;
   }, []);
 
   return (

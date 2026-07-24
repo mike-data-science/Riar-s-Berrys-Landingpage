@@ -23,7 +23,7 @@ export default function Newsletter() {
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method:  'POST',
         headers: { 'Content-Type':'application/json', 'Accept':'application/json' },
-        body: JSON.stringify({ email, _subject:'Newsletter signup — Riar Berry\'s', type:'newsletter' }),
+        body: JSON.stringify({ email, _subject:'Newsletter signup — Mike Berry\'s', type:'newsletter' }),
       });
       setStatus(res.ok ? 'success' : 'error');
       if (res.ok) setEmail('');

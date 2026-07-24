@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { LangProvider }      from './context/LangContext';
 import { CookieProvider }    from './context/CookieContext';
@@ -25,11 +24,11 @@ import WhatsAppButton        from './components/WhatsAppButton';
 import CookieBanner          from './components/CookieBanner';
 import ScrollToTop           from './components/ScrollToTop';
 
-function HomePage({ heroVariant }) {
+function HomePage() {
   return (
     <main id="main-content" className="relative z-10 page-enter">
-      <HeroSection variant={heroVariant} />
-      {heroVariant !== 'C' && heroVariant !== 'D' && <MarqueeTransition />}
+      <HeroSection />
+      <MarqueeTransition />
       <ProductGrid />
       <NutritionSection />
       <ProcessStory />
@@ -43,15 +42,13 @@ function HomePage({ heroVariant }) {
 }
 
 export default function App() {
-  const [heroVariant, setHeroVariant] = useState('A');
-
   return (
     <LangProvider>
       <CookieProvider>
         <WishlistProvider>
-          <Navbar heroVariant={heroVariant} setHeroVariant={setHeroVariant} />
+          <Navbar />
           <Routes>
-            <Route path="/"                element={<HomePage heroVariant={heroVariant} />} />
+            <Route path="/"                element={<HomePage />} />
             <Route path="/product/:id"     element={<ProductPage />} />
             <Route path="/about"           element={<AboutPage />} />
             <Route path="/wishlist"        element={<WishlistPage />} />

@@ -128,8 +128,8 @@ export default function RecipesPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = recipe
-      ? `${t.recipes[recipe.id].title} — Riar Berry's Recipes`
-      : 'Recipes — Riar Berry\'s';
+      ? `${t.recipes[recipe.id].title} — Mike Berry's Recipes`
+      : 'Recipes — Mike Berry\'s';
   }, [id, recipe, t.recipes]);
 
   if (id) {

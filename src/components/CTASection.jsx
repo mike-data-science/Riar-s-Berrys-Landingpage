@@ -18,7 +18,7 @@ export default function CTASection() {
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method:  'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ name, email, message, _subject: `New message from ${name} — Riar Berry's` }),
+        body: JSON.stringify({ name, email, message, _subject: `New message from ${name} — Mike Berry's` }),
       });
       if (res.ok) {
         setStatus('success');
@@ -83,7 +83,7 @@ export default function CTASection() {
 
               {status === 'error' && (
                 <p className="text-[0.78rem] text-red-400 text-left font-medium" role="alert">
-                  Something went wrong. Email us directly at hello@riarberry.com
+                  Something went wrong. Email us directly at hello@mikeberry.com
                 </p>
               )}
 
